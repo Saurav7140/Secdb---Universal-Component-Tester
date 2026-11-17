@@ -1,0 +1,263 @@
+ERC report (2026-09-13T20:18:44, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
+
+***** Sheet /
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(46.92 mm, 118.16 mm): Symbol J1 Pin A1 [GND_A1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(52.00 mm, 108.00 mm): Symbol J1 [USB4105]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(94.92 mm, 35.00 mm): Symbol F1 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(94.92 mm, 116.00 mm): Symbol R1 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(94.92 mm, 130.00 mm): Symbol R2 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(100.00 mm, 35.00 mm): Symbol F1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(100.00 mm, 116.00 mm): Symbol R1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(100.00 mm, 130.00 mm): Symbol R2 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(139.92 mm, 50.00 mm): Symbol D1 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(142.92 mm, 105.54 mm): Symbol U6 Pin 1 [IO1_CONN, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(142.92 mm, 125.00 mm): Symbol C5 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(145.00 mm, 50.00 mm): Symbol D1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(148.00 mm, 103.00 mm): Symbol U6 [USBLC6-2SC6]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(148.00 mm, 125.00 mm): Symbol C5 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(159.92 mm, 35.00 mm): Symbol D2 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(165.00 mm, 35.00 mm): Symbol D2 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(192.92 mm, 96.00 mm): Symbol R4 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(192.92 mm, 110.00 mm): Symbol R5 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(198.00 mm, 96.00 mm): Symbol R4 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(198.00 mm, 110.00 mm): Symbol R5 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(219.92 mm, 35.00 mm): Symbol FB1 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(219.92 mm, 78.00 mm): Symbol R3 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(225.00 mm, 35.00 mm): Symbol FB1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(225.00 mm, 78.00 mm): Symbol R3 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(249.92 mm, 58.00 mm): Symbol C1 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(255.00 mm, 58.00 mm): Symbol C1 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(279.92 mm, 58.00 mm): Symbol C2 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(284.92 mm, 37.54 mm): Symbol U5 Pin 1 [VIN, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(285.00 mm, 58.00 mm): Symbol C2 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(290.00 mm, 35.00 mm): Symbol U5 [AP2112K]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(309.92 mm, 58.00 mm): Symbol C3 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(315.00 mm, 58.00 mm): Symbol C3 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(339.92 mm, 58.00 mm): Symbol C4 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(345.00 mm, 58.00 mm): Symbol C4 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(349.92 mm, 35.00 mm): Symbol FB2 Pin 1 [1, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(355.00 mm, 35.00 mm): Symbol FB2 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(45.72 mm, 36.83 mm): Symbol C6 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(45.72 mm, 50.80 mm): Symbol C10 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(68.58 mm, 36.83 mm): Symbol C7 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(68.58 mm, 50.80 mm): Symbol C11 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(91.44 mm, 36.83 mm): Symbol C8 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(91.44 mm, 50.80 mm): Symbol C12 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(114.30 mm, 36.83 mm): Symbol C9 [TwoPin]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 66.04 mm): Global Label 'TFT_DC'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 68.58 mm): Global Label 'TFT_RST'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 71.12 mm): Global Label 'TFT_MOSI'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 73.66 mm): Global Label 'DIODE_A_GPIO'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 76.20 mm): Global Label 'TFT_SCK'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 78.74 mm): Global Label 'TFT_CS'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 81.28 mm): Global Label 'BJT_C_GPIO'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 83.82 mm): Global Label 'BJT_B_GPIO'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 86.36 mm): Global Label 'BJT_E_GPIO'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(125.73 mm, 88.90 mm): Global Label 'ADC_BUFFERED'
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(130.81 mm, 82.55 mm): Symbol U1 [STM32F401CCU6]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(135.89 mm, 97.79 mm): Global Label 'DIODE_B_GPIO'
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 78.74 mm): Symbol R7 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 96.52 mm): Symbol R8 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 127.00 mm): Symbol R9 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 142.24 mm): Symbol R10 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 157.48 mm): Symbol R11 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(213.36 mm, 177.80 mm): Symbol R12 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(218.44 mm, 40.64 mm): Symbol Y1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(218.44 mm, 54.61 mm): Symbol C13 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(241.30 mm, 78.74 mm): Symbol C15 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(246.38 mm, 96.52 mm): Symbol TP1 [OnePin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(246.38 mm, 127.00 mm): Symbol SW2 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(246.38 mm, 142.24 mm): Symbol SW3 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(246.38 mm, 157.48 mm): Symbol SW4 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(246.38 mm, 177.80 mm): Symbol LED1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(251.46 mm, 40.64 mm): Symbol R6 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(251.46 mm, 54.61 mm): Symbol C14 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(269.24 mm, 78.74 mm): Symbol SW1 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(299.72 mm, 119.38 mm): Symbol R13 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(299.72 mm, 134.62 mm): Symbol R15 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(299.72 mm, 149.86 mm): Symbol R17 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(299.72 mm, 165.10 mm): Symbol R19 [TwoPin]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(325.12 mm, 52.08 mm): Symbol J2 Pin 1 [VTREF_3V3, Passive, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(330.20 mm, 47.00 mm): Symbol J2 [SWD_1x05]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(345.44 mm, 119.38 mm): Symbol R14 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(345.44 mm, 134.62 mm): Symbol R16 [TwoPin]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'SECDB'
+    ; warning
+    @(345.44 mm, 149.86 mm): Symbol R18 [TwoPin]
+
+***** Sheet /01 — USB-C and Power/
+
+***** Sheet /03 — Shared AFE and Sockets/
+
+***** Sheet /02 — STM32 Core and UI/
+
+***** Sheet /04 — Display Connector/
+
+ ** ERC messages: 81  Errors 0  Warnings 81
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters

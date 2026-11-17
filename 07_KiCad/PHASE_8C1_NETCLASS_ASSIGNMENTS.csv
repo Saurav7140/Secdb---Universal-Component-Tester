@@ -1,0 +1,47 @@
+net_name,net_class,routing_intent
+5V_DIODE,POWER_INPUT,USB input and pre-regulator power path
+LDO_IN,POWER_INPUT,USB input and pre-regulator power path
+USB_VBUS_FUSED,POWER_INPUT,USB input and pre-regulator power path
+USB_VBUS_RAW,POWER_INPUT,USB input and pre-regulator power path
+3V3_A,POWER,Regulated rails and MCU VCAP connection
+3V3_D,POWER,Regulated rails and MCU VCAP connection
+VCAP_1,POWER,Regulated rails and MCU VCAP connection
+GND,GROUND_RETURN,"Explicit ground trunks, stitching vias, and plane connections"
+USB_DM_CONN,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+USB_DM_ESD,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+USB_DM_MCU,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+USB_DP_CONN,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+USB_DP_ESD,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+USB_DP_MCU,USB_DIFF,USB D+/D- segments; dimensions are provisional pending fab stackup
+HSE_IN,CLOCK_CRITICAL,STM32 HSE crystal loop
+HSE_OUT,CLOCK_CRITICAL,STM32 HSE crystal loop
+HSE_XTAL_OUT,CLOCK_CRITICAL,STM32 HSE crystal loop
+ADC_BUFFERED,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+BJT_B,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+BJT_C,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+BJT_E,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+CAL_1V1,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+CAL_2V2,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+DIODE_A,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+DIODE_B,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+OPA_OUT,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+RC_INTERNAL,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+RC_SOCKET,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SENSE_COM,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_A0,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_A1,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_A2,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_BJT_B,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_BJT_C,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_BJT_E,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_CAL_1V1,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_CAL_2V2,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_DIODE_A,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_DIODE_B,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SNS_RC,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_100K,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_10K,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_1K,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_A0,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_A1,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"
+SRC_DISCHARGE,ANALOG_SENSITIVE,"DUT, calibration, MUX, buffer, and ADC measurement path"

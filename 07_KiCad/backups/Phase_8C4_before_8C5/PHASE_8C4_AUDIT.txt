@@ -1,0 +1,11 @@
+Footprints checked: 94 (positions/orientations preserved)
+Named nets checked: 71
+Routed segments: 316 (Phase 8C3: 246; added: 70)
+Vias: 71 (Phase 8C3: 60; added: 11)
+Manifest rows: 81 (Counter({'track': 70, 'via': 11}))
+DUT terminal nets completed: BJT_B, BJT_C, BJT_E, DIODE_A, DIODE_B, RC_SOCKET
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected pads: 87 (Phase 8C3: 105; reduction: 18)
+KiCad footprint errors: 0
+PASS: Phase 8C4 DUT socket/protection fanout and DRC verified

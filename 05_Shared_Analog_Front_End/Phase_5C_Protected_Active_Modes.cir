@@ -1,0 +1,82 @@
+* SECDB Phase 5C - diode and BJT modes with frozen socket protection.
+* Each exposed terminal carries a worst-direction 0.5 nA TPD4E1B06 load.
+* Selected sense branches include 1 kohm protection, TMUX1108 Ron/leakage,
+* the OPA391 macro-model, and the proposed 100 ohm/1 nF ADC filter.
+
+.include OPA391_TI_Model\OPAx391.LIB
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+.param REMIT=150
+.param RBASE=1.00105Meg
+.param RCOL=1.051k
+.param RLEG=1.051k
+
+VCC VCC 0 3.3
+
+.subckt PROTECTED_SENSE IN ADC VCC
+RPROT IN PROT 1k
+RSW PROT SIN 9.5
+CSENSE SIN 0 100p
+IMUX SIN 0 2n
+XU SIN OUT VCC 0 OUT OPAx391
+RISO OUT ADC 100
+CADC ADC 0 1n
+.ends PROTECTED_SENSE
+
+* Diode A-to-B drive with a protected ESD channel at each socket terminal.
+RDA VCC DIO_A {RLEG}
+DTEST DIO_A DIO_B 1N4148
+RDB DIO_B 0 {RLEG}
+IESD_DA DIO_A 0 0.5n
+IESD_DB DIO_B 0 0.5n
+CIESD_DA DIO_A 0 0.95p
+CIESD_DB DIO_B 0 0.95p
+XDA DIO_A ADC_DA VCC PROTECTED_SENSE
+XDB DIO_B ADC_DB VCC PROTECTED_SENSE
+
+* Known-pinout NPN active mode.
+RNE N_E 0 {REMIT}
+RNB VCC N_B {RBASE}
+RNC VCC N_C {RCOL}
+QN N_C N_B N_E 2N3904
+IESD_NE N_E 0 0.5n
+IESD_NB N_B 0 0.5n
+IESD_NC N_C 0 0.5n
+CIESD_NE N_E 0 0.95p
+CIESD_NB N_B 0 0.95p
+CIESD_NC N_C 0 0.95p
+XNE N_E ADC_NE VCC PROTECTED_SENSE
+XNB N_B ADC_NB VCC PROTECTED_SENSE
+XNC N_C ADC_NC VCC PROTECTED_SENSE
+
+* Known-pinout PNP active mode; reverse leakage direction is conservative here.
+RPE VCC P_E {REMIT}
+RPB P_B 0 {RBASE}
+RPC P_C 0 {RCOL}
+QP P_C P_B P_E 2N3906
+IESD_PE 0 P_E 0.5n
+IESD_PB 0 P_B 0.5n
+IESD_PC 0 P_C 0.5n
+CIESD_PE P_E 0 0.95p
+CIESD_PB P_B 0 0.95p
+CIESD_PC P_C 0 0.95p
+XPE P_E ADC_PE VCC PROTECTED_SENSE
+XPB P_B ADC_PB VCC PROTECTED_SENSE
+XPC P_C ADC_PC VCC PROTECTED_SENSE
+
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 50u 0 100n
+
+.meas TRAN DIODE_VF PARAM V(ADC_DA)-V(ADC_DB)
+.meas TRAN DIODE_IF PARAM (3.3-V(DIO_A))/RLEG
+.meas TRAN N_VBE PARAM V(ADC_NB)-V(ADC_NE)
+.meas TRAN N_VCE PARAM V(ADC_NC)-V(ADC_NE)
+.meas TRAN N_VCB PARAM V(ADC_NC)-V(ADC_NB)
+.meas TRAN N_HFE PARAM ((3.3-V(ADC_NC))/RCOL)/((3.3-V(ADC_NB))/RBASE)
+.meas TRAN P_VEB PARAM V(ADC_PE)-V(ADC_PB)
+.meas TRAN P_VEC PARAM V(ADC_PE)-V(ADC_PC)
+.meas TRAN P_VBC PARAM V(ADC_PB)-V(ADC_PC)
+.meas TRAN P_HFE PARAM (V(ADC_PC)/RCOL)/(V(ADC_PB)/RBASE)
+.end

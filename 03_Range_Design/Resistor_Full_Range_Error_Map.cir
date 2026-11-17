@@ -1,0 +1,36 @@
+* SECDB Phase 3 - full resistor autorange error map
+* Includes +0.1% RREF, 9.5 ohm switch RON, 12-bit quantization,
+* +/-2nA leakage direction, and +/-4 LSB STM32F401 ADC error.
+VCC VCC 0 3.3
+
+.func RPATH(x) if(x<3162.27766,1010.5,if(x<31622.7766,10019.5,100109.5))
+
+* Nominal leakage-free branch used for the center estimate.
+RPATH0 VCC ADC0 {RPATH(Rx)}
+RX0 ADC0 0 {Rx}
+
+* Positive worst-direction leakage branch.
+RPATHP VCC ADCP {RPATH(Rx)}
+RXP ADCP 0 {Rx}
+ILEAKP VCC ADCP 2n
+
+* Negative worst-direction leakage branch.
+RPATHM VCC ADCM {RPATH(Rx)}
+RXM ADCM 0 {Rx}
+ILEAKM ADCM VCC 2n
+
+* Ideal 12-bit code quantization.
+BCODE0 CODE0 0 V=floor(4095*V(ADC0)/3.3+0.5)
+BCODEP CODEP 0 V=floor(4095*V(ADCP)/3.3+0.5)
+BCODEM CODEM 0 V=floor(4095*V(ADCM)/3.3+0.5)
+
+* Firmware uses calibrated complete path resistance.
+BRCALC0 RCALC0 0 V=RPATH(Rx)*V(CODE0)/(4095-V(CODE0))
+BRMIN RMIN 0 V=RPATH(Rx)*(V(CODEM)-4)/(4095-(V(CODEM)-4))
+BRMAX RMAX 0 V=RPATH(Rx)*(V(CODEP)+4)/(4095-(V(CODEP)+4))
+
+.param Rx=1k
+.step param Rx list 100 220 470 1k 2.2k 4.7k 10k 22k 47k 100k 220k 470k 1Meg
+.op
+.save V(ADC0) V(CODE0) V(RCALC0) V(RMIN) V(RMAX)
+.end

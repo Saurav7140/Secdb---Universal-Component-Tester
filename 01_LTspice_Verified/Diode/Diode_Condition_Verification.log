@@ -1,0 +1,26 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Condition_Verification.cir
+Start Time: Sat Sep 12 16:01:29 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.091 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Condition_Verification.cir
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+vf_1n4148: V(ADC_FWD)=0.630188763142 at 0.623227289016
+if_1n4148: I(RFWD)=0.00266981124878 at 0.623227289016
+v_reverse: V(ADC_REV)=3.29999756813 at 0.623227289016
+i_reverse: I(RREV)=2.52330001338e-09 at 0.623227289016
+v_open: V(ADC_OPEN)=3.29999804497 at 0.623227289016
+i_open: I(ROPEN)=2.03100625207e-09 at 0.623227289016
+v_short: V(ADC_SHORT)=3.29996692017e-05 at 0.623227289016
+i_short: I(RSHORT)=0.00329996692017 at 0.623227289016
+vf_1n4007: V(ADC_4007)=0.623227289016 at 0.623227289016
+vf_1n5819: V(ADC_5819)=0.163679242134 at 0.623227289016
+vf_red_led: V(ADC_LED)=2.04900693893 at 0.623227289016

@@ -1,0 +1,12 @@
+Footprints checked: 94 (90 circuit footprints + 4 mounting holes)
+Named PCB nets checked: 71
+Routed segments: 149
+Vias: 31 (27 GND + 2 3V3_D + 2 3V3_A)
+Copper zones: 1 (B.Cu GND)
+Routed nets: 3V3_A, 3V3_D, 5V_DIODE, GND, LDO_IN, USB_VBUS_FUSED, USB_VBUS_RAW, VCAP_1
+Track widths (mm): 0.20, 0.25, 0.30, 0.50, 0.60, 0.80
+KiCad DRC violations: 0
+KiCad unconnected pads: 127 (Phase 8C1: 213; reduction: 86)
+KiCad footprint errors: 0
+Intentionally deferred supply taps: 7
+PASS: Phase 8C2 power routing, plane, placement refinements, artifacts, and DRC verified

@@ -1,0 +1,48 @@
+* SECDB Phase 4C - capacitor leakage, open, short, and above-range checks
+* The same calibrated 10.01k + 9.5-ohm charge path is used.
+
+.param RCHPATH=10.01k+9.5
+.param CPAR=50p
+.param VTH=3.3*2589/4095
+
+VCHARGE VCC 0 PULSE(0 3.3 1u 1n 1n 10s 20s)
+
+* 100 uF with representative parallel leakage.
+RCH_L1M VCC N_L1M {RCHPATH}
+C_L1M N_L1M 0 100u
+CP_L1M N_L1M 0 {CPAR}
+RLEAK_1M N_L1M 0 1Meg
+
+RCH_L100K VCC N_L100K {RCHPATH}
+C_L100K N_L100K 0 100u
+CP_L100K N_L100K 0 {CPAR}
+RLEAK_100K N_L100K 0 100k
+
+RCH_L15K VCC N_L15K {RCHPATH}
+C_L15K N_L15K 0 100u
+CP_L15K N_L15K 0 {CPAR}
+RLEAK_15K N_L15K 0 15k
+
+* Open socket: only the allocated 50 pF fixture/PCB parasitic remains.
+RCH_OPEN VCC N_OPEN {RCHPATH}
+C_OPEN N_OPEN 0 {CPAR}
+
+* Near-short and above-range references.
+RCH_SHORT VCC N_SHORT {RCHPATH}
+RSHORT N_SHORT 0 10m
+
+RCH_ABOVE VCC N_ABOVE {RCHPATH}
+C_ABOVE N_ABOVE 0 1m
+CP_ABOVE N_ABOVE 0 {CPAR}
+
+.options plotwinsize=0 reltol=1e-6
+.tran 0 5s 0 100u
+.save V(VCC) V(N_L1M) V(N_L100K) V(N_L15K) V(N_OPEN) V(N_SHORT) V(N_ABOVE)
+
+.meas TRAN T63_LEAK_1M TRIG V(VCC) VAL=1.65 RISE=1 TARG V(N_L1M) VAL={VTH} RISE=1
+.meas TRAN T63_LEAK_100K TRIG V(VCC) VAL=1.65 RISE=1 TARG V(N_L100K) VAL={VTH} RISE=1
+.meas TRAN T63_OPEN TRIG V(VCC) VAL=1.65 RISE=1 TARG V(N_OPEN) VAL={VTH} RISE=1
+.meas TRAN V_LEAK_15K_5S FIND V(N_L15K) AT=5s
+.meas TRAN V_SHORT_5S FIND V(N_SHORT) AT=5s
+.meas TRAN V_ABOVE_5S FIND V(N_ABOVE) AT=5s
+.end

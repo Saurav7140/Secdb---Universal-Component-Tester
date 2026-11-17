@@ -1,0 +1,3 @@
+option,scope,cost_impact,verification_impact,recommendation
+Four-layer conversion,"Add internal ground and signal/power layers; route remaining MCU and interface signals internally",Higher,"Define fabrication stack-up; recalculate USB impedance; rerun full DRC and plane review",Recommended electrical solution
+Coordinated two-layer re-fan,"Rebuild selected lower-MCU source-control DUT-drive support and power stubs before routing Phase 8D3",None to board layer count,"Large preservation manifest; repeat DRC and connectivity audit for every touched completed net",Use only if two-layer fabrication is mandatory

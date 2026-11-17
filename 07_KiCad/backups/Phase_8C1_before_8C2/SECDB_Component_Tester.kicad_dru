@@ -1,0 +1,69 @@
+(version 1)
+
+# Phase 8C1 routing-width constraints. USB geometry is provisional until the
+# fabrication stackup is known; update the USB rule before production release.
+
+(rule "8C1 USB differential segments"
+    (layer F.Cu)
+    (condition "A.NetClass == 'USB_DIFF'")
+    (constraint track_width (min 0.20mm) (max 0.20mm) (opt 0.20mm))
+)
+
+(rule "8C1 input-power trunks"
+    (condition "A.NetClass == 'POWER_INPUT'")
+    (constraint track_width (min 0.80mm))
+)
+
+(rule "8C1 input-power vias"
+    (condition "A.Type == 'Via' && A.NetClass == 'POWER_INPUT'")
+    (constraint via_diameter (min 1.00mm))
+    (constraint hole_size (min 0.50mm))
+)
+
+(rule "8C1 regulated-power trunks"
+    (condition "A.NetClass == 'POWER'")
+    (constraint track_width (min 0.50mm))
+)
+
+(rule "8C1 regulated-power vias"
+    (condition "A.Type == 'Via' && A.NetClass == 'POWER'")
+    (constraint via_diameter (min 0.80mm))
+    (constraint hole_size (min 0.40mm))
+)
+
+(rule "8C1 ground trunks and stitching"
+    (condition "A.NetClass == 'GROUND_RETURN'")
+    (constraint track_width (min 0.50mm))
+)
+
+(rule "8C1 ground vias"
+    (condition "A.Type == 'Via' && A.NetClass == 'GROUND_RETURN'")
+    (constraint via_diameter (min 0.80mm))
+    (constraint hole_size (min 0.40mm))
+)
+
+(rule "8C1 input-power route separation"
+    (condition "A.Type == 'Track' && B.Type == 'Track' && (A.NetClass == 'POWER_INPUT' || B.NetClass == 'POWER_INPUT')")
+    (constraint clearance (min 0.25mm))
+)
+
+(rule "8C1 regulated-power route separation"
+    (condition "A.Type == 'Track' && B.Type == 'Track' && (A.NetClass == 'POWER' || B.NetClass == 'POWER')")
+    (constraint clearance (min 0.20mm))
+)
+
+(rule "8C1 analog route separation"
+    (condition "A.Type == 'Track' && B.Type == 'Track' && (A.NetClass == 'ANALOG_SENSITIVE' || B.NetClass == 'ANALOG_SENSITIVE')")
+    (constraint clearance (min 0.20mm))
+)
+
+(rule "8C1 sensitive-analog traces"
+    (condition "A.NetClass == 'ANALOG_SENSITIVE'")
+    (constraint track_width (min 0.20mm) (max 0.30mm) (opt 0.25mm))
+)
+
+(rule "8C1 HSE crystal loop"
+    (layer F.Cu)
+    (condition "A.NetClass == 'CLOCK_CRITICAL'")
+    (constraint track_width (min 0.20mm) (max 0.25mm) (opt 0.20mm))
+)

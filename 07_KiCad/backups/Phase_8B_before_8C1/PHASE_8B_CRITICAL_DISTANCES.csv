@@ -1,0 +1,19 @@
+Capacitor,Target,Purpose,Nearest_common_net_pad_distance_mm
+C1,U5,LDO input bulk,4.590
+C2,U5,LDO input HF,4.150
+C3,U5,LDO output bulk,5.385
+C4,U5,LDO output HF,2.370
+C5,U6,USB protection supply,3.808
+C6,U1,MCU VBAT/VDD,4.364
+C7,U1,MCU VDD,3.812
+C8,U1,MCU VDD,2.903
+C9,U1,MCU VDD,3.771
+C10,U1,MCU VDDA,2.332
+C11,U1,MCU VDDA,3.147
+C12,U1,MCU VCAP,3.114
+C17,U2,source MUX decoupling,2.087
+C18,U3,sense MUX decoupling,3.355
+C19,U4,op-amp decoupling,2.703
+C20,U4,AFE bulk,6.734
+C21,J6,display bulk,6.576
+C22,J6,display HF,4.896

@@ -1,0 +1,6 @@
+Net classes checked: 7
+Explicit net assignments checked: 46
+Board nets present: 71
+Tracks/vias: 0
+Copper zones: 0
+PASS: Phase 8C1 rules, assignments, artifacts, and unchanged placement verified

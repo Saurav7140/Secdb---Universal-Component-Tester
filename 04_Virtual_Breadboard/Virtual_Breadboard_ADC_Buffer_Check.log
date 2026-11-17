@@ -1,0 +1,28 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_ADC_Buffer_Check.cir
+Start Time: Sat Sep 12 17:16:28 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.036 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_ADC_Buffer_Check.cir
+
+tap_1v1: V(TAP_1V1)=1.09999990463 at 1.10085995
+adc_1v1_nom: V(ADC11_N)=1.09999990463 at 1.10085995
+adc_1v1_low: V(ADC11_L)=1.09913992882 at 1.10085995
+adc_1v1_high: V(ADC11_H)=1.10085995 at 1.10085995
+code_1v1_nom: V(ADC11_N)*4095/3.3=1364.99988166
+adc_1v1_total_low: V(ADC11_L)-4*3.3/4095=1.09591648559
+adc_1v1_total_high: V(ADC11_H)+4*3.3/4095=1.10408339322
+tap_2v2: V(TAP_2V2)=2.20000004768 at 1.10085995
+adc_2v2_nom: V(ADC22_N)=2.20000004768 at 1.10085995
+adc_2v2_low: V(ADC22_L)=2.19913983345 at 1.10085995
+adc_2v2_high: V(ADC22_H)=2.2008600235 at 1.10085995
+code_2v2_nom: V(ADC22_N)*4095/3.3=2730.00005917
+adc_2v2_total_low: V(ADC22_L)-4*3.3/4095=2.19591639023
+adc_2v2_total_high: V(ADC22_H)+4*3.3/4095=2.20408346672

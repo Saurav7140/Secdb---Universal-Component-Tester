@@ -1,0 +1,11 @@
+Footprints checked: 94 (positions and orientations preserved)
+Named nets checked: 71
+Routed segments: 595 (Phase 8D2A: 522)
+Vias: 143 (Phase 8D2A: 129)
+Authorized changed nets: 15
+Phase 8D2B nets completed: 6
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected items: 52
+KiCad footprint errors: 0
+PASS: Phase 8D2B coordinated two-layer re-fan verified

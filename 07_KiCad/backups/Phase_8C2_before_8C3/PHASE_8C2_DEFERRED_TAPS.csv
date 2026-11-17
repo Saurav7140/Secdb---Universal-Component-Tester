@@ -1,0 +1,8 @@
+reference,pad,net,function,planned_phase
+R3,1,USB_VBUS_FUSED,USB VBUS sense-divider input,Phase 8C3 analog/sense routing
+J2,1,3V3_D,SWD connector supply,Phase 8D low-speed/debug routing
+R7,1,3V3_D,NRST pull-up supply,Phase 8D low-speed/debug routing
+R9,1,3V3_D,MODE button pull-up supply,Phase 8D low-speed/UI routing
+R10,1,3V3_D,UP button pull-up supply,Phase 8D low-speed/UI routing
+R11,1,3V3_D,DOWN button pull-up supply,Phase 8D low-speed/UI routing
+R42,1,3V3_D,Display backlight supply link,Phase 8D display routing

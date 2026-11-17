@@ -1,0 +1,221 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_Temperature_Loading_And_Faults.cir
+Start Time: Sat Sep 12 16:58:31 2026
+
+.step temp=-10°
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = -10
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=25°
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=60°
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.146 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_Temperature_Loading_And_Faults.cir
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+
+Measurement: ok_vbe
+  step	V(B_OK,E_OK) 	at
+     1	0.709985835478	1e-06
+     2	0.652521746233	1e-06
+     3	0.594646255486	1e-06
+
+Measurement: ok_vce
+  step	V(C_OK,E_OK) 	at
+     1	2.64010129683	1e-06
+     2	2.4879583884	1e-06
+     3	2.32182518672	1e-06
+
+Measurement: ok_vcb
+  step	V(C_OK,B_OK) 	at
+     1	1.93011546135	1e-06
+     2	1.83543664217	1e-06
+     3	1.72717893124	1e-06
+
+Measurement: ok_ib
+  step	I(RB_OK) 	at
+     1	2.58123804997e-06	1e-06
+     2	2.63722790805e-06	1e-06
+     3	2.6934988e-06	1e-06
+
+Measurement: ok_ic
+  step	I(RC_OK) 	at
+     1	0.000646935484838	1e-06
+     2	0.000796094653197	1e-06
+     3	0.000958969932981	1e-06
+
+Measurement: ok_hfe_est
+  step	I(RC_OK)/I(RB_OK)
+     1	250.629919563
+     2	301.867976888
+     3	356.031319925
+
+Measurement: p_veb
+  step	V(E_P,B_P) 	at
+     1	0.700867652893	1e-06
+     2	0.642202615738	1e-06
+     3	0.58312869072	1e-06
+
+Measurement: p_vec
+  step	V(E_P,C_P) 	at
+     1	2.85695165396	1e-06
+     2	2.75417757034	1e-06
+     3	2.64172285795	1e-06
+
+Measurement: p_vbc
+  step	V(B_P,C_P) 	at
+     1	2.15608400106	1e-06
+     2	2.11197495461	1e-06
+     3	2.05859416723	1e-06
+
+Measurement: p_hfe_est
+  step	I(RC_P)/I(RB_P)
+     1	167.54469418
+     2	201.921714015
+     3	238.312054601
+
+Measurement: direct_sink_hfe_est
+  step	I(RC_DS)/I(RB_DS)
+     1	154.520257428
+     2	188.761798746
+     3	225.654478675
+
+Measurement: direct_inject_hfe_est
+  step	I(RC_DI)/I(RB_DI)
+     1	347.003799789
+     2	415.246694157
+     3	486.662627662
+
+Measurement: buffer_sink_hfe_est
+  step	I(RC_BS)/I(RB_BS)
+     1	250.629446007
+     2	301.867377002
+     3	356.030671612
+
+Measurement: buffer_inject_hfe_est
+  step	I(RC_BI)/I(RB_BI)
+     1	250.630393119
+     2	301.868528676
+     3	356.031946628
+
+Measurement: open_base_vce
+  step	V(C_OB,E_OB) 	at
+     1	3.29999850884	1e-06
+     2	3.29999826691	1e-06
+     3	3.29999778538	1e-06
+
+Measurement: open_base_vbe
+  step	V(B_OB,E_OB) 	at
+     1	3.29999707833	1e-06
+     2	3.29999707482	1e-06
+     3	3.29999683171	1e-06
+
+Measurement: open_base_ic
+  step	I(RC_OB) 	at
+     1	1.36134625794e-09	1e-06
+     2	1.7314873979e-09	1e-06
+     3	2.22478857559e-09	1e-06
+
+Measurement: open_col_vbe
+  step	V(B_OC,E_OC) 	at
+     1	0.618527892349	1e-06
+     2	0.5479727279	1e-06
+     3	0.477047057462	1e-06
+
+Measurement: open_col_vce
+  step	V(C_OC,E_OC) 	at
+     1	3.29997450423	1e-06
+     2	3.29997383464	1e-06
+     3	3.29997316153	1e-06
+
+Measurement: open_col_ic
+  step	I(RC_OC) 	at
+     1	3.29391310235e-12	1e-06
+     2	3.29416051728e-12	1e-06
+     3	3.29438689869e-12	1e-06
+
+Measurement: ce_short_vce
+  step	V(C_CES,E_CES) 	at
+     1	3.23783606291e-05	1e-06
+     2	3.23802232742e-05	1e-06
+     3	3.23802232742e-05	1e-06
+
+Measurement: ce_short_vbe
+  step	V(B_CES,E_CES) 	at
+     1	0.612380404025	1e-06
+     2	0.54204393737	1e-06
+     3	0.471317712218	1e-06
+
+Measurement: ce_short_ic
+  step	I(RC_CES) 	at
+     1	0.00323523767292	1e-06
+     2	0.00323523697443	1e-06
+     3	0.00323523627594	1e-06
+
+Measurement: be_short_vbe
+  step	V(B_BES,E_BES) 	at
+     1	3.29637259711e-08	1e-06
+     2	3.29637259711e-08	1e-06
+     3	3.29673639499e-08	1e-06
+
+Measurement: be_short_ic
+  step	I(RC_BES) 	at
+     1	3.29271115582e-12	1e-06
+     2	3.30409571231e-12	1e-06
+     3	4.49108502124e-12	1e-06
+
+Measurement: bc_short_vbe
+  step	V(B_BCS,E_BCS) 	at
+     1	0.741523131728	1e-06
+     2	0.683402286842	1e-06
+     3	0.624355915934	1e-06
+
+Measurement: bc_short_vce
+  step	V(C_BCS,E_BCS) 	at
+     1	0.741523250937	1e-06
+     2	0.683402346447	1e-06
+     3	0.624355975538	1e-06
+
+Measurement: bc_short_vcb
+  step	V(C_BCS,B_BCS) 	at
+     1	1.19209289551e-07	1e-06
+     2	5.96046447754e-08	1e-06
+     3	5.96046447754e-08	1e-06
+
+Measurement: bc_short_ic
+  step	I(RC_BCS) 	at
+     1	0.00250828708522	1e-06
+     2	0.00256526772864	1e-06
+     3	0.00262315571308	1e-06
+
+Measurement: sat_vbe
+  step	V(B_SAT,E_SAT) 	at
+     1	0.75834774226	1e-06
+     2	0.702508233488	1e-06
+     3	0.645934320986	1e-06
+
+Measurement: sat_vce
+  step	V(C_SAT,E_SAT) 	at
+     1	0.039519123733	1e-06
+     2	0.0401813089848	1e-06
+     3	0.0405317917466	1e-06
+
+Measurement: sat_vcb
+  step	V(C_SAT,B_SAT) 	at
+     1	-0.718828618526	1e-06
+     2	-0.662326924503	1e-06
+     3	-0.60540252924	1e-06
+
+Measurement: sat_forced_beta
+  step	I(RC_SAT)/I(RB_SAT)
+     1	12.731408362
+     2	12.4517131736
+     3	12.1816955837

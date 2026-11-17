@@ -1,0 +1,8 @@
+net_class,base_clearance_mm,route_to_route_clearance_mm,track_width_mm,via_diameter_mm,via_drill_mm,diff_pair_width_mm,diff_pair_gap_mm,purpose
+Default,0.15,0.15,0.25,0.6,0.3,0.2,0.2,"Low-speed GPIO, control, display, SWD, and miscellaneous signals"
+POWER_INPUT,0.15,0.25,0.8,1.0,0.5,0.2,0.2,USB input and pre-regulator power path
+POWER,0.15,0.2,0.5,0.8,0.4,0.2,0.2,Regulated rails and MCU VCAP connection
+GROUND_RETURN,0.15,0.2,0.6,0.8,0.4,0.2,0.2,"Explicit ground trunks, stitching vias, and plane connections"
+USB_DIFF,0.15,0.15,0.2,0.6,0.3,0.2,0.2,USB D+/D- segments; dimensions are provisional pending fab stackup
+ANALOG_SENSITIVE,0.15,0.2,0.25,0.6,0.3,0.2,0.2,"DUT, calibration, MUX, buffer, and ADC measurement path"
+CLOCK_CRITICAL,0.2,0.2,0.2,0.6,0.3,0.2,0.2,STM32 HSE crystal loop

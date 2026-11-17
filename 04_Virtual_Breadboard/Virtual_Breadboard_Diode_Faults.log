@@ -1,0 +1,60 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Diode_Faults.cir
+Start Time: Sat Sep 12 22:01:40 2026
+
+.step pol=0
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step pol=1
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.157 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Diode_Faults.cir
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+
+Measurement: vopen
+  step	if(POL<0.5,V(OPEN_ADC_A)-V(OPEN_ADC_B),V(OPEN_ADC_B)-V(OPEN_ADC_A))
+     1	3.29979301036
+     2	3.30019304355
+
+Measurement: vhealthy
+  step	if(POL<0.5,V(HEALTHY_ADC_A)-V(HEALTHY_ADC_B),V(HEALTHY_ADC_B)-V(HEALTHY_ADC_A))
+     1	0.596310019493
+     2	3.29999467772
+
+Measurement: vshort
+  step	if(POL<0.5,V(SHORT_ADC_A)-V(SHORT_ADC_B),V(SHORT_ADC_B)-V(SHORT_ADC_A))
+     1	-0.000184297561646
+     2	0.000215768814087
+
+Measurement: ishort
+  step	abs(I(RSHORT_A))
+     1	0.00156992592383
+     2	0.00156992592383
+
+Measurement: vleak_100k
+  step	if(POL<0.5,V(L100_ADC_A)-V(L100_ADC_B),V(L100_ADC_B)-V(L100_ADC_A))
+     1	3.23206205294
+     2	3.23206205294
+
+Measurement: vleak_10k
+  step	if(POL<0.5,V(L10_ADC_A)-V(L10_ADC_B),V(L10_ADC_B)-V(L10_ADC_A))
+     1	2.72682204843
+     2	2.72682204843
+
+Measurement: code_open_high
+  step	max(V(OPEN_ADC_A),V(OPEN_ADC_B))*4095/3.3
+     1	4094.87153942
+     2	4095.11976242
+
+Measurement: code_open_low
+  step	min(V(OPEN_ADC_A),V(OPEN_ADC_B))*4095/3.3
+     1	0.12839474624
+     2	-0.119787074701

@@ -1,0 +1,77 @@
+* SECDB Phase 5B - calibration, diode conduction, NPN and PNP active modes
+* through the shared TMUX1108/OPA391/PA0 architecture.
+* Replicated SENSEOPA blocks represent sequential selections of one physical path.
+
+.include OPA391_TI_Model\OPAx391.LIB
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+.param REMIT=150
+.param RBASE=1.00105Meg
+.param RCOL=1.051k
+.param RLEG=1.051k
+
+VCC VCC 0 3.3
+
+.subckt SENSEOPA IN ADC VCC
+RSW IN SIN 9.5
+CSENSE SIN 0 100p
+IMUX SIN 0 2n
+XU SIN OUT VCC 0 OUT OPAx391
+RISO OUT ADC 100
+CADC ADC 0 7p
+.ends SENSEOPA
+
+* Always-present 10k calibration ladder, using U_SENSE S7/S8.
+RCAL1 VCC CAL_2V2 10k
+RCAL2 CAL_2V2 CAL_1V1 10k
+RCAL3 CAL_1V1 0 10k
+XCAL1 CAL_1V1 ADC_CAL1 VCC SENSEOPA
+XCAL2 CAL_2V2 ADC_CAL2 VCC SENSEOPA
+
+* Diode A-to-B drive; U_SENSE reads A then B.
+RDA VCC DIO_A {RLEG}
+DTEST DIO_A DIO_B 1N4148
+RDB DIO_B 0 {RLEG}
+XDA DIO_A ADC_DA VCC SENSEOPA
+XDB DIO_B ADC_DB VCC SENSEOPA
+
+* Known-pinout NPN active mode.
+RNE N_E 0 {REMIT}
+RNB VCC N_B {RBASE}
+RNC VCC N_C {RCOL}
+QN N_C N_B N_E 2N3904
+XNE N_E ADC_NE VCC SENSEOPA
+XNB N_B ADC_NB VCC SENSEOPA
+XNC N_C ADC_NC VCC SENSEOPA
+
+* Known-pinout PNP active mode.
+RPE VCC P_E {REMIT}
+RPB P_B 0 {RBASE}
+RPC P_C 0 {RCOL}
+QP P_C P_B P_E 2N3906
+XPE P_E ADC_PE VCC SENSEOPA
+XPB P_B ADC_PB VCC SENSEOPA
+XPC P_C ADC_PC VCC SENSEOPA
+
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 20u 0 100n
+
+.meas TRAN VCAL1 FIND V(ADC_CAL1) AT=20u
+.meas TRAN VCAL2 FIND V(ADC_CAL2) AT=20u
+.meas TRAN CODE_CAL1 PARAM V(ADC_CAL1)*4095/3.3
+.meas TRAN CODE_CAL2 PARAM V(ADC_CAL2)*4095/3.3
+.meas TRAN DIODE_VF PARAM V(ADC_DA)-V(ADC_DB)
+.meas TRAN DIODE_IF PARAM (3.3-V(DIO_A))/RLEG
+
+.meas TRAN N_VBE PARAM V(ADC_NB)-V(ADC_NE)
+.meas TRAN N_VCE PARAM V(ADC_NC)-V(ADC_NE)
+.meas TRAN N_VCB PARAM V(ADC_NC)-V(ADC_NB)
+.meas TRAN N_HFE PARAM ((3.3-V(ADC_NC))/RCOL)/((3.3-V(ADC_NB))/RBASE)
+
+.meas TRAN P_VEB PARAM V(ADC_PE)-V(ADC_PB)
+.meas TRAN P_VEC PARAM V(ADC_PE)-V(ADC_PC)
+.meas TRAN P_VBC PARAM V(ADC_PB)-V(ADC_PC)
+.meas TRAN P_HFE PARAM (V(ADC_PC)/RCOL)/(V(ADC_PB)/RBASE)
+.end

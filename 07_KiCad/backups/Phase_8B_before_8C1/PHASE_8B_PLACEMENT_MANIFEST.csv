@@ -1,0 +1,95 @@
+Reference,Value,X_mm,Y_mm,Rotation_deg,Locked,Schematic_path
+C1,10uF X7R,56.000,33.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C10,1uF X7R,63.000,67.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C11,100nF X7R,63.000,64.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C12,4.7uF X7R low-ESR,69.500,72.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C13,30pF C0G,50.000,69.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C14,30pF C0G,55.000,69.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C15,100nF X7R,62.500,74.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C16,1nF C0G 5%,70.500,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C17,100nF X7R,64.000,44.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C18,100nF X7R,93.000,45.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C19,100nF X7R,82.500,51.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C2,100nF X7R,53.500,32.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C20,1uF X7R,86.000,53.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C21,10uF X5R,105.500,69.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C22,100nF X7R,108.000,71.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C3,10uF X7R,63.500,27.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C4,100nF X7R,60.500,27.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C5,100nF X7R,34.500,46.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C6,100nF X7R,63.000,60.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C7,100nF X7R,68.000,59.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C8,100nF X7R,74.500,61.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+C9,100nF X7R,74.500,70.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+D1,SMBJ5.0A-TR,40.500,29.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+D2,B5819W-7-F,47.000,29.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+ESD1,TPD4E1B06DCKR,80.000,33.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+ESD2,TPD4E1B06DCKR,97.000,34.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A4309C0> >
+F1,MF-MSMF050-2,33.000,29.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+FB1,BLM21PG221SN1D,52.000,29.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+FB2,BLM21PG221SN1D,67.000,28.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+H1,M3 mounting hole,24.000,24.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+H2,M3 mounting hole,116.000,24.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+H3,M3 mounting hole,24.000,91.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+H4,M3 mounting hole,116.000,91.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J1,USB4105-GF-A,23.675,43.000,-90.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J2,SWD 1x5,32.000,75.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J3,R-C SOCKET,75.000,25.800,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J4,DIODE A-B,85.000,25.800,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J5,BJT E-B-C,97.000,25.800,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+J6,ST7735 1x8 BOARD HEADER,112.000,67.000,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+LED1,STATUS GREEN,106.500,88.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R1,5.1k 1%,30.000,39.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R10,10k 1%,84.000,78.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R11,10k 1%,96.000,78.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R12,1k 1%,106.500,91.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R13,100k 1%,54.000,54.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R14,100k 1%,58.500,54.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R15,100k 1%,63.000,54.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R16,100k 1%,91.000,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R17,100k 1%,95.500,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R18,100k 1%,100.000,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R19,100k 1%,104.500,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R2,5.1k 1%,30.000,44.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R20,1k 0.1% 25ppm,54.500,37.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R21,10k 0.1% 25ppm,59.500,37.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R22,100k 0.1% 25ppm,64.500,37.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R23,1k 0.1% 25ppm,66.500,40.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R24,330R 0.1%,70.500,34.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R25,1k 1%,74.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R26,1k 1%,78.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R27,1k 1%,82.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R28,1k 1%,86.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R29,1k 1%,90.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R3,1k 1%,77.000,69.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R30,1k 1%,94.000,39.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R31,1k 1%,96.000,48.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R32,1k 1%,100.500,48.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R33,10k 0.1% 25ppm,103.000,43.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R34,10k 0.1% 25ppm,106.000,43.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R35,10k 0.1% 25ppm,109.000,43.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R36,1k 0.1%,84.000,34.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R37,1k 0.1%,89.000,34.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R38,100R 1%,99.000,39.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R39,1M 0.1%,104.000,39.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R4,22R 1%,77.000,64.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R40,1k 0.1%,109.000,39.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R41,100R 1%,75.000,55.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R42,0R FIT,108.000,84.000,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R5,22R 1%,77.000,66.750,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R6,0R FIT,61.500,70.500,90.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R7,10k 1%,58.000,74.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R8,10k 1%,67.000,75.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+R9,10k 1%,60.000,78.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+SW1,RESET,48.000,85.500,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+SW2,MODE,60.000,85.500,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+SW3,UP,84.000,85.500,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+SW4,DOWN,96.000,85.500,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+TP1,BOOT0 SERVICE,38.500,79.500,0.0,yes,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U1,STM32F401CCU6,68.500,66.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U2,TMUX1104DGSR,60.000,43.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U3,TMUX1108PWR,87.000,45.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U4,OPA391DBVR,79.000,51.500,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U5,AP2112K-3.3TRG1,57.000,29.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+U6,USBLC6-2SC6,34.000,43.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >
+Y1,ABLS-8.000MHZ-B2-T,55.000,65.000,0.0,no,<pcbnew.KIID_PATH; proxy of <Swig Object of type 'KIID_PATH *' at 0x0000017C1A430990> >

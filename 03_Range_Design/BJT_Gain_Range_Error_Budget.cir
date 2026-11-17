@@ -1,0 +1,57 @@
+* SECDB Phase 3D - BJT gain range and ADC error budget
+* Known E-B-C insertion only. Custom models sweep nominal BF from 20 to 500.
+* Nonideal paths include 0.1% high resistors and 9.5-ohm switch resistance.
+
+.param BETA=100
+.param RCAL=1010.5
+.param RBAL=1001009.5
+.param EADC=3.973m
+
+VCC VCC 0 3.3
+
+* NPN test
+RCN VCC CN {RCAL}
+QN CN BN EN NTEST
+RBN VCC BN {RBAL}
+REN EN 0 9.5
+.model NTEST NPN(Is=1e-14 Bf={BETA} Vaf=100)
+
+* PNP test
+REP VCC EP 9.5
+QP CP BP EP PTEST
+RCP CP 0 {RCAL}
+RBP BP 0 {RBAL}
+.model PTEST PNP(Is=1e-14 Bf={BETA} Vaf=100)
+
+.step param BETA list 20 30 50 100 200 300 500
+.temp 25
+.tran 0 1u 0 1u
+
+* True operating values
+.meas TRAN N_VBE FIND V(BN,EN) AT=1u
+.meas TRAN N_VCE FIND V(CN,EN) AT=1u
+.meas TRAN N_VCB FIND V(CN,BN) AT=1u
+.meas TRAN N_IB FIND I(RBN) AT=1u
+.meas TRAN N_IC FIND I(RCN) AT=1u
+.meas TRAN N_HFE_TRUE PARAM I(RCN)/I(RBN)
+
+* What firmware would report if it ignored switch/path resistance
+.meas TRAN N_HFE_UNCAL PARAM ((3.3-V(CN))/1k)/((3.3-V(BN))/1Meg)
+
+* Path-calibrated estimate and conservative ADC/buffer extremes.
+* High result: collector voltage reads low and base voltage reads high.
+.meas TRAN N_HFE_CAL PARAM ((3.3-V(CN))/RCAL)/((3.3-V(BN))/RBAL)
+.meas TRAN N_HFE_ADC_HIGH PARAM ((3.3-(V(CN)-EADC))/RCAL)/((3.3-(V(BN)+EADC))/RBAL)
+.meas TRAN N_HFE_ADC_LOW PARAM ((3.3-(V(CN)+EADC))/RCAL)/((3.3-(V(BN)-EADC))/RBAL)
+
+.meas TRAN P_VEB FIND V(EP,BP) AT=1u
+.meas TRAN P_VEC FIND V(EP,CP) AT=1u
+.meas TRAN P_VBC FIND V(BP,CP) AT=1u
+.meas TRAN P_IB FIND I(RBP) AT=1u
+.meas TRAN P_IC FIND I(RCP) AT=1u
+.meas TRAN P_HFE_TRUE PARAM I(RCP)/I(RBP)
+.meas TRAN P_HFE_UNCAL PARAM (V(CP)/1k)/(V(BP)/1Meg)
+.meas TRAN P_HFE_CAL PARAM (V(CP)/RCAL)/(V(BP)/RBAL)
+.meas TRAN P_HFE_ADC_HIGH PARAM ((V(CP)+EADC)/RCAL)/((V(BP)-EADC)/RBAL)
+.meas TRAN P_HFE_ADC_LOW PARAM ((V(CP)-EADC)/RCAL)/((V(BP)+EADC)/RBAL)
+.end

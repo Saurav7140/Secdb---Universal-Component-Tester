@@ -1,0 +1,82 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Capacitor.cir
+Start Time: Sun Sep 13 02:10:40 2026
+Options:plotwinsize=0 reltol=1e-6
+
+.step cx=1e-07
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+reltol = 1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-05
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=0.0001
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.766 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Capacitor.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: t63_early
+  step	t63_early	FROM	TO
+     1	0.00100012216939	1.00050000001e-06	0.00100112266939
+     2	0.00999672423091	1.00050000001e-06	0.00999772473091
+     3	0.0999627362306	1.00050000001e-06	0.0999637367306
+     4	0.999622850724	1.00050000001e-06	0.999623851224
+
+Measurement: t63_nom
+  step	t63_nom	FROM	TO
+     1	0.00100278248386	1.00050000001e-06	0.00100378298386
+     2	0.0100233051037	1.00050000001e-06	0.0100243056037
+     3	0.100228501092	1.00050000001e-06	0.100229501592
+     4	1.00228057873	1.00050000001e-06	1.00228157923
+
+Measurement: t63_late
+  step	t63_late	FROM	TO
+     1	0.00100545006547	1.00050000001e-06	0.00100645056547
+     2	0.010049953186	1.00050000001e-06	0.010050953686
+     3	0.100495003826	1.00050000001e-06	0.100496004326
+     4	1.00494538412	1.00050000001e-06	1.00494638462
+
+Measurement: c_est
+  step	T63_NOM/(RCHPATH*KTH)
+     1	1.00052111442e-07
+     2	1.00007016017e-06
+     3	1.00002476332e-05
+     4	0.000100002034113
+
+Measurement: c_err_pct
+  step	100*(T63_NOM/(RCHPATH*KTH)-CX)/CX
+     1	0.0521114422353
+     2	0.00701601744852
+     3	0.00247633233897
+     4	0.00203411267965
+
+Measurement: tdis_1pct
+  step	tdis_1pct	FROM	TO
+     1	0.000465814301018	1.0005e-06	0.000466814801018
+     2	0.00465396544514	1.0005e-06	0.00465496594514
+     3	0.0465353761326	1.0005e-06	0.0465363766326
+     4	0.465350332054	1.0005e-06	0.465351332554

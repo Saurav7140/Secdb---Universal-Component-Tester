@@ -1,0 +1,27 @@
+Test_ID,Module,Stimulus,Trial_or_start_code,Final_or_threshold_code,Time_us,Expected_range,Expected_value,Expected_status,Safety_expectation
+R01,Resistor,50ohm,20,147,NA,1K,50ohm,BELOW_SUPPORTED_RANGE,AFE disconnected
+R02,Resistor,100ohm,39,284,NA,1K,100ohm,OK,AFE disconnected
+R03,Resistor,220ohm,85,577,NA,1K,220ohm,OK,AFE disconnected
+R04,Resistor,1kohm,361,1750,NA,1K,1000ohm,OK,AFE disconnected
+R05,Resistor,3.3kohm,990,2912,NA,1K,3300ohm,OK,AFE disconnected
+R06,Resistor,10kohm,2012,2012,NA,10K,9997ohm,OK,AFE disconnected
+R07,Resistor,30kohm,3045,3045,NA,10K,30014ohm,OK,AFE disconnected
+R08,Resistor,33kohm,3117,1013,NA,100K,33013ohm,OK,AFE disconnected
+R09,Resistor,100kohm,3711,2043,NA,100K,99999ohm,OK,AFE disconnected
+R10,Resistor,470kohm,4007,3374,NA,100K,470018ohm,OK,AFE disconnected
+R11,Resistor,1Mohm,4053,3721,NA,100K,999292ohm,OK,AFE disconnected
+R12,Resistor,1.5Mohm,4067,3838,NA,100K,1499949ohm,ABOVE_SUPPORTED_RANGE,AFE disconnected
+R13,Resistor,Short,0,0,NA,1K,NA,SHORT_OR_BELOW_MEASURABLE,AFE disconnected
+R14,Resistor,Open,4095,4095,NA,100K,NA,OPEN_OR_ABOVE_MEASURABLE,AFE disconnected
+C01,Capacitor,100nF,41,2589,1036,NA,100nF,OK,Final discharge confirmed
+C02,Capacitor,1uF,41,2589,10354,NA,1000nF,OK,Final discharge confirmed
+C03,Capacitor,10uF,41,2589,103530,NA,10000nF,OK,Final discharge confirmed
+C04,Capacitor,100uF,41,2589,1035298,NA,100003nF,OK,Final discharge confirmed
+C05,Capacitor,50nF,41,2589,518,NA,50nF,OPEN_OR_BELOW_100NF,Final discharge confirmed
+C06,Capacitor,150uF,41,2589,1552906,NA,150000nF,ABOVE_100UF,Final discharge confirmed
+C07,Capacitor,Open_or_parasitic,41,2589,10,NA,NA,OPEN_OR_BELOW_100NF,Final discharge confirmed
+C08,Capacitor,Short_leaky_or_large,41,Below_threshold,5000000,NA,NA,TIMEOUT_SHORT_LEAKAGE_OR_ABOVE_RANGE,Attempt final discharge
+C09,Capacitor,Charged_or_external_voltage,Above_41,NA,5000000,NA,NA,INITIAL_DISCHARGE_FAILED_OR_EXTERNAL_VOLTAGE,AFE disconnected and removal warning
+C10,Capacitor,Final_discharge_timeout,41,Above_41,NA,NA,NA,FINAL_DISCHARGE_FAILED,AFE disconnected and external discharge required
+C11,Capacitor,ADC_timeout,41,NA,NA,NA,NA,ADC_FAILURE,AFE disconnected and discharge not confirmed
+C12,Capacitor,Positive_10_code_ADC_offset,51,2599,10354,NA,1000nF,OK,Thresholds translated to raw codes

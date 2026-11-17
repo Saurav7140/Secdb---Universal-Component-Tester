@@ -1,0 +1,51 @@
+ID,Audit_item,Result,Evidence_or_required_action
+ERC-01,Exact MCU package and pin count,PASS,STM32F401CCU6 uses the UFQFPN48/UQFN48 pin table plus exposed ground pad
+ERC-02,PB11 package availability,CORRECTED,PB11 is not bonded out in UFQFPN48; SRC_A1 moved from PB11 to PA8
+ERC-03,Duplicate GPIO assignment,PASS,Every assigned MCU GPIO has one functional owner and alternate functions are mutually exclusive
+ERC-04,PA0 analog path,PASS,PA0 is dedicated to ADC_BUFFERED and is never driven digitally
+ERC-05,USB and diode conflict,PASS,PA9 remains VBUS sense; PA10 is diode B drive because the Type-C design is device-only and USB ID is unused
+ERC-06,SWD accessibility,PASS,PA13 PA14 NRST 3V3_D and GND reach the five-pin SWD header
+ERC-07,HSE and low-speed crystal pins,PASS,PH0 and PH1 use the 8MHz HSE; PC14 and PC15 are buttons so no LSE crystal is fitted
+ERC-08,MCU VDD decoupling,PASS,Three VDD pins each have 100nF and the package has 10uF bulk
+ERC-09,MCU analog supply,PASS,VDDA-VREF+ uses filtered 3V3_A with 1uF plus 100nF; VSSA-VREF- joins the continuous ground plane
+ERC-10,MCU internal-regulator capacitor,PASS,The single VCAP_1 pin has one 4.7uF low-ESR capacitor and no other connection
+ERC-11,MCU backup supply,PASS,VBAT ties to 3V3_D with 100nF because no backup battery is used
+ERC-12,MCU exposed pad,PASS,UFQFPN exposed pad is assigned to GND with a thermal-via array
+ERC-13,BOOT0 default,PASS,External 10k pulldown selects normal flash boot and a service pad remains accessible
+ERC-14,NRST default,PASS,10k pullup 100nF capacitor reset button and SWD header connection are specified
+ERC-15,U_SRC package pinout,PASS,TMUX1104 DGS pins 1 through 10 match the manufacturer pin table
+ERC-16,U_SENSE package pinout,PASS,TMUX1108 PW pins 1 through 16 match the manufacturer pin table; VSS and GND both connect to ground
+ERC-17,Mux reset state,PASS,Seven external 100k pulldowns hold both EN pins and all five address pins low during MCU reset
+ERC-18,Mux logic thresholds,PASS,3.3V STM32 outputs exceed the mux 1.8V-compatible high threshold
+ERC-19,Mux analog range,PASS,Normal DUT nodes remain between GND and 3V3_A; out-of-range components are prohibited
+ERC-20,Mux output contention,PASS,U_SRC selects one path and U_SENSE selects one node; firmware transition state disables both before changing drives
+ERC-21,R-C source guard,PASS,Calibrated 330ohm guard separates the exposed R-C socket from the U_SRC common pin
+ERC-22,Sense input isolation,PASS,All eight U_SENSE inputs receive 1kohm branch resistors and do not carry DUT excitation current
+ERC-23,OPA391 follower pinout,PASS,DBV pins are OUT=1 V-=2 +IN=3 -IN=4 V+=5 with OUT tied directly to -IN
+ERC-24,ADC stability network,PASS,OPA output uses 100ohm series isolation and PA0 has 1nF C0G to ground; Phase 5C settling is 147.10us to 1mV
+ERC-25,Calibration ladder loading,PASS,Three equal 10k 0.1% resistors create ratiometric 1-3 and 2-3 rail taps; sense branches are high impedance
+ERC-26,Socket ESD pinout,PASS,TPD4E1B06 DCK pins IO1=1 IO2=2 GND=3 IO3=4 IO4=5 NC=6 are used exactly
+ERC-27,Socket ESD loading,PASS,0.5nA maximum leakage and 0.95pF maximum capacitance were included in Phase 5C simulations
+ERC-28,Socket overvoltage boundary,LIMITED,ESD arrays are not DC overvoltage disconnects; board must state unpowered and discharged components only
+ERC-29,USB-C sink configuration,PASS,CC1 and CC2 each have independent 5.1k 1% Rd resistors to ground
+ERC-30,USB data orientation,PASS,Connector A6-B6 are tied as D+ and A7-B7 as D- before the flow-through ESD array
+ERC-31,USB data protection,PASS,USBLC6-2SC6 is placed at the connector and each MCU line has 22ohm series resistance
+ERC-32,USB VBUS detection,PASS,PA9 senses USB_VBUS_FUSED through 1kohm and uses no internal pull
+ERC-33,USB shield and ESD return,PASS,Shell stakes connect directly to the ground plane and ESD devices require short ground returns
+ERC-34,Power-path polarity,PASS,TVS cathode connects to fused VBUS and B5819W anode-to-cathode direction feeds the LDO
+ERC-35,PPTC and TVS order,PASS,Connector VBUS feeds PPTC first and the TVS is on the fused side so a sustained TVS short is source-limited
+ERC-36,AP2112 pinout,PASS,SOT25 pins VIN=1 GND=2 EN=3 NC=4 VOUT=5 are assigned exactly
+ERC-37,AP2112 stability capacitors,PASS,Input and output each have 10uF plus 100nF X7R versus the 1uF minimum-compatible requirement
+ERC-38,LDO thermal headroom,VERIFY_ON_HARDWARE,Continuous board target is capped at 150mA until regulator temperature and display current are measured
+ERC-39,Analog rail filtering,PASS,3V3_A derives from 3V3_D through a 45mohm-maximum DCR ferrite bead with local decoupling
+ERC-40,Ground strategy,PASS,One continuous ground plane is frozen; digital and ESD return placement prevents current through precision analog area
+ERC-41,GPIO output current,PASS,Modeled fault currents are at or below about 2.75mA and remain inside the STM32 ordinary GPIO drive capability
+ERC-42,Diode drive contention,PASS,Two 1k legs bound current even when one GPIO is high and the other low
+ERC-43,BJT drive contention,PASS,100ohm emitter 1Mohm base and 1k collector paths bound current; drive sequencing is defined
+ERC-44,TFT connector ambiguity,RESOLVED,Board header order is explicitly frozen as GND 3V3 SCK MOSI CS DC RST BL and must be cabled to the actual module
+ERC-45,TFT logic voltage,PASS,Display interface and supply are 3.3V only; no 5V logic is routed to it
+ERC-46,HSE component and load network,PASS,ABLS-8.000MHZ-B2-T with two 30pF C0G capacitors and fitted 0ohm tuning link is specified
+ERC-47,HSE startup margin,VERIFY_ON_HARDWARE,Probe clock output rather than crystal pins and verify USB enumeration over voltage and temperature
+ERC-48,Unused MCU GPIO handling,PASS,Unused pins remain no-connect and firmware configures them analog no-pull; optional copper test pads have no external load
+ERC-49,Unused ESD channels,PASS,ESD2 IO3 and IO4 and both NC pins are explicitly left unconnected
+ERC-50,Physical-validation status,OPEN,All present results are simulation and design-review verified; fabricated-board ERC bring-up and calibration remain mandatory

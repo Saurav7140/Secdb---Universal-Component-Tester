@@ -1,0 +1,17 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Forward_1N4148.net
+Start Time: Sat Sep 12 16:01:01 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.082 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Forward_1N4148.net
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+vforward: V(ADC_IN)=0.630188763323 at 0.630188763323
+iforward: I(RLIMIT)=0.00266981124878 at 0.630188763323

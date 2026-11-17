@@ -1,0 +1,109 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Diode_Integration.cir
+Start Time: Sat Sep 12 22:01:40 2026
+
+.step temp=-10°
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = -10
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Changing Tseed to 1e-11
+
+.step temp=25°
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=60°
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.347 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Diode_Integration.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+
+Measurement: vsi_a
+  step	V(SI_ADC_A) 	at
+     1	1.98374927044	1e-05
+     2	1.95008850098	1e-05
+     3	1.91602122784	1e-05
+
+Measurement: vsi_b
+  step	V(SI_ADC_B) 	at
+     1	1.31615078449	1e-05
+     2	1.3498955965	1e-05
+     3	1.38404679298	1e-05
+
+Measurement: vtest_si
+  step	V(SI_ADC_A)-V(SI_ADC_B)
+     1	0.667598485947
+     2	0.600192904472
+     3	0.531974434853
+
+Measurement: itest_si
+  step	abs(I(RSI_A))
+     1	0.00125233468134
+     2	0.0012844017474
+     3	0.00131685554516
+
+Measurement: code_si_a
+  step	V(SI_ADC_A)*4095/3.3
+     1	2461.65250377
+     2	2419.88254894
+     3	2377.60816
+
+Measurement: code_si_b
+  step	V(SI_ADC_B)*4095/3.3
+     1	1633.22347348
+     2	1675.09771748
+     3	1717.47624766
+
+Measurement: vsch_a
+  step	V(SCH_ADC_A) 	at
+     1	1.75524353981	1e-05
+     2	1.72087931633	1e-05
+     3	1.68860220909	1e-05
+
+Measurement: vsch_b
+  step	V(SCH_ADC_B) 	at
+     1	1.54465651512	1e-05
+     2	1.57910466194	1e-05
+     3	1.61146593094	1e-05
+
+Measurement: vtest_sch
+  step	V(SCH_ADC_A)-V(SCH_ADC_B)
+     1	0.210587024689
+     2	0.141774654388
+     3	0.0771362781525
+
+Measurement: itest_sch
+  step	abs(I(RSCH_A))
+     1	0.00146975019015
+     2	0.0015024865279
+     3	0.00153323705308
+
+Measurement: vled_a
+  step	V(LED_ADC_A) 	at
+     1	2.64540338516	1e-05
+     2	2.65259695053	1e-05
+     3	2.6592168808	1e-05
+
+Measurement: vled_b
+  step	V(LED_ADC_B) 	at
+     1	0.654496788979	1e-05
+     2	0.64738714695	1e-05
+     3	0.640851140022	1e-05
+
+Measurement: vtest_led
+  step	V(LED_ADC_A)-V(LED_ADC_B)
+     1	1.99090659618
+     2	2.00520980358
+     3	2.01836574078
+
+Measurement: itest_led
+  step	abs(I(RLED_A))
+     1	0.000622793275397
+     2	0.000615988741629
+     3	0.000609730021097

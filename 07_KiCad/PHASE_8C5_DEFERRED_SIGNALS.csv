@@ -1,0 +1,3 @@
+net,function,reason,planned_phase
+USB_VBUS_FUSED,VBUS divider source tap,Low-speed monitor route would cross the matched USB perimeter pair,Phase 8D
+USB_VBUS_SENSE,STM32 VBUS-presence input,Route with remaining MCU low-speed control signals,Phase 8D

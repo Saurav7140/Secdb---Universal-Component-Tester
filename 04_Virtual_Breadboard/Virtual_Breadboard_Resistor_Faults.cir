@@ -1,0 +1,32 @@
+* SECDB Phase 4B - resistor open/short rail-level fault signatures
+* Behavioral buffer is used because the vendor macro-model does not converge
+* when stepped directly into the artificial 10m short rail condition.
+
+VCC VCC 0 3.3
+
+* 1k selected range and 10m DUT short.
+RREF_S VCC RS_OUT 1.001k
+RSW_S RS_OUT SENSE_SHORT 9.5
+RX_SHORT SENSE_SHORT 0 10m
+E_BUF_S OUT_S 0 SENSE_SHORT 0 1
+RISO_S OUT_S ADC_SHORT 100
+IADC_S ADC_SHORT 0 1u
+
+* 100k selected range and 1Tohm DUT open.
+RREF_O VCC RO_OUT 100.1k
+RSW_O RO_OUT SENSE_OPEN 9.5
+RX_OPEN SENSE_OPEN 0 1T
+E_BUF_O OUT_O 0 SENSE_OPEN 0 1
+RISO_O OUT_O ADC_OPEN 100
+IADC_O 0 ADC_OPEN 1u
+
+.op
+.meas OP SENSE_SHORT FIND V(SENSE_SHORT)
+.meas OP ADC_SHORT FIND V(ADC_SHORT)
+.meas OP CODE_SHORT PARAM V(ADC_SHORT)*4095/3.3
+.meas OP SHORT_CURRENT FIND I(RREF_S)
+.meas OP SENSE_OPEN FIND V(SENSE_OPEN)
+.meas OP ADC_OPEN FIND V(ADC_OPEN)
+.meas OP CODE_OPEN PARAM V(ADC_OPEN)*4095/3.3
+.meas OP OPEN_CURRENT FIND I(RREF_O)
+.end

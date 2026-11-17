@@ -1,0 +1,203 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Resistor.cir
+Start Time: Sun Sep 13 02:08:54 2026
+
+.step rx=100
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=220
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=470
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=1000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=2200
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3162.27766
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3300
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=4700
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=10000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=22000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=30000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=31622.7766
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=33000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=47000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=100000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=220000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=470000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=1000000
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 6.638 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Resistor.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: selected_rref
+  step	RSEL
+     1	1000
+     2	1000
+     3	1000
+     4	1000
+     5	1000
+     6	1000
+     7	10000
+     8	10000
+     9	10000
+    10	10000
+    11	10000
+    12	10000
+    13	100000
+    14	100000
+    15	100000
+    16	100000
+    17	100000
+    18	100000
+    19	100000
+
+Measurement: vadc
+  step	V(ADC) 	at
+     1	0.297143280506	0.0002
+     2	0.589986562729	0.0002
+     3	1.04760563374	0.0002
+     4	1.64137470722	0.0002
+     5	2.26132750511	0.0002
+     6	2.46851944923	0.0002
+     7	0.79164659977	0.0002
+     8	0.817582786083	0.0002
+     9	1.05369091034	0.0002
+    10	1.64838480949	0.0002
+    11	2.26736593246	0.0002
+    12	2.4737932682	0.0002
+    13	0.792160570621	0.0002
+    14	0.818108081818	0.0002
+    15	1.05430340767	0.0002
+    16	1.64908897877	0.0002
+    17	2.2679708004	0.0002
+    18	2.72053027153	0.0002
+    19	2.99970388412	0.0002
+
+Measurement: rx_est
+  step	RPATH*V(ADC)/(3.3-V(ADC))
+     1	99.9925447665
+     2	219.992053707
+     3	469.991183047
+     4	999.990262339
+     5	2199.99225469
+     6	2999.99669403
+     7	3162.19520968
+     8	3299.91698383
+     9	4699.9124585
+    10	9999.90293966
+    11	21999.925893
+    12	29999.9633226
+    13	31621.9602083
+    14	32999.1771264
+    15	46999.1304037
+    16	99999.0132701
+    17	219999.029999
+    18	470000.263753
+    19	1000009.1247
+
+Measurement: err_n_pct
+  step	100*(RPATH*V(ADC)/(3.3-V(ADC))-RX)/RX
+     1	-0.0074552334758
+     2	-0.00361195158243
+     3	-0.00187594736138
+     4	-0.000973766062157
+     5	-0.000352059477357
+     6	-0.000110198889812
+     7	-0.00260730807175
+     8	-0.00251564145524
+     9	-0.00186258503711
+    10	-0.000970603415481
+    11	-0.00033685016247
+    12	-0.000122258023512
+    13	-0.00258165721093
+    14	-0.00249355631366
+    15	-0.0018502049502
+    16	-0.000986729947908
+    17	-0.000440909576679
+    18	5.6117674103e-05
+    19	0.00091247019138
+
+Measurement: err_low_pct
+  step	100*(RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))-RX)/RX
+     1	-1.51176441696
+     2	-0.843070776756
+     3	-0.570560207339
+     4	-0.493601435857
+     5	-0.570550529856
+     6	-0.652013522427
+     7	-0.679179409834
+     8	-0.664478092784
+     9	-0.569586433534
+    10	-0.494658554832
+    11	-0.574096194734
+    12	-0.656902252754
+    13	-0.686027703209
+    14	-0.671412211955
+    15	-0.577394521228
+    16	-0.505528758989
+    17	-0.591621154716
+    18	-0.880468410498
+    19	-1.53578312915
+
+Measurement: err_high_pct
+  step	100*(RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))-RX)/RX
+     1	1.50094059374
+     2	0.838361959746
+     3	0.568869110482
+     4	0.494079950387
+     5	0.574371144286
+     6	0.658252439997
+     7	0.676168222349
+     8	0.661635006658
+     9	0.567943747888
+    10	0.495178853662
+    11	0.577948324735
+    12	0.663267062102
+    13	0.683094490008
+    14	0.668651108856
+    15	0.575835241814
+    16	0.506141485718
+    17	0.595718166893
+    18	0.893957716498
+    19	1.58258125748

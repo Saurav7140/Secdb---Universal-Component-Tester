@@ -1,0 +1,26 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_OPA391_TI_Model.cir
+Start Time: Sat Sep 12 17:25:07 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.776 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_OPA391_TI_Model.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+ladder_1v1: V(TAP_1V1) =1.10000002384 at 5e-05
+vout_1v1: V(OUT_1V1) =1.09998703003 at 5e-05
+vadc_1v1: V(ADC_1V1) =1.09988701344 at 5e-05
+err_1v1_mv: (V(ADC_1V1)-1.1)*1000=-0.112986564636
+code_1v1: V(ADC_1V1)*4095/3.3=1364.85979394
+ladder_2v2: V(TAP_2V2) =2.20000004768 at 5e-05
+vout_2v2: V(OUT_2V2) =2.19999694824 at 5e-05
+vadc_2v2: V(ADC_2V2) =2.20009708405 at 5e-05
+err_2v2_mv: (V(ADC_2V2)-2.2)*1000=0.09708404541
+code_2v2: V(ADC_2V2)*4095/3.3=2730.12047247
+tset_rise_1mv=3.81045508274e-07 FROM 0.0001000005 TO 0.000100381545508

@@ -1,0 +1,19 @@
+Audit_ID,Scope,Reference_or_group,Device_or_requirement,Assigned_footprint,Result,Evidence_or_remaining_action
+7C-01,Whole-project connectivity,All sheets,90 components and 291 pins/terminals,23 unique installed footprints,PASS,Exported KiCad netlist exactly matches the frozen per-pin capture model; no missing or unexpected references
+7C-02,Project symbol library,SECDB,14 pin-audited project symbols,SECDB.kicad_sym,PASS,Project-local sym-lib-table resolves every embedded SECDB symbol without library warnings
+7C-03,MCU package and pads,U1,STM32F401CCU6 UFQFPN48 plus exposed pad,Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.3x5.3mm_ThermalVias,PASS,Schematic pins 1-49 all have matching footprint pad numbers; pin 49 is the exposed ground pad
+7C-04,Source multiplexer,U2,TMUX1104DGSR DGS VSSOP-10,Package_SO:MSOP-10_3x3mm_P0.5mm,PASS,Manufacturer pin order A0/S1/GND/S3/EN/VDD/S4/D/S2/A1 matches pins 1-10
+7C-05,Sense multiplexer,U3,TMUX1108PWR PW TSSOP-16,Package_SO:TSSOP-16_4.4x5mm_P0.65mm,PASS,All address enable supply source and drain pins match the 16-pin manufacturer table
+7C-06,Buffer amplifier,U4,OPA391DBVR DBV SOT-23-5,Package_TO_SOT_SMD:SOT-23-5,PASS,OUT=1 V-=2 +IN=3 -IN=4 V+=5; output and inverting input share OPA_OUT
+7C-07,LDO,U5,AP2112K-3.3TRG1 SOT25,Package_TO_SOT_SMD:SOT-23-5,PASS,VIN=1 GND=2 EN=3 NC=4 VOUT=5; every symbol pin has a matching pad
+7C-08,USB ESD,U6,USBLC6-2SC6 SOT-23-6,Package_TO_SOT_SMD:SOT-23-6,PASS,Flow-through D+/D- pin order and VBUS/GND connections match the ST six-pin device
+7C-09,Socket ESD,"ESD1, ESD2",TPD4E1B06DCKR DCK SC70-6,Package_TO_SOT_SMD:SOT-363_SC-70-6,PASS,IO1=1 IO2=2 GND=3 IO3=4 IO4=5 NC=6; unused channels carry explicit no-connect markers
+7C-10,USB-C connector,J1,USB4105-GF-A 16-contact receptacle,Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal,PASS,All A/B contact identifiers and combined SH pad exist in the footprint; duplicate USB2 and power contacts use the intended nets
+7C-11,Power polarity,"D1, D2",SMBJ5.0A TVS and B5819W Schottky,"Diode_SMD:D_SMB; Diode_SMD:D_SOD-123",PASS,Footprint pad 1 is cathode and pad 2 is anode; net assignment gives fused-VBUS TVS clamping and forward series power flow
+7C-12,Crystal,Y1,ABLS-8.000MHZ-B2-T,Crystal:Crystal_SMD_HC49-SD,PASS,Two-terminal symbol and footprint pad numbers agree; PCB placement and startup margin remain first-board checks
+7C-13,Headers and sockets,J2-J6,SWD component sockets and frozen ST7735 header order,Installed 2.54mm THT header/socket footprints,PASS,Every schematic pin number exists in its assigned footprint; J6 remains GND/3V3/SCK/MOSI/CS/DC/RST/BL
+7C-14,Passives and controls,"F1, FB1-FB2, R1-R42, C1-C22, SW1-SW4, LED1, TP1",Frozen values and package families,Installed KiCad standard footprints,PASS,All symbol pins map to existing footprint pads and all 23 unique footprint files resolve locally
+7C-15,Grid cleanup,All symbols,50 mil connection-grid compliance,N/A,PASS,All generated symbol origins and label endpoints are aligned; endpoint_off_grid warnings reduced from 32 to 0
+7C-16,Electrical rules,Complete hierarchy,KiCad 10 ERC,N/A,PASS,0 errors and 0 warnings after project-library and grid cleanup
+7C-17,Display module physical verification,J6/R42,Purchased ST7735 module,N/A,VERIFY_ON_HARDWARE,Confirm module voltage pin-1 orientation header order and onboard backlight current limiting before connection
+7C-18,First-board validation,U5/Y1,Regulator thermal behavior and HSE startup,N/A,VERIFY_ON_HARDWARE,Measure 3.3V droop and temperature under display load; verify oscillator startup and USB enumeration on hardware

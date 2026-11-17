@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "filename": "SECDB_Component_Tester.kicad_pro",
+    "version": 1
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.15,
+        "min_track_width": 0.2,
+        "min_via_diameter": 0.6,
+        "min_through_hole_diameter": 0.2,
+        "min_hole_clearance": 0.15,
+        "min_copper_edge_clearance": 0.3
+      },
+      "rule_severities": {},
+      "drc_exclusions": []
+    }
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.15,
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "POWER_INPUT",
+        "clearance": 0.15,
+        "track_width": 0.8,
+        "via_diameter": 1.0,
+        "via_drill": 0.5,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "POWER",
+        "clearance": 0.15,
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "GROUND_RETURN",
+        "clearance": 0.15,
+        "track_width": 0.6,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "USB_DIFF",
+        "clearance": 0.15,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "ANALOG_SENSITIVE",
+        "clearance": 0.15,
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      },
+      {
+        "name": "CLOCK_CRITICAL",
+        "clearance": 0.2,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25
+      }
+    ],
+    "meta": {
+      "version": 4
+    },
+    "netclass_assignments": {
+      "5V_DIODE": [
+        "POWER_INPUT"
+      ],
+      "LDO_IN": [
+        "POWER_INPUT"
+      ],
+      "USB_VBUS_FUSED": [
+        "POWER_INPUT"
+      ],
+      "USB_VBUS_RAW": [
+        "POWER_INPUT"
+      ],
+      "3V3_A": [
+        "POWER"
+      ],
+      "3V3_D": [
+        "POWER"
+      ],
+      "VCAP_1": [
+        "POWER"
+      ],
+      "GND": [
+        "GROUND_RETURN"
+      ],
+      "USB_DM_CONN": [
+        "USB_DIFF"
+      ],
+      "USB_DM_ESD": [
+        "USB_DIFF"
+      ],
+      "USB_DM_MCU": [
+        "USB_DIFF"
+      ],
+      "USB_DP_CONN": [
+        "USB_DIFF"
+      ],
+      "USB_DP_ESD": [
+        "USB_DIFF"
+      ],
+      "USB_DP_MCU": [
+        "USB_DIFF"
+      ],
+      "HSE_IN": [
+        "CLOCK_CRITICAL"
+      ],
+      "HSE_OUT": [
+        "CLOCK_CRITICAL"
+      ],
+      "HSE_XTAL_OUT": [
+        "CLOCK_CRITICAL"
+      ],
+      "ADC_BUFFERED": [
+        "ANALOG_SENSITIVE"
+      ],
+      "BJT_B": [
+        "ANALOG_SENSITIVE"
+      ],
+      "BJT_C": [
+        "ANALOG_SENSITIVE"
+      ],
+      "BJT_E": [
+        "ANALOG_SENSITIVE"
+      ],
+      "CAL_1V1": [
+        "ANALOG_SENSITIVE"
+      ],
+      "CAL_2V2": [
+        "ANALOG_SENSITIVE"
+      ],
+      "DIODE_A": [
+        "ANALOG_SENSITIVE"
+      ],
+      "DIODE_B": [
+        "ANALOG_SENSITIVE"
+      ],
+      "OPA_OUT": [
+        "ANALOG_SENSITIVE"
+      ],
+      "RC_INTERNAL": [
+        "ANALOG_SENSITIVE"
+      ],
+      "RC_SOCKET": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SENSE_COM": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_A0": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_A1": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_A2": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_BJT_B": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_BJT_C": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_BJT_E": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_CAL_1V1": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_CAL_2V2": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_DIODE_A": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_DIODE_B": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SNS_RC": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_100K": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_10K": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_1K": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_A0": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_A1": [
+        "ANALOG_SENSITIVE"
+      ],
+      "SRC_DISCHARGE": [
+        "ANALOG_SENSITIVE"
+      ]
+    },
+    "netclass_patterns": []
+  },
+  "text_variables": {
+    "PROJECT_NAME": "SECDB Component Tester",
+    "PROJECT_PHASE": "Phase 8C1",
+    "SAFETY_LINE_1": "UNPOWERED COMPONENTS ONLY",
+    "SAFETY_LINE_2": "DISCHARGE CAPACITORS BEFORE INSERTION"
+  }
+}

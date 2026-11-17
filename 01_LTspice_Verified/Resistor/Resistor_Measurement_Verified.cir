@@ -1,0 +1,12 @@
+* SECDB - resistor measurement verification
+* 3.3 V -> 10k reference -> ADC_IN -> unknown resistor -> ground
+VCC VCC 0 3.3
+RREF VCC ADC_IN 10k
+RX ADC_IN 0 {Rx}
+
+.param Rx=1k
+.step param Rx list 220 1k 4.7k 10k 47k 100k 1Meg
+.op
+.meas OP VADC FIND V(ADC_IN)
+.meas OP RX_CALC PARAM 10k*V(ADC_IN)/(3.3-V(ADC_IN))
+.end

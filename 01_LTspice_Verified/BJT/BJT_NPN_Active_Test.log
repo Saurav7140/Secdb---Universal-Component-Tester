@@ -1,0 +1,20 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_NPN_Active_Test.net
+Start Time: Sat Sep 12 16:11:07 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.055 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_NPN_Active_Test.net
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+vbe: V(BASE)=0.649325739902 at 0.649325739902
+vce: V(COLLECTOR)=2.49175024033 at 0.649325739902
+ib: I(RB)=-2.65067433247e-06 at 0.649325739902
+ic: I(RC)=0.000808249809779 at 0.649325739902
+hfe: abs(I(RC)/I(RB))=304.922336131

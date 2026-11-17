@@ -1,0 +1,27 @@
+Placed schematic footprints checked: 90
+Locked mechanical/interface footprints checked: 15
+Critical capacitor placements checked: 18
+Phase 8A ratsnest MST estimate: 3220.5 mm
+Phase 8B ratsnest MST estimate: 2336.1 mm
+Estimated ratsnest reduction: 27.5%
+Tracks/vias: 0
+Copper zones: 0
+C1->U5: 4.590 mm (limit 8.0 mm)
+C2->U5: 4.150 mm (limit 5.0 mm)
+C3->U5: 5.385 mm (limit 8.0 mm)
+C4->U5: 2.370 mm (limit 5.0 mm)
+C5->U6: 3.808 mm (limit 5.0 mm)
+C6->U1: 4.364 mm (limit 5.0 mm)
+C7->U1: 3.812 mm (limit 5.0 mm)
+C8->U1: 2.903 mm (limit 5.0 mm)
+C9->U1: 3.771 mm (limit 5.0 mm)
+C10->U1: 2.332 mm (limit 5.0 mm)
+C11->U1: 3.147 mm (limit 5.0 mm)
+C12->U1: 3.114 mm (limit 4.0 mm)
+C17->U2: 2.087 mm (limit 5.0 mm)
+C18->U3: 3.355 mm (limit 5.0 mm)
+C19->U4: 2.703 mm (limit 5.0 mm)
+C20->U4: 6.734 mm (limit 8.0 mm)
+C21->J6: 6.576 mm (limit 8.0 mm)
+C22->J6: 4.896 mm (limit 5.0 mm)
+PASS: Phase 8B engineered placement verified

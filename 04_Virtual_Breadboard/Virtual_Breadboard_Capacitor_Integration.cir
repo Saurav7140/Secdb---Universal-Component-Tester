@@ -1,0 +1,55 @@
+* SECDB Phase 4C - virtual capacitor charge/discharge integration
+* TI OPAx391 PSpice Model Rev. B / macro-model Final 1.3.
+* TMUX1104 selected path is conservatively represented by 9.5-ohm Ron.
+
+.include OPA391_TI_Model\OPAx391.LIB
+
+.param CX=100n
+.param RCH=10.01k
+.param RDIS=1.001k
+.param RON=9.5
+.param RCHPATH=RCH+RON
+.param RDISPATH=RDIS+RON
+.param CPAR=50p
+.param VTH_EARLY=3.3*2585/4095
+.param VTH_NOM=3.3*2589/4095
+.param VTH_LATE=3.3*2593/4095
+.param KTH=-ln(1-2589/4095)
+
+VCC VCC 0 3.3
+
+* Charge state: TMUX S1 connects the 3.3 V source through 10.01k and Ron.
+VCHARGE_CMD CHARGE_CMD 0 PULSE(0 3.3 1u 1n 1n 10s 20s)
+RCHARGE CHARGE_CMD CHARGE_SW {RCH}
+RSW_CHARGE CHARGE_SW SENSE_CH {RON}
+CUNKNOWN_CH SENSE_CH 0 {CX}
+CPAR_CH SENSE_CH 0 {CPAR}
+XU_CH SENSE_CH OUT_CH VCC 0 OUT_CH OPAx391
+RISO_CH OUT_CH ADC_CH 100
+CADC_CH ADC_CH 0 7p
+
+* Discharge state: TMUX S2 connects the node to ground through 1.001k and Ron.
+* The source begins at 3.3 V and falls at 1 us, avoiding artificial UIC startup.
+VDIS_CMD DIS_CMD 0 PULSE(3.3 0 1u 1n 1n 10s 20s)
+RDISCHARGE DIS_CMD DIS_SW {RDIS}
+RSW_DISCHARGE DIS_SW SENSE_DIS {RON}
+CUNKNOWN_DIS SENSE_DIS 0 {CX}
+CPAR_DIS SENSE_DIS 0 {CPAR}
+
+.step param CX list 100n 1u 10u 100u
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 {1u+2.2*RCHPATH*(CX+CPAR)} 0 {10*CX}
+.save V(CHARGE_CMD) V(SENSE_CH) V(ADC_CH) V(DIS_CMD) V(SENSE_DIS)
+
+* Threshold timing begins at the half-voltage point of the 1 ns command edge.
+.meas TRAN T63_EARLY TRIG V(CHARGE_CMD) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_EARLY} RISE=1
+.meas TRAN T63_NOM TRIG V(CHARGE_CMD) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_NOM} RISE=1
+.meas TRAN T63_LATE TRIG V(CHARGE_CMD) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_LATE} RISE=1
+.meas TRAN C_EST_CAL PARAM T63_NOM/(RCHPATH*KTH)
+.meas TRAN C_ERR_PCT PARAM 100*(T63_NOM/(RCHPATH*KTH)-CX)/CX
+
+* Time to discharge from the command edge to 1% of 3.3 V.
+.meas TRAN TDIS_1PCT TRIG V(DIS_CMD) VAL=1.65 FALL=1 TARG V(SENSE_DIS) VAL=33m FALL=1
+.meas TRAN VDIS_FINAL FIND V(SENSE_DIS) AT={1u+2.2*RCHPATH*(CX+CPAR)}
+.end

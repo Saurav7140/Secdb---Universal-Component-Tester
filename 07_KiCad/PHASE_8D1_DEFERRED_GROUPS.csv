@@ -1,0 +1,8 @@
+group,nets,reason,next_checkpoint
+MUX pull-down ground returns,GND,Integrate with final ground stitching after remaining signal corridors are fixed,Phase 8D4
+VBUS monitoring,"USB_VBUS_FUSED;USB_VBUS_SENSE",Requires a controlled crossover around the retained matched USB pair,Phase 8D2
+RC controls,"RC_INTERNAL;SRC_DISCHARGE",Dense source-MUX breakout requires a separate verified fanout,Phase 8D2
+DUT drive GPIO,"DIODE_A_GPIO;DIODE_B_GPIO;BJT_E_GPIO;BJT_B_GPIO;BJT_C_GPIO",Requires fine-pitch MCU and USB-stub corridor review,Phase 8D2
+Debug and UI,"NRST;BOOT0;SWDIO;SWCLK;BTN_MODE;BTN_UP;BTN_DOWN;STATUS_LED;LED_ANODE",Route after DUT-control fanout is frozen,Phase 8D3
+Display,"TFT_SCK;TFT_MOSI;TFT_CS;TFT_DC;TFT_RST;TFT_BL",Route as ordered connector bundle,Phase 8D3
+Power and ground completion,"3V3_D;GND",Complete deferred taps and final stitching after all signal routing,Phase 8D4

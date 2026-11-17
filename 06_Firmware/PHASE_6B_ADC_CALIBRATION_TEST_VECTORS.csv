@@ -1,0 +1,13 @@
+Test_ID,Condition,Low_average,High_average,Low_spread,High_spread,Raw_input,Expected_result,Expected_corrected_code,Required_safe_action
+T01,Ideal calibration,1365,2730,2,2,2048,PASS,2048,Enter CAL_1V1 safe idle
+T02,Common positive 10-code offset,1375,2740,3,3,2058,PASS,2048,Enter CAL_1V1 safe idle
+T03,Accepted gain and offset variation,1392,2785,4,5,2089,PASS,2048,Enter CAL_1V1 safe idle
+T04,Low tap below window,1300,2730,2,2,NA,CAL_LOW_OUT_OF_RANGE,NA,Disable both muxes and lock DUT modes
+T05,High tap above window,1365,2800,2,2,NA,CAL_HIGH_OUT_OF_RANGE,NA,Disable both muxes and lock DUT modes
+T06,Swapped calibration taps,2730,1365,2,2,NA,CAL_LOW_OUT_OF_RANGE,NA,Disable both muxes and lock DUT modes
+T07,Excessive calibration span,1305,2790,2,2,NA,CAL_SPAN_OUT_OF_RANGE,NA,Disable both muxes and lock DUT modes
+T08,Noisy low calibration read,1365,2730,17,2,NA,UNSTABLE,NA,Disable both muxes and lock DUT modes
+T09,ADC poll timeout,NA,NA,NA,NA,NA,TIMEOUT,NA,Disable both muxes and tri-state DUT drives
+T10,Component mode before calibration,NA,NA,NA,NA,NA,CALIBRATION_REQUIRED,NA,Disable both muxes and tri-state DUT drives
+T11,Raw code below corrected range,1375,2740,2,2,0,PASS,0,Clamp to ADC range
+T12,Raw code above corrected range,1375,2740,2,2,4095,PASS,4085,Remain within ADC range

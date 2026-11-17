@@ -1,0 +1,335 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Resistor_Integration.cir
+Start Time: Sat Sep 12 17:37:33 2026
+
+.step rx=100
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=220
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=470
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=1000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=2200
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3162.27766
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=3300
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=4700
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=10000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=22000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=30000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=31622.7766
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=33000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=47000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=100000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=220000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=470000
+Direct Newton iteration succeeded in finding operating point.
+
+.step rx=1000000
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 4.839 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Resistor_Integration.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: selected_rref
+  step	RSEL
+     1	1000
+     2	1000
+     3	1000
+     4	1000
+     5	1000
+     6	1000
+     7	10000
+     8	10000
+     9	10000
+    10	10000
+    11	10000
+    12	10000
+    13	100000
+    14	100000
+    15	100000
+    16	100000
+    17	100000
+    18	100000
+    19	100000
+
+Measurement: vadc_n
+  step	V(ADC_N) 	at
+     1	0.297143280506	5e-05
+     2	0.589986562729	5e-05
+     3	1.04760563374	5e-05
+     4	1.64137470722	5e-05
+     5	2.26132750511	5e-05
+     6	2.46851944923	5e-05
+     7	0.79164659977	5e-05
+     8	0.817582786083	5e-05
+     9	1.05369091034	5e-05
+    10	1.64838480949	5e-05
+    11	2.26736593246	5e-05
+    12	2.47379350662	5e-05
+    13	0.792160511017	5e-05
+    14	0.818108081818	5e-05
+    15	1.05430340767	5e-05
+    16	1.64908909798	5e-05
+    17	2.26797127724	5e-05
+    18	2.7205312252	5e-05
+    19	2.99970507622	5e-05
+
+Measurement: adc_code_n
+  step	V(ADC_N)*4095/3.3
+     1	368.727798083
+     2	732.119689204
+     3	1299.98335459
+     4	2036.79679578
+     5	2806.10185862
+     6	3063.20822564
+     7	982.361462441
+     8	1014.54591182
+     9	1307.53462965
+    10	2045.49569542
+    11	2813.59499801
+    12	3069.7528514
+    13	982.99917958
+    14	1015.19775607
+    15	1308.29468315
+    16	2046.3696534
+    17	2814.34617584
+    18	3375.93192946
+    19	3722.36129912
+
+Measurement: trial_10k_code
+  step	V(ADC_T)*4095/3.3
+     1	40.4384605079
+     2	87.9552798515
+     3	183.456805213
+     4	371.588982371
+     5	737.242506038
+     6	943.564784256
+     7	982.361462441
+     8	1014.54591182
+     9	1307.53462965
+    10	2045.49569542
+    11	2813.59499801
+    12	3069.7528514
+    13	3109.70639966
+    14	3141.24995145
+    15	3375.42631193
+    16	3722.07254388
+    17	3916.63144827
+    18	4009.53223489
+    19	4054.3851549
+
+Measurement: rx_est_n
+  step	RPATH*V(ADC_N)/(3.3-V(ADC_N))
+     1	99.9925447665
+     2	219.992053707
+     3	469.991183047
+     4	999.990262339
+     5	2199.99225469
+     6	2999.99669403
+     7	3162.19520968
+     8	3299.91698383
+     9	4699.9124585
+    10	9999.90293966
+    11	21999.925893
+    12	29999.974871
+    13	31621.9570774
+    14	32999.1771264
+    15	46999.1304037
+    16	99999.0277195
+    17	219999.177901
+    18	470001.202025
+    19	1000013.49189
+
+Measurement: err_n_pct
+  step	100*(RPATH*V(ADC_N)/(3.3-V(ADC_N))-RX)/RX
+     1	-0.0074552334758
+     2	-0.00361195158243
+     3	-0.00187594736138
+     4	-0.000973766062157
+     5	-0.000352059477357
+     6	-0.000110198889812
+     7	-0.00260730807175
+     8	-0.00251564145524
+     9	-0.00186258503711
+    10	-0.000970603415481
+    11	-0.00033685016247
+    12	-8.37632740756e-05
+    13	-0.00259155800149
+    14	-0.00249355631366
+    15	-0.0018502049502
+    16	-0.000972280474176
+    17	-0.000373681161595
+    18	0.000255749909135
+    19	0.00134918872801
+
+Measurement: vadc_worst_low
+  step	V(ADC_L) 	at
+     1	0.297043025494	5e-05
+     2	0.589886128902	5e-05
+     3	1.04750490189	5e-05
+     4	1.64127361774	5e-05
+     5	2.26122617722	5e-05
+     6	2.46841788292	5e-05
+     7	0.791541695595	5e-05
+     8	0.817477762699	5e-05
+     9	1.05358445644	5e-05
+    10	1.64827477932	5e-05
+    11	2.26725196838	5e-05
+    12	2.47367835045	5e-05
+    13	0.792012393475	5e-05
+    14	0.81795835495	5e-05
+    15	1.05413937569	5e-05
+    16	1.64888894558	5e-05
+    17	2.26773357391	5e-05
+    18	2.72026610374	5e-05
+    19	2.99942278862	5e-05
+
+Measurement: rx_est_worst_low
+  step	RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))
+     1	98.4882465745
+     2	218.145271274
+     3	467.318367026
+     4	995.063985641
+     5	2187.44788834
+     6	2980.43959433
+     7	3140.80012125
+     8	3278.07222294
+     9	4673.22943762
+    10	9950.53414452
+    11	21873.6988372
+    12	29802.9293242
+    13	31405.8387126
+    14	32778.4339701
+    15	46728.624575
+    16	99494.471241
+    17	218698.43346
+    18	465861.798471
+    19	984642.168709
+
+Measurement: err_worst_low_pct
+  step	100*(RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))-RX)/RX
+     1	-1.51175342554
+     2	-0.843058511964
+     3	-0.570560207339
+     4	-0.493601435857
+     5	-0.570550529856
+     6	-0.652013522427
+     7	-0.679179409834
+     8	-0.664478092784
+     9	-0.569586433534
+    10	-0.494658554832
+    11	-0.574096194734
+    12	-0.656902252754
+    13	-0.686017834878
+    14	-0.671412211955
+    15	-0.577394521228
+    16	-0.505528758989
+    17	-0.591621154716
+    18	-0.880468410498
+    19	-1.53578312915
+
+Measurement: vadc_worst_high
+  step	V(ADC_H) 	at
+     1	0.297243535519	5e-05
+     2	0.590086996555	5e-05
+     3	1.04770636559	5e-05
+     4	1.6414757967	5e-05
+     5	2.26142907143	5e-05
+     6	2.46862101555	5e-05
+     7	0.791751503944	5e-05
+     8	0.817687869072	5e-05
+     9	1.05379736423	5e-05
+    10	1.64849495888	5e-05
+    11	2.26747965813	5e-05
+    12	2.47390842438	5e-05
+    13	0.792308628559	5e-05
+    14	0.818257808685	5e-05
+    15	1.05446743965	5e-05
+    16	1.64928925037	5e-05
+    17	2.26820898056	5e-05
+    18	2.72079634666	5e-05
+    19	2.9999871254	5e-05
+
+Measurement: rx_est_worst_high
+  step	RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))
+     1	101.500929543
+     2	221.844396311
+     3	472.673684819
+     4	1004.9407995
+     5	2212.63616517
+     6	3019.74641188
+     7	3183.65997664
+     8	3321.83395522
+     9	4726.69257216
+    10	10049.5178854
+    11	22127.1486314
+    12	30198.9684551
+    13	31838.7869033
+    14	33220.6548659
+    15	47270.6347258
+    16	100506.141486
+    17	221310.579967
+    18	474201.601268
+    19	1015825.81257
+
+Measurement: err_worst_high_pct
+  step	100*(RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))-RX)/RX
+     1	1.50092954252
+     2	0.838361959746
+     3	0.568869110482
+     4	0.494079950387
+     5	0.574371144286
+     6	0.658213729218
+     7	0.676168222349
+     8	0.661635006658
+     9	0.567927067272
+    10	0.495178853662
+    11	0.577948324735
+    12	0.663228183555
+    13	0.683084556597
+    14	0.668651108856
+    15	0.575818565467
+    16	0.506141485718
+    17	0.595718166893
+    18	0.893957716498
+    19	1.58258125748

@@ -1,0 +1,22 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Resistor_Faults.cir
+Start Time: Sat Sep 12 17:33:08 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.043 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Resistor_Faults.cir
+
+sense_short: V(SENSE_SHORT)=3.26567787852e-05 at 3.30009966964
+adc_short: V(ADC_SHORT)=-6.73432223266e-05 at 3.30009966964
+code_short: V(ADC_SHORT)*4095/3.3=-0.0835668167962
+short_current: I(RREF_S)=0.00326567771845 at 3.30009966964
+sense_open: V(SENSE_OPEN)=3.2999997139 at 3.30009966964
+adc_open: V(ADC_OPEN)=3.30009966964 at 3.30009966964
+code_open: V(ADC_OPEN)*4095/3.3=4095.12368096
+open_current: I(RREF_O)=3.2999995965e-12 at 3.30009966964

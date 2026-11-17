@@ -1,0 +1,38 @@
+* SECDB Phase 5C - protected high-impedance settling regression.
+* Single worst-case resistor channel avoids unrelated switch-model startup
+* convergence. Leakage accuracy is covered by the other Phase 5C decks.
+
+.include OPA391_TI_Model\OPAx391.LIB
+
+VCC VCC 0 3.3
+VRSTEP R_SRC 0 PULSE(0 3.3 1u 1n 1n 1s 2s)
+
+* 100k reference at +0.1%, TMUX1104 max Ron, calibrated 330R guard,
+* 1M DUT, TPD max capacitance, 1k sense branch, TMUX1108 max Ron,
+* 100p sense allocation, OPA391, and 100R/1nF ADC filter.
+RRPATH R_SRC R_NODE 100.4395k
+RRX R_NODE 0 1Meg
+CRNODE R_NODE 0 100.95p
+RPROT_R R_NODE R_PROT 1k
+RS_R R_PROT R_IN 9.5
+CS_R R_IN 0 100p
+XUR R_IN R_OUT VCC 0 R_OUT OPAx391
+RISO_R R_OUT ADC_R 100
+CADC_R ADC_R 0 1n
+
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 500u 0 100n
+.save V(R_SRC) V(R_NODE) V(R_IN) V(ADC_R)
+
+.param VRFINAL=3.3*1Meg/(1Meg+100.4395k)
+.meas TRAN TRNODE_1MV TRIG V(R_SRC) VAL=1.65 RISE=1 TARG V(R_NODE) VAL={VRFINAL-1m} RISE=1
+.meas TRAN TRADC_1MV TRIG V(R_SRC) VAL=1.65 RISE=1 TARG V(ADC_R) VAL={VRFINAL-1m} RISE=1
+.meas TRAN VR_FINAL FIND V(ADC_R) AT=500u
+.meas TRAN VADC_50 FIND V(ADC_R) AT=50u
+.meas TRAN VADC_100 FIND V(ADC_R) AT=100u
+.meas TRAN VADC_200 FIND V(ADC_R) AT=200u
+.meas TRAN ERR_50US PARAM abs(VADC_50-VRFINAL)
+.meas TRAN ERR_100US PARAM abs(VADC_100-VRFINAL)
+.meas TRAN ERR_200US PARAM abs(VADC_200-VRFINAL)
+.end

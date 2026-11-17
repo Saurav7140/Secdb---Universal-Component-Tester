@@ -1,0 +1,78 @@
+* SECDB Phase 5C - precision-input protection loading check.
+* The TPD4E1B06 maximum 0.5 nA leakage and 0.95 pF capacitance are
+* included together with the Phase 5B conservative 2 nA mux-path leakage.
+* A 1 kohm branch resistor protects the sense mux without entering the
+* source-to-DUT current path. A calibrated 330 ohm guard is placed between the
+* R/C socket and U_SRC common pin. The ADC node includes the proposed 1 nF filter.
+
+.include OPA391_TI_Model\OPAx391.LIB
+
+.param RX=1k
+.param RSEL=if(RX<3.16227766k,1k,if(RX<31.6227766k,10k,100k))
+.param RREF_ACT=RSEL*1.001
+.param RGUARD=330
+.param RPATH=RREF_ACT+9.5+RGUARD
+.param EADC=3.973m
+.param RPROT=1k
+.param CESD=0.95p
+
+VCC VCC 0 3.3
+
+* Nominal protected measurement path.
+RREF VCC REF_OUT {RREF_ACT}
+RSRC_ON REF_OUT RC_INT 9.5
+RGUARD_N RC_INT RC_SENSE {RGUARD}
+RX_DUT RC_SENSE 0 {RX}
+CESD_N RC_SENSE 0 {CESD}
+RPROT_N RC_SENSE PROT_N {RPROT}
+RSENSE_N PROT_N SIN_N 9.5
+CSENSE_N SIN_N 0 100p
+XUN SIN_N OUT_N VCC 0 OUT_N OPAx391
+RISO_N OUT_N ADC_N 100
+CADC_N ADC_N 0 1n
+
+* Worst-low: ESD and mux leakage leave the DUT node; ADC allocation is low.
+RREF_L VCC REF_L {RREF_ACT}
+RSRC_L REF_L RCI_L 9.5
+RGUARD_L RCI_L RC_L {RGUARD}
+RX_L RC_L 0 {RX}
+CESD_L RC_L 0 {CESD}
+IESD_L RC_L 0 0.5n
+RPROT_L RC_L PROT_L {RPROT}
+RSENSE_L PROT_L SIN_L 9.5
+CSENSE_L SIN_L 0 100p
+IMUX_L SIN_L 0 2n
+XUL SIN_L OUT_L VCC 0 OUT_L OPAx391
+RISO_L OUT_L ADC_L 100
+CADC_L ADC_L 0 1n
+IADC_L ADC_L 0 1u
+
+* Worst-high: leakage directions and ADC allocation are reversed.
+RREF_H VCC REF_H {RREF_ACT}
+RSRC_H REF_H RCI_H 9.5
+RGUARD_H RCI_H RC_H {RGUARD}
+RX_H RC_H 0 {RX}
+CESD_H RC_H 0 {CESD}
+IESD_H 0 RC_H 0.5n
+RPROT_H RC_H PROT_H {RPROT}
+RSENSE_H PROT_H SIN_H 9.5
+CSENSE_H SIN_H 0 100p
+IMUX_H 0 SIN_H 2n
+XUH SIN_H OUT_H VCC 0 OUT_H OPAx391
+RISO_H OUT_H ADC_H 100
+CADC_H ADC_H 0 1n
+IADC_H 0 ADC_H 1u
+
+.step param RX list 100 220 470 1k 2.2k 3k 3.16227766k 3.3k 4.7k 10k 22k 30k 31.6227766k 33k 47k 100k 220k 470k 1Meg
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 250u 0 200n
+.save V(RC_SENSE) V(ADC_N) V(ADC_L) V(ADC_H)
+
+.meas TRAN SELECTED_RREF PARAM RSEL
+.meas TRAN VADC FIND V(ADC_N) AT=250u
+.meas TRAN RX_EST PARAM RPATH*V(ADC_N)/(3.3-V(ADC_N))
+.meas TRAN ERR_N_PCT PARAM 100*(RPATH*V(ADC_N)/(3.3-V(ADC_N))-RX)/RX
+.meas TRAN ERR_LOW_PCT PARAM 100*(RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))-RX)/RX
+.meas TRAN ERR_HIGH_PCT PARAM 100*(RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))-RX)/RX
+.end

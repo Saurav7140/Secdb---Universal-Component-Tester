@@ -1,0 +1,13 @@
+Footprints checked: 94 (R4/R5 rotated 180 degrees; positions preserved)
+Named nets checked: 71
+Routed segments: 390 (Phase 8C4: 316)
+Vias: 96 (Phase 8C4: 71; new fine vias: 9)
+Manifest rows: 101 (Counter({'track': 75, 'via': 26}))
+USB connector-side D+/D- lengths: 26.971/27.219 mm (mismatch 0.248 mm)
+USB protected D+/D- lengths: 88.975/89.013 mm (mismatch 0.038 mm)
+USB MCU-stub D+/D- lengths: 4.296/4.705 mm (mismatch 0.409 mm)
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected pads: 69 (Phase 8C4: 87; reduction: 18)
+KiCad footprint errors: 0
+PASS: Phase 8C5 USB-C and HSE routing verified

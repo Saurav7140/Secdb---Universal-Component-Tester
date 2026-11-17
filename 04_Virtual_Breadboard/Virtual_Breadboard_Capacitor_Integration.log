@@ -1,0 +1,89 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Capacitor_Integration.cir
+Start Time: Sat Sep 12 17:46:35 2026
+Options:plotwinsize=0 reltol=1e-6
+
+.step cx=1e-07
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+reltol = 1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-05
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=0.0001
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.975 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_Capacitor_Integration.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: t63_early
+  step	t63_early	FROM	TO
+     1	0.000999605891988	1.00050000001e-06	0.00100060639199
+     2	0.0099960590975	1.00050000001e-06	0.0099970595975
+     3	0.0999605854368	1.00050000001e-06	0.0999615859368
+     4	0.999605847906	1.00050000001e-06	0.999606848406
+
+Measurement: t63_nom
+  step	t63_nom	FROM	TO
+     1	0.00100226482933	1.00050000001e-06	0.00100326532933
+     2	0.0100226370545	1.00050000001e-06	0.0100236375545
+     3	0.10022635272	1.00050000001e-06	0.10022735322
+     4	1.00226337578	1.00050000001e-06	1.00226437628
+
+Measurement: t63_late
+  step	t63_late	FROM	TO
+     1	0.00100493105562	1.00050000001e-06	0.00100593155562
+     2	0.0100492862157	1.00050000001e-06	0.0100502867157
+     3	0.100492826599	1.00050000001e-06	0.100493827099
+     4	1.00492832096	1.00050000001e-06	1.00492932146
+
+Measurement: c_est_cal
+  step	T63_NOM/(RCHPATH*KTH)
+     1	1.00000462724e-07
+     2	1.00000350591e-06
+     3	1.00000332805e-05
+     4	0.000100000317698
+
+Measurement: c_err_pct
+  step	100*(T63_NOM/(RCHPATH*KTH)-CX)/CX
+     1	0.000462724418054
+     2	0.000350590541142
+     3	0.000332805478817
+     4	0.000317697636211
+
+Measurement: tdis_1pct
+  step	tdis_1pct	FROM	TO
+     1	0.000465582325845	1.0005e-06	0.000466582825845
+     2	0.00465373054888	1.0005e-06	0.00465473104888
+     3	0.0465351732543	1.0005e-06	0.0465361737543
+     4	0.46534961314	1.0005e-06	0.46535061364
+
+Measurement: vdis_final
+  step	V(SENSE_DIS) 	at
+     1	1.10867182102e-09	0.002206392145
+     2	1.10866649194e-09	0.022045002145
+     3	1.10866515968e-09	0.220431102145
+     4	1.10866449354e-09	2.20429210215

@@ -1,0 +1,26 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Resistor_Autorange_Nonideal.cir
+Start Time: Sat Sep 12 16:18:23 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.032 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Resistor_Autorange_Nonideal.cir
+
+v_1k_ron10: V(ADC_1K_10)=1.64179098606 at 1.64991750412
+rcalc_1k_ron10: 1k*V(ADC_1K_10)/(3.3-V(ADC_1K_10))=990.098939434
+v_1k_ron50: V(ADC_1K_50)=1.6097561121 at 1.64991750412
+rcalc_1k_ron50: 1k*V(ADC_1K_50)/(3.3-V(ADC_1K_50))=952.380969173
+v_10k_ron10: V(ADC_10K_10)=1.6491754055 at 1.64991750412
+rcalc_10k_ron10: 10k*V(ADC_10K_10)/(3.3-V(ADC_10K_10))=9990.00990777
+v_10k_ron50: V(ADC_10K_50)=1.64588522911 at 1.64991750412
+rcalc_10k_ron50: 10k*V(ADC_10K_50)/(3.3-V(ADC_10K_50))=9950.24806063
+v_100k_ron10: V(ADC_100K_10)=1.64991750412 at 1.64991750412
+rcalc_100k_ron10: 100k*V(ADC_100K_10)/(3.3-V(ADC_100K_10))=99990.0009999
+v_100k_ron50: V(ADC_100K_50)=1.64958763123 at 1.64991750412
+rcalc_100k_ron50: 100k*V(ADC_100K_50)/(3.3-V(ADC_100K_50))=99950.0283951

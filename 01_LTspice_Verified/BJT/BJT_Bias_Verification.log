@@ -1,0 +1,43 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_Bias_Verification.cir
+Start Time: Sat Sep 12 16:11:51 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.061 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\BJT_Bias_Verification.cir
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+sat_vbe: V(B_SAT)=0.699840784073 at 0.538326545859
+sat_vce: V(C_SAT)=0.0403849035501 at 0.538326545859
+sat_ib: I(RB_SAT)=0.000260015920503 at 0.538326545859
+sat_ic: I(RC_SAT)=0.00325961504132 at 0.538326545859
+sat_forced_beta: I(RC_SAT)/I(RB_SAT)=12.5362133019
+npn_vbe: V(B_NPN)=0.649325728416 at 0.538326545859
+npn_vce: V(C_NPN)=2.49175024033 at 0.538326545859
+npn_ib: I(RB_NPN)=2.65067433247e-06 at 0.538326545859
+npn_ic: I(RC_NPN)=0.000808249809779 at 0.538326545859
+npn_hfe: I(RC_NPN)/I(RB_NPN)=304.922336131
+deg_vbe: V(B_DEG)=0.590205907822 at 0.538326545859
+deg_vce: V(C_DEG)=3.21657109261 at 0.538326545859
+deg_ib: I(RB_DEG)=2.7097939892e-06 at 0.538326545859
+deg_ic: I(RC_DEG)=8.34289603517e-05 at 0.538326545859
+deg_hfe: I(RC_DEG)/I(RB_DEG)=30.7879346859
+open_vbe: V(B_OPEN)=0.311513543129 at 0.538326545859
+open_vce: V(C_OPEN)=3.29999828339 at 0.538326545859
+open_ib: I(RB_OPEN)=2.98848641146e-12 at 0.538326545859
+open_ic: I(RC_OPEN)=1.75420444837e-09 at 0.538326545859
+ces_vbe: V(B_CES)=0.538326545859 at 0.538326545859
+ces_vce: V(C_CES)=3.30267830577e-05 at 0.538326545859
+ces_ib: I(RB_CES)=2.76167338598e-06 at 0.538326545859
+ces_ic: I(RC_CES)=0.00329996692017 at 0.538326545859
+pnp_veb: V(VCC)-V(B_PNP)=0.638913393021
+pnp_vec: V(VCC)-V(C_PNP)=2.75722950697
+pnp_ib: I(RB_PNP)=2.66108645519e-06 at 0.538326545859
+pnp_ic: I(RC_PNP)=0.000542770430911 at 0.538326545859
+pnp_hfe: I(RC_PNP)/I(RB_PNP)=203.965726049

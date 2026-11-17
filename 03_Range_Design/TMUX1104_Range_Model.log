@@ -1,0 +1,20 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\TMUX1104_Range_Model.cir
+Start Time: Sat Sep 12 16:23:52 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.036 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\TMUX1104_Range_Model.cir
+
+vadc_low: V(ADC_LOW)=1.64138269424 at 2.99988339252
+rx_low_uncal: 1k*V(ADC_LOW)/(3.3-V(ADC_LOW))=989.609048783
+rx_low_cal: 1010.5*V(ADC_LOW)/(3.3-V(ADC_LOW))=999.999943796
+vadc_high: V(ADC_HIGH)=2.99988339252 at 2.99988339252
+rx_high_uncal: 100k*V(ADC_HIGH)/(3.3-V(ADC_HIGH))=999572.605353
+rx_high_pathcal: 100109.5*V(ADC_HIGH)/(3.3-V(ADC_HIGH))=1000667.13736

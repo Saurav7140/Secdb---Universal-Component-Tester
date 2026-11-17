@@ -1,0 +1,7 @@
+group,nets,reason,next_checkpoint
+MCU VBUS sense,USB_VBUS_SENSE,Fine-pitch pin is enclosed by the short MCU-side USB and MUX-control fanout; requires a controlled local re-fan,Phase 8D2B
+DUT drive GPIO,"DIODE_A_GPIO;DIODE_B_GPIO;BJT_E_GPIO;BJT_B_GPIO;BJT_C_GPIO",Requires an ordered fine-pitch breakout and dedicated cross-board corridors,Phase 8D2B
+MUX pull-down ground returns,GND,Integrate with final ground stitching after remaining signal corridors are fixed,Phase 8D4
+Debug and UI,"NRST;BOOT0;SWDIO;SWCLK;BTN_MODE;BTN_UP;BTN_DOWN;STATUS_LED;LED_ANODE",Route after DUT-control fanout is frozen,Phase 8D3
+Display,"TFT_SCK;TFT_MOSI;TFT_CS;TFT_DC;TFT_RST;TFT_BL",Route as an ordered connector bundle,Phase 8D3
+Power and ground completion,"3V3_D;GND",Complete deferred taps and final stitching after all signal routing,Phase 8D4

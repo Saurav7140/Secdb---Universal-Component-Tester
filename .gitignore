@@ -1,0 +1,24 @@
+# Local scratch files
+tmp/
+
+# KiCad local state and automatic history
+**/.history/
+**/*-backups/
+*.kicad_prl
+*.lck
+~*.lck
+fp-info-cache
+
+# Generated build output
+**/Debug/
+**/Release/
+**/build/
+__pycache__/
+*.pyc
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

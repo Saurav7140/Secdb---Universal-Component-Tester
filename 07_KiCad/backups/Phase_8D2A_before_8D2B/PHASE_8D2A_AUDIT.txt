@@ -1,0 +1,11 @@
+Footprints checked: 94 (positions and orientations preserved)
+Named nets checked: 71
+Routed segments: 522 (Phase 8D1: 501)
+Vias: 129 (Phase 8D1: 123)
+Manifest rows: 27 (Counter({'track': 21, 'via': 6}))
+Phase 8D2A nets completed: 3
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected items: 57
+KiCad footprint errors: 0
+PASS: Phase 8D2A fused-VBUS and RC-control routing verified

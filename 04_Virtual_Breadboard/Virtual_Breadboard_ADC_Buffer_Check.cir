@@ -1,0 +1,64 @@
+* SECDB Phase 4A - virtual breadboard ADC buffer and calibration ladder
+* Three 10k resistors generate nominal 2.2V and 1.1V taps from 3.3V.
+* OPA391 is represented as a unity-gain VCVS with offset and output resistance.
+* Worst branch includes +/-750uV offset and +/-1uA MCU pin leakage.
+
+VCC VCC 0 3.3
+R1 VCC TAP_2V2 10k
+R2 TAP_2V2 TAP_1V1 10k
+R3 TAP_1V1 0 10k
+
+* Conservative buffer input bias loading on the resistor ladder.
+IIB_2V2 TAP_2V2 0 5p
+IIB_1V1 TAP_1V1 0 5p
+
+* Nominal 1.1V channel
+E11_N BUF11_N0 0 TAP_1V1 0 1
+RO11_N BUF11_N0 BUF11_N1 10
+RP11_N BUF11_N1 ADC11_N 100
+
+* Worst-low 1.1V reading: -750uV offset and 1uA ADC sink leakage.
+B11_L BUF11_L0 0 V=V(TAP_1V1)-750u
+RO11_L BUF11_L0 BUF11_L1 10
+RP11_L BUF11_L1 ADC11_L 100
+IADC11_L ADC11_L 0 1u
+
+* Worst-high 1.1V reading: +750uV offset and 1uA ADC injection.
+B11_H BUF11_H0 0 V=V(TAP_1V1)+750u
+RO11_H BUF11_H0 BUF11_H1 10
+RP11_H BUF11_H1 ADC11_H 100
+IADC11_H 0 ADC11_H 1u
+
+* Nominal 2.2V channel
+E22_N BUF22_N0 0 TAP_2V2 0 1
+RO22_N BUF22_N0 BUF22_N1 10
+RP22_N BUF22_N1 ADC22_N 100
+
+* Worst-low and worst-high 2.2V readings.
+B22_L BUF22_L0 0 V=V(TAP_2V2)-750u
+RO22_L BUF22_L0 BUF22_L1 10
+RP22_L BUF22_L1 ADC22_L 100
+IADC22_L ADC22_L 0 1u
+
+B22_H BUF22_H0 0 V=V(TAP_2V2)+750u
+RO22_H BUF22_H0 BUF22_H1 10
+RP22_H BUF22_H1 ADC22_H 100
+IADC22_H 0 ADC22_H 1u
+
+.op
+.meas OP TAP_1V1 FIND V(TAP_1V1)
+.meas OP ADC_1V1_NOM FIND V(ADC11_N)
+.meas OP ADC_1V1_LOW FIND V(ADC11_L)
+.meas OP ADC_1V1_HIGH FIND V(ADC11_H)
+.meas OP CODE_1V1_NOM PARAM V(ADC11_N)*4095/3.3
+.meas OP ADC_1V1_TOTAL_LOW PARAM V(ADC11_L)-4*3.3/4095
+.meas OP ADC_1V1_TOTAL_HIGH PARAM V(ADC11_H)+4*3.3/4095
+
+.meas OP TAP_2V2 FIND V(TAP_2V2)
+.meas OP ADC_2V2_NOM FIND V(ADC22_N)
+.meas OP ADC_2V2_LOW FIND V(ADC22_L)
+.meas OP ADC_2V2_HIGH FIND V(ADC22_H)
+.meas OP CODE_2V2_NOM PARAM V(ADC22_N)*4095/3.3
+.meas OP ADC_2V2_TOTAL_LOW PARAM V(ADC22_L)-4*3.3/4095
+.meas OP ADC_2V2_TOTAL_HIGH PARAM V(ADC22_H)+4*3.3/4095
+.end

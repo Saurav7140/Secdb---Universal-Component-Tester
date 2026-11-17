@@ -1,0 +1,28 @@
+item_type,net,role,layer,width_mm,start_x_mm,start_y_mm,end_x_mm,end_y_mm,via_diameter_mm,via_drill_mm
+track,USB_VBUS_FUSED,Fused-VBUS monitor corridor,F.Cu,0.500,37.750,44.500,37.750,54.250,,
+track,USB_VBUS_FUSED,Fused-VBUS monitor corridor,F.Cu,0.500,37.750,54.250,47.750,64.250,,
+via,USB_VBUS_FUSED,Fused-VBUS monitor corridor layer change,F.Cu-B.Cu,,47.750,64.250,,,1.000,0.500
+track,USB_VBUS_FUSED,Fused-VBUS monitor corridor,B.Cu,0.500,47.750,64.250,56.500,73.000,,
+track,USB_VBUS_FUSED,Fused-VBUS monitor corridor,B.Cu,0.500,56.500,73.000,72.500,73.000,,
+track,USB_VBUS_FUSED,Fused-VBUS monitor corridor,B.Cu,0.500,72.500,73.000,76.000,69.500,,
+via,USB_VBUS_FUSED,Fused-VBUS monitor corridor layer change,F.Cu-B.Cu,,76.000,69.500,,,1.000,0.500
+track,RC_INTERNAL,RC internal left-side MUX escape F.Cu escape,F.Cu,0.200,62.100,43.500,60.750,43.500,,
+via,RC_INTERNAL,RC internal left-side MUX escape via,F.Cu-B.Cu,,60.750,43.500,,,0.450,0.200
+track,RC_INTERNAL,RC internal resistor-side F.Cu escape,F.Cu,0.200,70.500,35.000,70.500,36.500,,
+via,RC_INTERNAL,RC internal resistor-side via,F.Cu-B.Cu,,70.500,36.500,,,0.600,0.300
+track,RC_INTERNAL,RC internal control corridor,B.Cu,0.200,60.750,43.500,61.250,43.000,,
+track,RC_INTERNAL,RC internal control corridor,B.Cu,0.200,61.250,43.000,61.250,40.500,,
+track,RC_INTERNAL,RC internal control corridor,B.Cu,0.200,61.250,40.500,65.250,36.500,,
+track,RC_INTERNAL,RC internal control corridor,B.Cu,0.200,65.250,36.500,70.500,36.500,,
+track,SRC_DISCHARGE,Source-discharge left-side MUX escape F.Cu escape,F.Cu,0.200,62.100,44.000,60.250,44.000,,
+via,SRC_DISCHARGE,Source-discharge left-side MUX escape via,F.Cu-B.Cu,,60.250,44.000,,,0.450,0.200
+via,SRC_DISCHARGE,Source-discharge resistor via-in-pad,F.Cu-B.Cu,,66.500,41.500,,,0.600,0.300
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,60.250,44.000,60.250,43.750,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,60.250,43.750,60.000,43.500,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,60.000,43.500,60.750,42.750,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,60.750,42.750,60.750,40.250,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,60.750,40.250,65.250,35.750,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,65.250,35.750,70.750,35.750,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,70.750,35.750,71.250,36.250,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,71.250,36.250,71.250,36.750,,
+track,SRC_DISCHARGE,Source-discharge control corridor,B.Cu,0.200,71.250,36.750,66.500,41.500,,

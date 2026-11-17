@@ -1,0 +1,10 @@
+Footprints checked: 94
+Named nets checked: 71
+Routed segments: 246
+Vias: 60 (5 fine-pitch 0.45/0.20 mm through-vias)
+Manifest rows: 128 (Counter({'track': 98, 'via': 30}))
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected pads: 105 (Phase 8C2: 127; reduction: 22)
+KiCad footprint errors: 0
+PASS: Phase 8C3 internal precision-chain routing and DRC verified

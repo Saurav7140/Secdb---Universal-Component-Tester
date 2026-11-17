@@ -1,0 +1,45 @@
+* SECDB - independent diode measurement verification
+* Every test uses 3.3 V and a 1k current-limiting resistor.
+VCC VCC 0 3.3
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+* Healthy 1N4148, forward biased
+RFWD VCC ADC_FWD 1k
+DFWD ADC_FWD 0 1N4148
+
+* Healthy 1N4148, reverse biased
+RREV VCC ADC_REV 1k
+DREV 0 ADC_REV 1N4148
+
+* Fault models: 1G approximates open; 10m approximates short
+ROPEN VCC ADC_OPEN 1k
+DOPEN ADC_OPEN 0 OPEN_DIODE
+.model OPEN_DIODE D(Is=1e-30 Rs=1G)
+
+RSHORT VCC ADC_SHORT 1k
+RFAULT_SHORT ADC_SHORT 0 10m
+
+* Forward-voltage comparison at approximately 2-3 mA
+R4007 VCC ADC_4007 1k
+D4007 ADC_4007 0 1N4007
+
+R5819 VCC ADC_5819 1k
+D5819 ADC_5819 0 1N5819
+
+RLED VCC ADC_LED 1k
+DLED ADC_LED 0 RED_LED
+.model RED_LED D(Is=1e-20 N=2 Rs=10 Eg=1.8)
+
+.op
+.meas OP VF_1N4148 FIND V(ADC_FWD)
+.meas OP IF_1N4148 FIND I(RFWD)
+.meas OP V_REVERSE FIND V(ADC_REV)
+.meas OP I_REVERSE FIND I(RREV)
+.meas OP V_OPEN FIND V(ADC_OPEN)
+.meas OP I_OPEN FIND I(ROPEN)
+.meas OP V_SHORT FIND V(ADC_SHORT)
+.meas OP I_SHORT FIND I(RSHORT)
+.meas OP VF_1N4007 FIND V(ADC_4007)
+.meas OP VF_1N5819 FIND V(ADC_5819)
+.meas OP VF_RED_LED FIND V(ADC_LED)
+.end

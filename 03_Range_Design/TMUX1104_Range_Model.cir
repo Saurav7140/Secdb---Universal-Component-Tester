@@ -1,0 +1,24 @@
+* SECDB Phase 3 - preliminary TMUX1104 resistor-range model at 3.3V
+VCC VCC 0 3.3
+
+* Low range worst-case path: +0.1% reference and 9.5 ohm switch RON
+RREF_LOW VCC N_LOW 1001
+RON_LOW N_LOW ADC_LOW 9.5
+RX_LOW ADC_LOW 0 1k
+
+* High range: +0.1% reference, 9.5 ohm RON, and 2nA aggregate
+* worst-direction leakage injected into the common measurement node.
+RREF_HIGH VCC N_HIGH 100.1k
+RON_HIGH N_HIGH ADC_HIGH 9.5
+RX_HIGH ADC_HIGH 0 1Meg
+ILEAK_HIGH VCC ADC_HIGH 2n
+
+.op
+.meas OP VADC_LOW FIND V(ADC_LOW)
+.meas OP RX_LOW_UNCAL PARAM 1k*V(ADC_LOW)/(3.3-V(ADC_LOW))
+.meas OP RX_LOW_CAL PARAM 1010.5*V(ADC_LOW)/(3.3-V(ADC_LOW))
+
+.meas OP VADC_HIGH FIND V(ADC_HIGH)
+.meas OP RX_HIGH_UNCAL PARAM 100k*V(ADC_HIGH)/(3.3-V(ADC_HIGH))
+.meas OP RX_HIGH_PATHCAL PARAM 100109.5*V(ADC_HIGH)/(3.3-V(ADC_HIGH))
+.end

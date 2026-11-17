@@ -1,0 +1,29 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5C_Protection_Settling.cir
+Start Time: Sun Sep 13 02:32:17 2026
+Options:plotwinsize=0 reltol=1e-6
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+reltol = 1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.396 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5C_Protection_Settling.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+trnode_1mv=0.000147961524187 FROM 1.00049999999e-06 TO 0.000148962024187
+tradc_1mv=0.000147070563991 FROM 1.00049999999e-06 TO 0.000148071063991
+vr_final: V(ADC_R) =2.9988052845 at 0.0005
+vadc_50: V(ADC_R) =2.80063991055 at 5e-05
+vadc_100: V(ADC_R) =2.9852966509 at 0.0001
+vadc_200: V(ADC_R) =2.99874486952 at 0.0002
+err_50us: abs(VADC_50-VRFINAL)=0.198161931802
+err_100us: abs(VADC_100-VRFINAL)=0.0135051914591
+err_200us: abs(VADC_200-VRFINAL)=5.69728349009e-05

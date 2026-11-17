@@ -1,0 +1,36 @@
+* SECDB - independent capacitor RC charging verification
+* Threshold is VCC*(1-exp(-1)) = 2.08599784 V, reached at t = R*C.
+VSTEP VCC 0 PULSE(0 3.3 0 1n 1n 10s 20s)
+
+R100N VCC ADC_100N 10k
+C100N ADC_100N 0 100n
+
+R1U VCC ADC_1U 10k
+C1U ADC_1U 0 1u
+
+R10U VCC ADC_10U 10k
+C10U ADC_10U 0 10u
+
+R100U VCC ADC_100U 10k
+C100U ADC_100U 0 100u
+
+* Diagnostic reference cases
+* Open: no capacitor is connected, so the unloaded ADC node follows VCC.
+ROPEN VCC ADC_OPEN 10k
+* Short: 10m approximates a shorted component.
+RSHORT VCC ADC_SHORT 10k
+RFAULT_SHORT ADC_SHORT 0 10m
+
+.options plotwinsize=0 reltol=1e-6
+.tran 0 5s
+.meas TRAN T63_100N WHEN V(ADC_100N)=2.08599784 RISE=1
+.meas TRAN T63_1U WHEN V(ADC_1U)=2.08599784 RISE=1
+.meas TRAN T63_10U WHEN V(ADC_10U)=2.08599784 RISE=1
+.meas TRAN T63_100U WHEN V(ADC_100U)=2.08599784 RISE=1
+.meas TRAN C_CALC_100N PARAM T63_100N/10k
+.meas TRAN C_CALC_1U PARAM T63_1U/10k
+.meas TRAN C_CALC_10U PARAM T63_10U/10k
+.meas TRAN C_CALC_100U PARAM T63_100U/10k
+.meas TRAN V_OPEN_1MS FIND V(ADC_OPEN) AT=1m
+.meas TRAN V_SHORT_4S FIND V(ADC_SHORT) AT=4s
+.end

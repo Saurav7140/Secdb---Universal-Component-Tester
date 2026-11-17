@@ -1,0 +1,49 @@
+Item,References,Qty,Value_or_function,Preferred_part_or_series,Package,Phase_5C_status,Notes
+1,U1,1,MCU,STM32F401CCU6,UFQFPN-48_7x7mm_EP,Frozen,Exposed pad to ground with thermal vias
+2,U2,1,4-to-1 source mux,TMUX1104DGSR,VSSOP-10,Frozen,U_SRC for resistor and capacitor paths
+3,U3,1,8-to-1 sense mux,TMUX1108PWR,TSSOP-16,Frozen,U_SENSE before the shared buffer
+4,U4,1,Precision unity-gain buffer,OPA391DBVR,SOT-23-5,Frozen,Official TI macro-model used in LTspice
+5,U5,1,3.3V 600mA LDO,AP2112K-3.3TRG1,SOT-25,Frozen,Board design current target not more than 150mA until thermal test
+6,ESD1-ESD2,2,4-channel ultra-low-leakage ESD array,TPD4E1B06DCKR,SC70-6_DCK,Frozen,Six channels used on exposed non-ground test terminals; two spare
+7,ESD_USB,1,USB 2.0 data-line ESD protection,USBLC6-2SC6,SOT-23-6,Frozen,Place at USB connector on D+ and D-
+8,D_TVS,1,5V VBUS TVS,SMBJ5.0A-TR,SMB,Frozen,Place after PPTC with short ground return
+9,F1,1,0.50A hold resettable fuse,MF-MSMF050-2,1812,Frozen,0.50A hold and 1.00A trip at 23C nominal
+10,D_PWR,1,1A 40V Schottky reverse-polarity diode,B5819W-7-F,SOD-123,Frozen,Series path after TVS node
+11,FB_PWR-FB_A,2,220ohm at 100MHz ferrite bead,BLM21PG221SN1D,0805,Frozen,45mohm maximum DCR; one input EMI bead and one 3V3_A bead
+12,J_USB,1,USB-C USB2.0 receptacle,USB4105-GF-A,USB-C_16pin,Frozen,GCT top-mount horizontal receptacle with through-hole shell stakes
+13,R_CC1-R_CC2,2,5.1kohm 1%,Generic thick film,0603,Frozen,USB-C sink Rd from CC1 and CC2 to ground
+14,R_VBUS,1,1kohm 1%,Generic thick film,0603,Frozen,Series to PA9 VBUS sense; PA9 remains no-pull
+15,R_REF1-R_REF3,3,1k 10k 100k 0.1% 25ppm,C0G-grade thin-film resistor series,0805,Frozen,Calibrate effective source path including switch and guard
+16,R_DIS,1,1kohm 0.1% 25ppm,Thin film,0805,Frozen,Capacitor discharge path through U_SRC S4
+17,R_RC_GUARD,1,330ohm 0.1% 25ppm,Thin film,0805,Frozen,Between R/C socket node and U_SRC common; include in path calibration
+18,R_SNS1-R_SNS8,8,1kohm 1%,Generic thin film,0603,Frozen,Series branch from each selected source to U_SENSE; no source current flows through these
+19,R_CAL1-R_CAL3,3,10kohm 0.1% 25ppm,Matched thin-film series preferred,0805,Frozen,Creates 1/3 and 2/3 ratiometric calibration taps
+20,R_DA-R_DB,2,1kohm 0.1%,Thin film,0805,Frozen,Diode bidirectional test-current limiting
+21,"R_BE,R_BB,R_BC",3,100ohm 1M 1k,Thin film,0805,Frozen,BJT emitter base and collector drive paths respectively
+22,R_ADC,1,100ohm 1%,Generic thin film,0603,Frozen,OPA391 output isolation before PA0
+23,C_ADC,1,1nF 5% C0G/NP0,Generic C0G,0603,Frozen,PA0 anti-kickback and noise filter after R_ADC
+24,R_MUX_PD1-R_MUX_PD7,7,100kohm 1%,Generic thick film,0603,Frozen,Hardware pulldowns on both EN pins and five address pins
+25,R_BOOT,1,10kohm 1%,Generic thick film,0603,Frozen,BOOT0 default pulldown
+26,R_NRST,1,10kohm 1%,Generic thick film,0603,Frozen,NRST pullup; verify with ST reset recommendation
+27,C_NRST,1,100nF X7R,Generic ceramic,0603,Frozen,Close to NRST
+28,C_VCAP,1,4.7uF X7R low-ESR,Generic ceramic,0805,Frozen,Single capacitor because UFQFPN48 exposes one VCAP pin
+29,C_VDDA1-C_VDDA2,2,100nF and 1uF X7R,Generic ceramic,0603,Frozen,At VDDA after FB_A
+30,C_VDD1-C_VDD3,3,100nF X7R,Generic ceramic,0603,Frozen,One per MCU VDD pin
+31,C_VDD_BULK,1,10uF X7R,Generic ceramic,0805,Frozen,Near MCU power entry
+32,C_VBAT,1,100nF X7R,Generic ceramic,0603,Frozen,VBAT tied to VDD because no battery is used
+33,C_LDO_IN-C_LDO_OUT,4,10uF plus 100nF on each side,Generic ceramic,0805_and_0603,Frozen,Place directly at AP2112 pins
+34,C_AFE_DEC1-C_AFE_DEC3,3,100nF X7R,Generic ceramic,0603,Frozen,One each for U_SRC U_SENSE and OPA391
+35,C_AFE_BULK,1,1uF X7R,Generic ceramic,0603,Frozen,Local 3V3_A bulk near AFE
+36,C_TFT1-C_TFT2,2,10uF plus 100nF X7R,Generic ceramic,0805_and_0603,Frozen,At display connector
+37,Y1,1,8MHz crystal 18pF load and 20ppm tolerance,ABLS-8.000MHZ-B2-T,HC49-US_SMD,Frozen,Fundamental-mode Abracon crystal; keep loop compact
+38,C_HSE1-C_HSE2,2,30pF C0G 5%,Generic C0G,0603,Frozen,Initial load for 18pF crystal assuming about 3pF stray contribution; verify startup on PCB
+39,J_SWD,1,SWDIO SWCLK 3V3 GND NRST header,Generic 1x5 male header,2.54mm_THT,Frozen,Keep accessible after assembly
+40,J_RC-J_DIODE-J_BJT,3,Two 1x2 plus one 1x3 female machine-pin sockets,Generic turned-pin socket strip,2.54mm_THT,Frozen,Separate labelled R-C diode and E-B-C groups
+41,J_TFT,1,ST7735 module header,Generic 1x8 female header,2.54mm_THT,Frozen,Board order GND 3V3 SCK MOSI CS DC RST BL; cable if module differs
+42,SW1-SW4,4,Reset plus three UI buttons,Generic 6x6mm tactile switch,6mm_THT,Frozen,PC13-PC15 buttons are active-low; no LSE crystal
+43,D_LED-R_LED,2,Status LED plus 1kohm resistor,Generic,0603,Frozen,Driven from PB8
+44,R_USB_DP-R_USB_DM,2,22ohm 1%,Generic thin film,0603,Frozen,Place close to MCU in series with PA12 and PA11
+45,R_BTN1-R_BTN3,3,10kohm 1%,Generic thick film,0603,Frozen,External pullups for PC13 PC14 and PC15 active-low buttons
+46,R_HSE,1,0ohm link,Generic jumper resistor,0603,Frozen,Series tuning footprint at OSC_OUT; fit 0ohm initially
+47,R_TFT_BL,1,0ohm link,Generic jumper resistor,0603,Frozen,Feeds TFT backlight pin from 3V3_D; change value only if bare LED module requires it
+48,C_USB_VBUS,1,100nF X7R,Generic ceramic,0603,Frozen,At USBLC6-2 VBUS pin

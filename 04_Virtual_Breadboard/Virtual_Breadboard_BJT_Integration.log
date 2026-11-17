@@ -1,0 +1,255 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_BJT_Integration.cir
+Start Time: Sat Sep 12 22:07:43 2026
+
+.step beta=20
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=30
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=50
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=100
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=200
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=300
+Direct Newton iteration succeeded in finding operating point.
+
+.step beta=500
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 3.375 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Virtual_Breadboard_BJT_Integration.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: n_ve
+  step	V(N_E_ADC) 	at
+     1	0.00873093586415	1e-05
+     2	0.0128182126209	1e-05
+     3	0.0209121648222	1e-05
+     4	0.0407818444073	1e-05
+     5	0.0792235061526	1e-05
+     6	0.116148754954	1e-05
+     7	0.186020836234	1e-05
+
+Measurement: n_vb
+  step	V(N_B_ADC) 	at
+     1	0.592436432838	1e-05
+     2	0.606808125973	1e-05
+     3	0.627832472324	1e-05
+     4	0.665157735348	1e-05
+     5	0.720859348774	1e-05
+     6	0.767730891705	1e-05
+     7	0.849880218506	1e-05
+
+Measurement: n_vc
+  step	V(N_C_ADC) 	at
+     1	3.2416472435	1e-05
+     2	3.21296834946	1e-05
+     3	3.15618443489	1e-05
+     4	3.01686835289	1e-05
+     5	2.74746203423	1e-05
+     6	2.48868989944	1e-05
+     7	1.99903333187	1e-05
+
+Measurement: n_vbe
+  step	V(N_B_ADC)-V(N_E_ADC)
+     1	0.583705496974
+     2	0.593989913352
+     3	0.606920307502
+     4	0.62437589094
+     5	0.641635842621
+     6	0.65158213675
+     7	0.663859382272
+
+Measurement: n_vce
+  step	V(N_C_ADC)-V(N_E_ADC)
+     1	3.23291630764
+     2	3.20015013684
+     3	3.13527227007
+     4	2.97608650848
+     5	2.66823852807
+     6	2.37254114449
+     7	1.81301249564
+
+Measurement: n_vcb
+  step	V(N_C_ADC)-V(N_B_ADC)
+     1	2.64921081066
+     2	2.60616022348
+     3	2.52835196257
+     4	2.35171061754
+     5	2.02660268545
+     6	1.72095900774
+     7	1.14915311337
+
+Measurement: n_ib
+  step	(3.3-V(N_B_ADC))/RBASE
+     1	2.70472360737e-06
+     2	2.69036698869e-06
+     3	2.66936469475e-06
+     4	2.63207858214e-06
+     5	2.57643539406e-06
+     6	2.52961301463e-06
+     7	2.44754985415e-06
+
+Measurement: n_ic
+  step	(3.3-V(N_C_ADC))/RCOL
+     1	5.55211764988e-05
+     2	8.28084210687e-05
+     3	0.000136836884024
+     4	0.000269392623321
+     5	0.000525725942697
+     6	0.000771941104239
+     7	0.00123783698204
+
+Measurement: n_hfe_cal
+  step	((3.3-V(N_C_ADC))/RCOL)/((3.3-V(N_B_ADC))/RBASE)
+     1	20.5274861902
+     2	30.7796004846
+     3	51.2619666744
+     4	102.349764611
+     5	204.051669182
+     6	305.16173809
+     7	505.745359976
+
+Measurement: n_hfe_low
+  step	((3.3-(V(N_C_ADC)+EADC))/RCOL)/((3.3-(V(N_B_ADC)-EADC))/RBASE)
+     1	19.1018243372
+     2	29.3312404178
+     3	49.7718198393
+     4	100.761622305
+     5	202.272856304
+     6	303.191663501
+     7	503.384607806
+
+Measurement: n_hfe_high
+  step	((3.3-(V(N_C_ADC)-EADC))/RCOL)/((3.3-(V(N_B_ADC)+EADC))/RBASE)
+     1	21.9573381411
+     2	32.2322401097
+     3	52.7565512321
+     4	103.942703575
+     5	205.835970807
+     6	307.138004285
+     7	508.113780752
+
+Measurement: p_ve
+  step	V(P_E_ADC) 	at
+     1	3.2912530899	1e-05
+     2	3.2871658802	1e-05
+     3	3.27907180786	1e-05
+     4	3.2592022419	1e-05
+     5	3.22076058388	1e-05
+     6	3.18383526802	1e-05
+     7	3.11396312714	1e-05
+
+Measurement: p_vb
+  step	V(P_B_ADC) 	at
+     1	2.70754766464	1e-05
+     2	2.69317579269	1e-05
+     3	2.67215156555	1e-05
+     4	2.63482642174	1e-05
+     5	2.5791246891	1e-05
+     6	2.53225302696	1e-05
+     7	2.45010375977	1e-05
+
+Measurement: p_vc
+  step	V(P_C_ADC) 	at
+     1	0.0583369359374	1e-05
+     2	0.0870156288147	1e-05
+     3	0.143799677491	1e-05
+     4	0.283115625381	1e-05
+     5	0.552522063255	1e-05
+     6	0.811294198036	1e-05
+     7	1.30095088482	1e-05
+
+Measurement: p_veb
+  step	V(P_E_ADC)-V(P_B_ADC)
+     1	0.583705425262
+     2	0.593990087509
+     3	0.60692024231
+     4	0.62437582016
+     5	0.641635894775
+     6	0.651582241058
+     7	0.663859367371
+
+Measurement: p_vec
+  step	V(P_E_ADC)-V(P_C_ADC)
+     1	3.23291615397
+     2	3.20015025139
+     3	3.13527213037
+     4	2.97608661652
+     5	2.66823852062
+     6	2.37254106998
+     7	1.81301224232
+
+Measurement: p_vbc
+  step	V(P_B_ADC)-V(P_C_ADC)
+     1	2.6492107287
+     2	2.60616016388
+     3	2.52835188806
+     4	2.35171079636
+     5	2.02660262585
+     6	1.72095882893
+     7	1.14915287495
+
+Measurement: p_ib
+  step	V(P_B_ADC)/RBASE
+     1	2.70470772153e-06
+     2	2.69035092422e-06
+     3	2.66934874936e-06
+     4	2.63206275584e-06
+     5	2.57641944868e-06
+     6	2.52959695016e-06
+     7	2.44753384922e-06
+
+Measurement: p_ic
+  step	V(P_C_ADC)/RCOL
+     1	5.55061236322e-05
+     2	8.2793176798e-05
+     3	0.000136821767356
+     4	0.00026937737905
+     5	0.000525710811851
+     6	0.000771925973393
+     7	0.00123782196462
+
+Measurement: p_hfe_cal
+  step	(V(P_C_ADC)/RCOL)/(V(P_B_ADC)/RBASE)
+     1	20.5220413245
+     2	30.774117998
+     3	51.2566098336
+     4	102.344588271
+     5	204.047059232
+     6	305.157694526
+     7	505.742531412
+
+Measurement: p_hfe_low
+  step	((V(P_C_ADC)-EADC)/RCOL)/((V(P_B_ADC)+EADC)/RBASE)
+     1	19.0963790883
+     2	29.3257573715
+     3	49.766462063
+     4	100.756444224
+     5	202.268242453
+     6	303.18761378
+     7	503.381768409
+
+Measurement: p_hfe_high
+  step	((V(P_C_ADC)+EADC)/RCOL)/((V(P_B_ADC)-EADC)/RBASE)
+     1	21.9518936845
+     2	32.22675821
+     3	52.751195356
+     4	103.93752901
+     5	205.831364805
+     6	307.133966937
+     7	508.110963107

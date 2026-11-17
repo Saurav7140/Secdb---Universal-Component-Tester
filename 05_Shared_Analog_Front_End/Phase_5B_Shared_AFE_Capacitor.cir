@@ -1,0 +1,57 @@
+* SECDB Phase 5B - capacitor charge/discharge through the shared U_SRC
+* TMUX1104 and U_SENSE TMUX1108/OPA391/PA0 path.
+
+.include OPA391_TI_Model\OPAx391.LIB
+
+.param CX=100n
+.param RCH=10.01k
+.param RDIS=1.001k
+.param RON_SRC=9.5
+.param RON_SENSE=9.5
+.param RCHPATH=RCH+RON_SRC
+.param RDISPATH=RDIS+RON_SRC
+.param CPAR=100p
+.param VTH_EARLY=3.3*2585/4095
+.param VTH_NOM=3.3*2589/4095
+.param VTH_LATE=3.3*2593/4095
+.param KTH=-ln(1-2589/4095)
+
+VCC VCC 0 3.3
+
+* U_SRC S2 charge state. U_SENSE S1 monitors RC_SENSE.
+VCHARGE CHARGE_SRC 0 PULSE(0 3.3 1u 1n 1n 10s 20s)
+RCHARGE CHARGE_SRC CH_SW {RCH}
+RSRC_CH CH_SW RC_CH {RON_SRC}
+CUNKNOWN_CH RC_CH 0 {CX}
+CPAR_CH RC_CH 0 {CPAR}
+RSENSE_CH RC_CH SIN_CH {RON_SENSE}
+XUCH SIN_CH OUT_CH VCC 0 OUT_CH OPAx391
+RISO_CH OUT_CH ADC_CH 100
+CADC_CH ADC_CH 0 7p
+
+* U_SRC S4 discharge state from a precharged node.
+VDIS DIS_SRC 0 PULSE(3.3 0 1u 1n 1n 10s 20s)
+RDISCH DIS_SRC DIS_SW {RDIS}
+RSRC_DIS DIS_SW RC_DIS {RON_SRC}
+CUNKNOWN_DIS RC_DIS 0 {CX}
+CPAR_DIS RC_DIS 0 {CPAR}
+
+* Total inactive-channel effects are represented by the conservative 100 pF
+* node allocation and a 2 nA aggregate leakage sink. Explicit 1 Tohm dummy
+* branches were removed because floating inactive nodes destabilize the vendor
+* macro-model without changing the physical result.
+IMUX_TOTAL SIN_CH 0 2n
+
+.step param CX list 100n 1u 10u 100u
+.temp 25
+.options plotwinsize=0 reltol=1e-6
+.tran 0 {1u+2.2*RCHPATH*(CX+CPAR)} 0 {10*CX}
+.save V(CHARGE_SRC) V(RC_CH) V(ADC_CH) V(DIS_SRC) V(RC_DIS)
+
+.meas TRAN T63_EARLY TRIG V(CHARGE_SRC) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_EARLY} RISE=1
+.meas TRAN T63_NOM TRIG V(CHARGE_SRC) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_NOM} RISE=1
+.meas TRAN T63_LATE TRIG V(CHARGE_SRC) VAL=1.65 RISE=1 TARG V(ADC_CH) VAL={VTH_LATE} RISE=1
+.meas TRAN C_EST PARAM T63_NOM/(RCHPATH*KTH)
+.meas TRAN C_ERR_PCT PARAM 100*(T63_NOM/(RCHPATH*KTH)-CX)/CX
+.meas TRAN TDIS_1PCT TRIG V(DIS_SRC) VAL=1.65 FALL=1 TARG V(RC_DIS) VAL=33m FALL=1
+.end

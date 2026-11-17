@@ -1,0 +1,71 @@
+* SECDB Phase 4B - virtual resistor breadboard integrated with OPA391 and PA0
+* TI OPAx391 PSpice Model Rev. B / macro-model Final 1.3.
+* TMUX1104 is conservatively represented by 9.5-ohm Ron and +/-2nA path leakage.
+
+.include OPA391_TI_Model\OPAx391.LIB
+
+.param RX=1k
+.param RSEL=if(RX<3.16227766k,1k,if(RX<31.6227766k,10k,100k))
+.param RREF_ACT=RSEL*1.001
+.param RPATH=RREF_ACT+9.5
+.param EADC=3.973m
+
+VCC VCC 0 3.3
+
+* Nominal selected range and buffered ADC path.
+RREF_N VCC RREF_N_OUT {RREF_ACT}
+RSW_N RREF_N_OUT SENSE_N 9.5
+RX_N SENSE_N 0 {RX}
+XU_N SENSE_N OUT_N VCC 0 OUT_N OPAx391
+RISO_N OUT_N ADC_N 100
+CADC_N ADC_N 0 7p
+
+* Worst-low branch: switch leakage and MCU leakage both draw current.
+RREF_L VCC RREF_L_OUT {RREF_ACT}
+RSW_L RREF_L_OUT SENSE_L 9.5
+RX_L SENSE_L 0 {RX}
+ILEAK_L SENSE_L 0 2n
+XU_L SENSE_L OUT_L VCC 0 OUT_L OPAx391
+RISO_L OUT_L ADC_L 100
+CADC_L ADC_L 0 7p
+IADC_L ADC_L 0 1u
+
+* Worst-high branch: switch leakage and MCU leakage inject current.
+RREF_H VCC RREF_H_OUT {RREF_ACT}
+RSW_H RREF_H_OUT SENSE_H 9.5
+RX_H SENSE_H 0 {RX}
+ILEAK_H 0 SENSE_H 2n
+XU_H SENSE_H OUT_H VCC 0 OUT_H OPAx391
+RISO_H OUT_H ADC_H 100
+CADC_H ADC_H 0 7p
+IADC_H 0 ADC_H 1u
+
+* Autorange trial branch always uses the 10k channel.
+RREF_T VCC RREF_T_OUT 10.01k
+RSW_T RREF_T_OUT SENSE_T 9.5
+RX_T SENSE_T 0 {RX}
+XU_T SENSE_T OUT_T VCC 0 OUT_T OPAx391
+RISO_T OUT_T ADC_T 100
+CADC_T ADC_T 0 7p
+
+.step param RX list 100 220 470 1k 2.2k 3k 3.16227766k 3.3k 4.7k 10k 22k 30k 31.6227766k 33k 47k 100k 220k 470k 1Meg
+.temp 25
+.tran 0 50u 0 100n
+.save V(SENSE_N) V(ADC_N) V(ADC_L) V(ADC_H) V(ADC_T)
+
+.meas TRAN SELECTED_RREF PARAM RSEL
+.meas TRAN VADC_N FIND V(ADC_N) AT=50u
+.meas TRAN ADC_CODE_N PARAM V(ADC_N)*4095/3.3
+.meas TRAN TRIAL_10K_CODE PARAM V(ADC_T)*4095/3.3
+.meas TRAN RX_EST_N PARAM RPATH*V(ADC_N)/(3.3-V(ADC_N))
+.meas TRAN ERR_N_PCT PARAM 100*(RPATH*V(ADC_N)/(3.3-V(ADC_N))-RX)/RX
+
+* EADC contains conservative +/-4 LSB plus +/-750uV buffer allocation.
+.meas TRAN VADC_WORST_LOW FIND V(ADC_L) AT=50u
+.meas TRAN RX_EST_WORST_LOW PARAM RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))
+.meas TRAN ERR_WORST_LOW_PCT PARAM 100*(RPATH*(V(ADC_L)-EADC)/(3.3-(V(ADC_L)-EADC))-RX)/RX
+
+.meas TRAN VADC_WORST_HIGH FIND V(ADC_H) AT=50u
+.meas TRAN RX_EST_WORST_HIGH PARAM RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))
+.meas TRAN ERR_WORST_HIGH_PCT PARAM 100*(RPATH*(V(ADC_H)+EADC)/(3.3-(V(ADC_H)+EADC))-RX)/RX
+.end

@@ -1,0 +1,72 @@
+* SECDB - independent BJT bias and gain verification
+VCC VCC 0 3.3
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+* Existing topology: 10k base resistor forces the 2N3904 into saturation.
+RC_SAT VCC C_SAT 1k
+Q_SAT C_SAT B_SAT 0 2N3904
+RB_SAT VCC B_SAT 10k
+
+* Recommended NPN gain test: 1Meg base resistor keeps the device active.
+RC_NPN VCC C_NPN 1k
+Q_NPN C_NPN B_NPN 0 2N3904
+RB_NPN VCC B_NPN 1Meg
+
+* Artificially degraded NPN with low forward current gain.
+RC_DEG VCC C_DEG 1k
+Q_DEG C_DEG B_DEG 0 DEGRADED_NPN
+RB_DEG VCC B_DEG 1Meg
+.model DEGRADED_NPN NPN(Is=1e-14 Bf=30 Vaf=100)
+
+* Open-base approximation: 1Tohm leaves essentially no commanded base current.
+RC_OPEN VCC C_OPEN 1k
+Q_OPEN C_OPEN B_OPEN 0 2N3904
+RB_OPEN VCC B_OPEN 1T
+
+* Collector-emitter short approximation while the base test remains connected.
+RC_CES VCC C_CES 1k
+Q_CES C_CES B_CES 0 2N3904
+RB_CES VCC B_CES 1Meg
+RCE_SHORT C_CES 0 10m
+
+* PNP test: emitter at 3.3 V; base and collector return to ground.
+Q_PNP C_PNP B_PNP VCC 2N3906
+RC_PNP C_PNP 0 1k
+RB_PNP B_PNP 0 1Meg
+
+.op
+
+.meas OP SAT_VBE FIND V(B_SAT)
+.meas OP SAT_VCE FIND V(C_SAT)
+.meas OP SAT_IB FIND I(RB_SAT)
+.meas OP SAT_IC FIND I(RC_SAT)
+.meas OP SAT_FORCED_BETA PARAM I(RC_SAT)/I(RB_SAT)
+
+.meas OP NPN_VBE FIND V(B_NPN)
+.meas OP NPN_VCE FIND V(C_NPN)
+.meas OP NPN_IB FIND I(RB_NPN)
+.meas OP NPN_IC FIND I(RC_NPN)
+.meas OP NPN_HFE PARAM I(RC_NPN)/I(RB_NPN)
+
+.meas OP DEG_VBE FIND V(B_DEG)
+.meas OP DEG_VCE FIND V(C_DEG)
+.meas OP DEG_IB FIND I(RB_DEG)
+.meas OP DEG_IC FIND I(RC_DEG)
+.meas OP DEG_HFE PARAM I(RC_DEG)/I(RB_DEG)
+
+.meas OP OPEN_VBE FIND V(B_OPEN)
+.meas OP OPEN_VCE FIND V(C_OPEN)
+.meas OP OPEN_IB FIND I(RB_OPEN)
+.meas OP OPEN_IC FIND I(RC_OPEN)
+
+.meas OP CES_VBE FIND V(B_CES)
+.meas OP CES_VCE FIND V(C_CES)
+.meas OP CES_IB FIND I(RB_CES)
+.meas OP CES_IC FIND I(RC_CES)
+
+.meas OP PNP_VEB PARAM V(VCC)-V(B_PNP)
+.meas OP PNP_VEC PARAM V(VCC)-V(C_PNP)
+.meas OP PNP_IB FIND I(RB_PNP)
+.meas OP PNP_IC FIND I(RC_PNP)
+.meas OP PNP_HFE PARAM I(RC_PNP)/I(RB_PNP)
+.end

@@ -1,0 +1,33 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Active_Modes.cir
+Start Time: Sun Sep 13 02:11:42 2026
+Options:plotwinsize=0 reltol=1e-6
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+reltol = 1e-06
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.986 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5B_Shared_AFE_Active_Modes.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+
+vcal1: V(ADC_CAL1) =1.09996712208 at 2e-05
+vcal2: V(ADC_CAL2) =2.19997692108 at 2e-05
+code_cal1: V(ADC_CAL1)*4095/3.3=1364.95920149
+code_cal2: V(ADC_CAL2)*4095/3.3=2729.97136116
+diode_vf: V(ADC_DA)-V(ADC_DB)=0.600192904472
+diode_if: (3.3-V(DIO_A))/RLEG=0.0012844038055
+n_vbe: V(ADC_NB)-V(ADC_NE)=0.651446662843
+n_vce: V(ADC_NC)-V(ADC_NE)=2.38358350843
+n_vcb: V(ADC_NC)-V(ADC_NB)=1.73213684559
+n_hfe: ((3.3-V(ADC_NC))/RCOL)/((3.3-V(ADC_NB))/RBASE)=301.346975935
+p_veb: V(ADC_PE)-V(ADC_PB)=0.64151096344
+p_vec: V(ADC_PE)-V(ADC_PC)=2.67458999157
+p_vbc: V(ADC_PB)-V(ADC_PC)=2.03307902813
+p_hfe: (V(ADC_PC)/RCOL)/(V(ADC_PB)/RBASE)=201.922229593

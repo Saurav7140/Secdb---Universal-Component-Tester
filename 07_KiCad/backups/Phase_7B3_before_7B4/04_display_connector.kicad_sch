@@ -1,0 +1,23 @@
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "7a000000-0000-4000-8000-000000004001")
+  (paper "A3")
+  (title_block
+    (title "SECDB — 04 Display Connector")
+    (date "2026-09-13")
+    (rev "Phase 7A")
+    (company "Final-year ECE project")
+    (comment 1 "Hierarchy placeholder — detailed capture not started")
+    (comment 2 "Frozen board-side header order: GND, 3V3_D, SCK, MOSI, CS, DC, RST, BL")
+  )
+  (lib_symbols)
+  (text "PHASE 7A PLACEHOLDER\nPlanned J_TFT pin order: 1 GND, 2 3V3_D, 3 TFT_SCK, 4 TFT_MOSI, 5 TFT_CS, 6 TFT_DC, 7 TFT_RST, 8 TFT_BL."
+    (exclude_from_sim no)
+    (at 30.48 35.56 0)
+    (effects (font (size 1.5 1.5)) (justify left))
+    (uuid "7a000000-0000-4000-8000-000000004101")
+  )
+  (sheet_instances (path "/" (page "5")))
+  (embedded_fonts no)
+)

@@ -1,0 +1,102 @@
+item_type,net,role,layer,width_mm,start_x_mm,start_y_mm,end_x_mm,end_y_mm,via_diameter_mm,via_drill_mm
+track,USB_CC1,USB-C CC1 connector escape,F.Cu,0.200,27.355,41.750,26.000,41.750,,
+track,USB_CC1,USB-C CC1 connector escape,F.Cu,0.200,26.000,41.750,25.800,41.200,,
+via,USB_CC1,USB-C CC1 crossover via,F.Cu-B.Cu,,25.800,41.200,,,0.450,0.200
+track,USB_CC1,USB-C CC1 VBUS crossover,B.Cu,0.200,25.800,41.200,29.500,40.400,,
+via,USB_CC1,USB-C CC1 pull-down-side via,F.Cu-B.Cu,,29.500,40.400,,,0.450,0.200
+track,USB_CC1,USB-C CC1 pull-down,F.Cu,0.200,29.500,40.400,30.000,40.413,,
+track,USB_CC2,USB-C CC2 connector escape,F.Cu,0.200,27.355,44.750,25.800,44.750,,
+via,USB_CC2,USB-C CC2 crossover via,F.Cu-B.Cu,,25.800,44.750,,,0.450,0.200
+track,USB_CC2,USB-C CC2 VBUS crossover,B.Cu,0.200,25.800,44.750,29.500,44.900,,
+via,USB_CC2,USB-C CC2 pull-down-side via,F.Cu-B.Cu,,29.500,44.900,,,0.450,0.200
+track,USB_CC2,USB-C CC2 pull-down,F.Cu,0.200,29.500,44.900,30.000,44.913,,
+track,GND,CC1 pull-down ground return,F.Cu,0.200,30.000,38.587,31.200,38.600,,
+via,GND,CC1 pull-down ground return,F.Cu-B.Cu,,31.200,38.600,,,0.600,0.300
+track,GND,CC2 pull-down ground return,F.Cu,0.200,30.000,43.087,31.750,43.000,,
+track,USB_DP_CONN,USB-C D+ A6 escape,F.Cu,0.200,27.355,42.750,24.200,42.750,,
+via,USB_DP_CONN,USB-C D+ A6 breakout via,F.Cu-B.Cu,,24.200,42.750,,,0.450,0.200
+track,USB_DP_CONN,USB-C D+ B6 escape,F.Cu,0.200,27.355,43.750,24.200,43.750,,
+via,USB_DP_CONN,USB-C D+ B6 breakout via,F.Cu-B.Cu,,24.200,43.750,,,0.450,0.200
+track,USB_DP_CONN,USB-C D+ reversible-pad join,B.Cu,0.200,24.200,42.750,24.000,42.750,,
+track,USB_DP_CONN,USB-C D+ reversible-pad join,B.Cu,0.200,24.000,42.750,24.000,43.750,,
+track,USB_DP_CONN,USB-C D+ reversible-pad join,B.Cu,0.200,24.000,43.750,24.200,43.750,,
+track,USB_DP_CONN,USB-C D+ upper crossover lane,B.Cu,0.200,24.000,43.250,24.000,37.200,,
+track,USB_DP_CONN,USB-C D+ upper crossover lane,B.Cu,0.200,24.000,37.200,32.000,37.200,,
+track,USB_DP_CONN,USB-C D+ upper crossover lane,B.Cu,0.200,32.000,37.200,32.000,41.200,,
+via,USB_DP_CONN,USB-C D+ ESD-side return via,F.Cu-B.Cu,,32.000,41.200,,,0.600,0.300
+track,USB_DP_CONN,USB-C D+ to ESD array,F.Cu,0.200,32.000,41.200,32.862,42.050,,
+track,USB_DM_CONN,USB-C D- B7 escape,F.Cu,0.200,27.355,42.250,25.000,42.250,,
+via,USB_DM_CONN,USB-C D- B7 breakout via,F.Cu-B.Cu,,25.000,42.250,,,0.450,0.200
+track,USB_DM_CONN,USB-C D- A7 escape,F.Cu,0.200,27.355,43.250,25.000,43.250,,
+via,USB_DM_CONN,USB-C D- A7 breakout via,F.Cu-B.Cu,,25.000,43.250,,,0.450,0.200
+track,USB_DM_CONN,USB-C D- reversible-pad join,B.Cu,0.200,25.000,42.250,26.000,42.250,,
+track,USB_DM_CONN,USB-C D- reversible-pad join,B.Cu,0.200,26.000,42.250,26.000,43.250,,
+track,USB_DM_CONN,USB-C D- reversible-pad join,B.Cu,0.200,26.000,43.250,25.000,43.250,,
+track,USB_DM_CONN,USB-C D- lower crossover lane,B.Cu,0.200,26.000,42.750,24.500,44.250,,
+track,USB_DM_CONN,USB-C D- lower crossover lane,B.Cu,0.200,24.500,44.250,24.500,49.000,,
+track,USB_DM_CONN,USB-C D- lower crossover lane,B.Cu,0.200,24.500,49.000,31.000,49.000,,
+track,USB_DM_CONN,USB-C D- lower crossover lane,B.Cu,0.200,31.000,49.000,31.000,45.000,,
+via,USB_DM_CONN,USB-C D- ESD-side return via,F.Cu-B.Cu,,31.000,45.000,,,0.600,0.300
+track,USB_DM_CONN,USB-C D- to ESD array,F.Cu,0.200,31.000,45.000,32.862,43.950,,
+track,USB_DP_ESD,Protected USB D+ launch,F.Cu,0.200,35.138,42.050,34.500,40.500,,
+via,USB_DP_ESD,Protected USB D+ launch via,F.Cu-B.Cu,,34.500,40.500,,,0.600,0.300
+track,USB_DP_ESD,Protected USB D+ perimeter lane,B.Cu,0.200,34.500,40.500,41.500,45.000,,
+track,USB_DP_ESD,Protected USB D+ perimeter lane,B.Cu,0.200,41.500,45.000,41.500,74.000,,
+track,USB_DP_ESD,Protected USB D+ perimeter lane,B.Cu,0.200,41.500,74.000,79.000,74.000,,
+track,USB_DP_ESD,Protected USB D+ perimeter lane,B.Cu,0.200,79.000,74.000,79.000,63.000,,
+via,USB_DP_ESD,Protected USB D+ resistor-side via,F.Cu-B.Cu,,79.000,63.000,,,0.600,0.300
+track,USB_DP_ESD,Protected USB D+ series-resistor neck-down,F.Cu,0.200,79.000,63.000,77.912,64.000,,
+track,USB_DM_ESD,Protected USB D- launch,F.Cu,0.200,35.138,43.950,34.500,45.500,,
+via,USB_DM_ESD,Protected USB D- launch via,F.Cu-B.Cu,,34.500,45.500,,,0.600,0.300
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,34.500,45.500,34.500,48.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,34.500,48.000,40.500,48.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,40.500,48.000,40.500,75.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,40.500,75.000,50.000,75.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,50.000,75.000,50.000,76.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,50.000,76.000,52.000,76.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,52.000,76.000,52.000,75.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,52.000,75.000,80.000,75.000,,
+track,USB_DM_ESD,Protected USB D- perimeter lane with length trim,B.Cu,0.200,80.000,75.000,80.000,66.750,,
+via,USB_DM_ESD,Protected USB D- resistor-side via,F.Cu-B.Cu,,80.000,66.750,,,0.600,0.300
+track,USB_DM_ESD,Protected USB D- series-resistor neck-down,F.Cu,0.200,80.000,66.750,77.912,66.750,,
+track,USB_DP_MCU,USB D+ MCU stub,F.Cu,0.200,76.088,64.000,74.500,64.000,,
+track,USB_DP_MCU,USB D+ MCU stub,F.Cu,0.200,74.500,64.000,72.800,64.750,,
+track,USB_DP_MCU,USB D+ MCU stub,F.Cu,0.200,72.800,64.750,71.950,64.750,,
+track,USB_DM_MCU,USB D- MCU stub,F.Cu,0.200,76.088,66.750,74.500,66.750,,
+track,USB_DM_MCU,USB D- MCU stub,F.Cu,0.200,74.500,66.750,72.800,65.250,,
+track,USB_DM_MCU,USB D- MCU stub,F.Cu,0.200,72.800,65.250,71.950,65.250,,
+via,GND,VDDA bulk-capacitor via-in-pad ground return,F.Cu-B.Cu,,63.000,66.638,,,0.600,0.300
+track,HSE_IN,STM32 HSE input escape,F.Cu,0.200,65.050,65.250,64.000,65.250,,
+track,HSE_IN,STM32 HSE input escape,F.Cu,0.200,64.000,65.250,64.000,64.500,,
+via,HSE_IN,HSE input inner via,F.Cu-B.Cu,,64.000,64.500,,,0.600,0.300
+track,HSE_IN,HSE input power/ADC crossover,B.Cu,0.200,64.000,64.500,65.500,66.000,,
+track,HSE_IN,HSE input power/ADC crossover,B.Cu,0.200,65.500,66.000,65.500,68.500,,
+track,HSE_IN,HSE input power/ADC crossover,B.Cu,0.200,65.500,68.500,58.500,68.500,,
+via,HSE_IN,HSE input HSE-output-crossover entry,F.Cu-B.Cu,,58.500,68.500,,,0.600,0.300
+track,HSE_IN,HSE input HSE-output crossover,F.Cu,0.200,58.500,68.500,56.500,68.500,,
+via,HSE_IN,HSE input HSE-output-crossover return,F.Cu-B.Cu,,56.500,68.500,,,0.600,0.300
+track,HSE_IN,HSE input crystal-side lower route,B.Cu,0.200,56.500,68.500,53.000,67.500,,
+via,HSE_IN,HSE input crystal-side return via,F.Cu-B.Cu,,53.000,67.500,,,0.600,0.300
+track,HSE_IN,HSE input crystal connection,F.Cu,0.200,53.000,67.500,50.750,65.000,,
+track,HSE_IN,HSE input load-capacitor branch,F.Cu,0.200,50.750,65.000,48.200,67.000,,
+track,HSE_IN,HSE input load-capacitor branch,F.Cu,0.200,48.200,67.000,49.138,69.500,,
+track,HSE_XTAL_OUT,HSE crystal output load branch,F.Cu,0.200,59.250,65.000,59.250,67.000,,
+track,HSE_XTAL_OUT,HSE crystal output load branch,F.Cu,0.200,59.250,67.000,57.000,67.000,,
+track,HSE_XTAL_OUT,HSE crystal output load branch,F.Cu,0.200,57.000,67.000,54.138,69.500,,
+track,HSE_XTAL_OUT,HSE crystal output to damping resistor,F.Cu,0.200,59.250,67.000,60.000,68.000,,
+track,HSE_XTAL_OUT,HSE crystal output to damping resistor,F.Cu,0.200,60.000,68.000,60.000,71.400,,
+track,HSE_XTAL_OUT,HSE crystal output to damping resistor,F.Cu,0.200,60.000,71.400,61.500,71.412,,
+track,HSE_OUT,Damped HSE output escape,F.Cu,0.200,61.500,69.588,62.500,70.500,,
+via,HSE_OUT,Damped HSE output lower via,F.Cu-B.Cu,,62.500,70.500,,,0.600,0.300
+track,HSE_OUT,Damped HSE output lower bypass,B.Cu,0.200,62.500,70.500,57.500,70.500,,
+track,HSE_OUT,Damped HSE output lower bypass,B.Cu,0.200,57.500,70.500,57.500,62.500,,
+via,HSE_OUT,Damped HSE ADC-crossover entry,F.Cu-B.Cu,,57.500,62.500,,,0.600,0.300
+track,HSE_OUT,Damped HSE ADC crossover,F.Cu,0.200,57.500,62.500,61.000,62.500,,
+via,HSE_OUT,Damped HSE ADC-crossover return,F.Cu-B.Cu,,61.000,62.500,,,0.600,0.300
+track,HSE_OUT,Damped HSE MCU approach,B.Cu,0.200,61.000,62.500,63.800,65.750,,
+via,HSE_OUT,Damped HSE output MCU-side fine via,F.Cu-B.Cu,,63.800,65.750,,,0.450,0.200
+track,HSE_OUT,Damped HSE output to STM32,F.Cu,0.200,63.800,65.750,65.050,65.750,,
+track,GND,HSE input load-capacitor ground,F.Cu,0.200,50.862,69.500,50.860,71.000,,
+via,GND,HSE input load-capacitor ground,F.Cu-B.Cu,,50.860,71.000,,,0.600,0.300
+track,GND,HSE output load-capacitor ground,F.Cu,0.200,55.862,69.500,55.860,71.000,,
+via,GND,HSE output load-capacitor ground,F.Cu-B.Cu,,55.860,71.000,,,0.600,0.300

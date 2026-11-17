@@ -1,0 +1,152 @@
+Block,Reference,Pin_or_terminal,Net,Required_connection_or_note
+MCU,U1,1 VBAT,3V3_D,Tie to VDD because no backup battery; C_VBAT 100nF to GND
+MCU,U1,2 PC13,BTN_MODE,10k pullup to 3V3_D and active-low button to GND
+MCU,U1,3 PC14,BTN_UP,10k pullup to 3V3_D and active-low button to GND; no LSE crystal
+MCU,U1,4 PC15,BTN_DOWN,10k pullup to 3V3_D and active-low button to GND; no LSE crystal
+MCU,U1,5 PH0-OSC_IN,HSE_IN,Y1 pin 1 and 30pF C0G to GND
+MCU,U1,6 PH1-OSC_OUT,HSE_OUT,Through fitted 0ohm R_HSE to Y1 pin 2; crystal-side node has 30pF C0G to GND
+MCU,U1,7 NRST,NRST,10k pullup to 3V3_D; 100nF to GND; reset button to GND; SWD header
+MCU,U1,8 VSSA-VREF-,GND,Direct connection to continuous ground plane beside VDDA decoupling
+MCU,U1,9 VDDA-VREF+,3V3_A,After FB_A; local 1uF plus 100nF to GND
+MCU,U1,10 PA0,ADC_BUFFERED,ADC1_IN0 only; no digital output use
+MCU,U1,11 PA1,BJT_E_GPIO,Through R_BE 100ohm to BJT_E
+MCU,U1,12 PA2,BJT_B_GPIO,Through R_BB 1Mohm to BJT_B
+MCU,U1,13 PA3,BJT_C_GPIO,Through R_BC 1kohm to BJT_C
+MCU,U1,14 PA4,TFT_CS,SPI display chip select
+MCU,U1,15 PA5,TFT_SCK,SPI1_SCK
+MCU,U1,16 PA6,DIODE_A_GPIO,Through R_DA 1kohm to DIODE_A
+MCU,U1,17 PA7,TFT_MOSI,SPI1_MOSI
+MCU,U1,18 PB0,TFT_RST,Display reset
+MCU,U1,19 PB1,TFT_DC,Display data-command select
+MCU,U1,20 PB2,NC_SPARE,Leave unconnected with copper test pad optional; firmware analog no-pull
+MCU,U1,21 PB10,SRC_A0,U2 TMUX1104 pin 1 plus 100k pulldown
+MCU,U1,22 VCAP_1,VCAP_1,4.7uF low-ESR X7R directly to GND; no other load
+MCU,U1,23 VSS,GND,Ground plane
+MCU,U1,24 VDD,3V3_D,100nF directly to pin
+MCU,U1,25 PB12,SRC_EN,U2 TMUX1104 pin 5 plus 100k pulldown
+MCU,U1,26 PB13,SNS_A0,U3 TMUX1108 pin 1 plus 100k pulldown
+MCU,U1,27 PB14,SNS_A1,U3 TMUX1108 pin 16 plus 100k pulldown
+MCU,U1,28 PB15,SNS_A2,U3 TMUX1108 pin 15 plus 100k pulldown
+MCU,U1,29 PA8,SRC_A1,U2 TMUX1104 pin 10 plus 100k pulldown; replaces unavailable PB11
+MCU,U1,30 PA9,USB_VBUS_SENSE,From USB_VBUS_FUSED through R_VBUS 1kohm; configure OTG_FS_VBUS no pull
+MCU,U1,31 PA10,DIODE_B_GPIO,Through R_DB 1kohm to DIODE_B; USB ID function unused in device-only design
+MCU,U1,32 PA11,USB_DM_MCU,From R_USB_DM 22ohm; OTG_FS_DM
+MCU,U1,33 PA12,USB_DP_MCU,From R_USB_DP 22ohm; OTG_FS_DP
+MCU,U1,34 PA13,SWDIO,SWD header; do not place a heavy load
+MCU,U1,35 VSS,GND,Ground plane
+MCU,U1,36 VDD,3V3_D,100nF directly to pin
+MCU,U1,37 PA14,SWCLK,SWD header; do not place a heavy load
+MCU,U1,38 PA15,NC_SPARE,Leave unconnected with copper test pad optional; firmware analog no-pull
+MCU,U1,39 PB3,NC_SPARE,Leave unconnected; firmware analog no-pull
+MCU,U1,40 PB4,NC_SPARE,Leave unconnected; firmware analog no-pull
+MCU,U1,41 PB5,NC_SPARE,Leave unconnected; firmware analog no-pull
+MCU,U1,42 PB6,NC_SPARE,Leave unconnected; firmware analog no-pull
+MCU,U1,43 PB7,NC_SPARE,Leave unconnected; firmware analog no-pull
+MCU,U1,44 PB8,STATUS_LED,Through R_LED 1kohm and LED to GND
+MCU,U1,45 BOOT0,BOOT0,10k pulldown to GND plus labelled service test pad
+MCU,U1,46 PB9,SNS_EN,U3 TMUX1108 pin 2 plus 100k pulldown
+MCU,U1,47 VSS,GND,Ground plane
+MCU,U1,48 VDD,3V3_D,100nF directly to pin
+MCU,U1,Exposed pad,GND,Solder entire pad to GND with thermal-via array; never leave floating
+Source_mux,U2 TMUX1104DGSR,1 A0,SRC_A0,From U1 PB10 with 100k pulldown
+Source_mux,U2 TMUX1104DGSR,2 S1,SRC_1K,From 3V3_A through R_REF_1K 1k 0.1%
+Source_mux,U2 TMUX1104DGSR,3 GND,GND,Ground plane
+Source_mux,U2 TMUX1104DGSR,4 S3,SRC_100K,From 3V3_A through R_REF_100K 100k 0.1%
+Source_mux,U2 TMUX1104DGSR,5 EN,SRC_EN,From U1 PB12 with 100k pulldown
+Source_mux,U2 TMUX1104DGSR,6 VDD,3V3_A,100nF to GND at pins 6 and 3
+Source_mux,U2 TMUX1104DGSR,7 S4,SRC_DISCHARGE,To GND through R_DIS 1k 0.1%
+Source_mux,U2 TMUX1104DGSR,8 D,RC_INTERNAL,Through R_RC_GUARD 330ohm 0.1% to RC_SOCKET
+Source_mux,U2 TMUX1104DGSR,9 S2,SRC_10K,From 3V3_A through R_REF_10K 10k 0.1%
+Source_mux,U2 TMUX1104DGSR,10 A1,SRC_A1,From U1 PA8 with 100k pulldown
+Sense_mux,U3 TMUX1108PWR,1 A0,SNS_A0,From U1 PB13 with 100k pulldown
+Sense_mux,U3 TMUX1108PWR,2 EN,SNS_EN,From U1 PB9 with 100k pulldown
+Sense_mux,U3 TMUX1108PWR,3 VSS,GND,Single-supply negative rail
+Sense_mux,U3 TMUX1108PWR,4 S1,SNS_RC,From RC_SOCKET through R_SNS1 1k
+Sense_mux,U3 TMUX1108PWR,5 S2,SNS_DIODE_A,From DIODE_A through R_SNS2 1k
+Sense_mux,U3 TMUX1108PWR,6 S3,SNS_DIODE_B,From DIODE_B through R_SNS3 1k
+Sense_mux,U3 TMUX1108PWR,7 S4,SNS_BJT_E,From BJT_E through R_SNS4 1k
+Sense_mux,U3 TMUX1108PWR,8 D,SENSE_COM,To U4 OPA391 pin 3 noninverting input
+Sense_mux,U3 TMUX1108PWR,9 S8,SNS_CAL_2V2,From CAL_2V2 through R_SNS8 1k
+Sense_mux,U3 TMUX1108PWR,10 S7,SNS_CAL_1V1,From CAL_1V1 through R_SNS7 1k
+Sense_mux,U3 TMUX1108PWR,11 S6,SNS_BJT_C,From BJT_C through R_SNS6 1k
+Sense_mux,U3 TMUX1108PWR,12 S5,SNS_BJT_B,From BJT_B through R_SNS5 1k
+Sense_mux,U3 TMUX1108PWR,13 VDD,3V3_A,100nF to GND at pins 13 and 14
+Sense_mux,U3 TMUX1108PWR,14 GND,GND,Ground plane
+Sense_mux,U3 TMUX1108PWR,15 A2,SNS_A2,From U1 PB15 with 100k pulldown
+Sense_mux,U3 TMUX1108PWR,16 A1,SNS_A1,From U1 PB14 with 100k pulldown
+Buffer,U4 OPA391DBVR,1 OUT,OPA_OUT,Tie to pin 4 and R_ADC input
+Buffer,U4 OPA391DBVR,2 V-,GND,Ground plane
+Buffer,U4 OPA391DBVR,3 +IN,SENSE_COM,From U3 pin 8
+Buffer,U4 OPA391DBVR,4 -IN,OPA_OUT,Unity-gain feedback directly to pin 1
+Buffer,U4 OPA391DBVR,5 V+,3V3_A,100nF to GND at pins 5 and 2
+ADC_filter,R_ADC,1-2,OPA_OUT to ADC_BUFFERED,100ohm 1% placed at U4 output
+ADC_filter,C_ADC,1-2,ADC_BUFFERED to GND,1nF C0G placed at U1 PA0
+LDO,U5 AP2112K-3.3TRG1,1 VIN,LDO_IN,10uF plus 100nF to GND
+LDO,U5 AP2112K-3.3TRG1,2 GND,GND,Ground plane
+LDO,U5 AP2112K-3.3TRG1,3 EN,LDO_IN,Tie high for always-on operation
+LDO,U5 AP2112K-3.3TRG1,4 NC,NC,No connection and no copper test point
+LDO,U5 AP2112K-3.3TRG1,5 VOUT,3V3_D,10uF plus 100nF to GND
+Power_input,F1 MF-MSMF050-2,1-2,USB_VBUS_RAW to USB_VBUS_FUSED,Place immediately after connector VBUS pins
+Power_input,D_TVS SMBJ5.0A-TR,A-K,GND to USB_VBUS_FUSED,Unidirectional TVS anode to GND and cathode to fused VBUS
+Power_input,D_PWR B5819W,A-K,USB_VBUS_FUSED to 5V_DIODE,Series reverse-polarity Schottky
+Power_input,FB_PWR BLM21PG221SN1D,1-2,5V_DIODE to LDO_IN,Input EMI bead
+Power_split,FB_A BLM21PG221SN1D,1-2,3V3_D to 3V3_A,Keep analog loads and decoupling on 3V3_A side
+Calibration,R_CAL1,1-2,3V3_A to CAL_2V2,10k 0.1% 25ppm
+Calibration,R_CAL2,1-2,CAL_2V2 to CAL_1V1,10k 0.1% 25ppm
+Calibration,R_CAL3,1-2,CAL_1V1 to GND,10k 0.1% 25ppm
+R_C_socket,J_RC,1,RC_SOCKET,Upper labelled R-C terminal
+R_C_socket,J_RC,2,GND,Lower labelled R-C terminal
+R_C_socket,R_RC_GUARD,1-2,RC_INTERNAL to RC_SOCKET,330ohm 0.1% calibrated source-path guard
+Diode_socket,J_DIODE,1,DIODE_A,Label A
+Diode_socket,J_DIODE,2,DIODE_B,Label B
+Diode_drive,R_DA,1-2,DIODE_A_GPIO to DIODE_A,1k 0.1%
+Diode_drive,R_DB,1-2,DIODE_B_GPIO to DIODE_B,1k 0.1%
+BJT_socket,J_BJT,1,BJT_E,Label E
+BJT_socket,J_BJT,2,BJT_B,Label B
+BJT_socket,J_BJT,3,BJT_C,Label C
+BJT_drive,R_BE,1-2,BJT_E_GPIO to BJT_E,100ohm 1%
+BJT_drive,R_BB,1-2,BJT_B_GPIO to BJT_B,1Mohm 0.1%
+BJT_drive,R_BC,1-2,BJT_C_GPIO to BJT_C,1k 0.1%
+Socket_ESD,ESD1 TPD4E1B06DCKR,1 IO1,RC_SOCKET,Place beside J_RC
+Socket_ESD,ESD1 TPD4E1B06DCKR,2 IO2,DIODE_A,Place beside J_DIODE
+Socket_ESD,ESD1 TPD4E1B06DCKR,3 GND,GND,Very short trace plus nearby ground via
+Socket_ESD,ESD1 TPD4E1B06DCKR,4 IO3,DIODE_B,Place beside J_DIODE
+Socket_ESD,ESD1 TPD4E1B06DCKR,5 IO4,BJT_E,Place beside J_BJT
+Socket_ESD,ESD1 TPD4E1B06DCKR,6 NC,NC,Leave unconnected
+Socket_ESD,ESD2 TPD4E1B06DCKR,1 IO1,BJT_B,Place beside J_BJT
+Socket_ESD,ESD2 TPD4E1B06DCKR,2 IO2,BJT_C,Place beside J_BJT
+Socket_ESD,ESD2 TPD4E1B06DCKR,3 GND,GND,Very short trace plus nearby ground via
+Socket_ESD,ESD2 TPD4E1B06DCKR,4 IO3,NC_ESD_SPARE,Leave unconnected
+Socket_ESD,ESD2 TPD4E1B06DCKR,5 IO4,NC_ESD_SPARE,Leave unconnected
+Socket_ESD,ESD2 TPD4E1B06DCKR,6 NC,NC,Leave unconnected
+USB,J_USB USB4105-GF-A,A4-A9-B4-B9,USB_VBUS_RAW,Tie all four VBUS contacts together with wide copper
+USB,J_USB USB4105-GF-A,A1-A12-B1-B12,GND,Tie all four GND contacts together
+USB,J_USB USB4105-GF-A,A5,USB_CC1,5.1k 1% to GND
+USB,J_USB USB4105-GF-A,B5,USB_CC2,5.1k 1% to GND
+USB,J_USB USB4105-GF-A,A6-B6,USB_DP_CONN,Tie duplicate D+ contacts together close to connector
+USB,J_USB USB4105-GF-A,A7-B7,USB_DM_CONN,Tie duplicate D- contacts together close to connector
+USB,J_USB USB4105-GF-A,Shield_stakes,GND,Direct wide connection to ground plane with stitching vias
+USB_ESD,ESD_USB USBLC6-2SC6,1 IO1,USB_DP_CONN,Connector side D+
+USB_ESD,ESD_USB USBLC6-2SC6,2 GND,GND,Short connection and nearby via
+USB_ESD,ESD_USB USBLC6-2SC6,3 IO2,USB_DM_CONN,Connector side D-
+USB_ESD,ESD_USB USBLC6-2SC6,4 IO2,USB_DM_ESD,System side D-
+USB_ESD,ESD_USB USBLC6-2SC6,5 VBUS,USB_VBUS_FUSED,100nF local bypass recommended by ST layout
+USB_ESD,ESD_USB USBLC6-2SC6,6 IO1,USB_DP_ESD,System side D+
+USB_data,R_USB_DP,1-2,USB_DP_ESD to USB_DP_MCU,22ohm close to U1 PA12
+USB_data,R_USB_DM,1-2,USB_DM_ESD to USB_DM_MCU,22ohm close to U1 PA11
+Clock,Y1 ABLS-8.000MHZ-B2-T,1,HSE_IN,Direct to U1 PH0
+Clock,Y1 ABLS-8.000MHZ-B2-T,2,HSE_XTAL_OUT,To R_HSE and 30pF to GND
+Clock,R_HSE,1-2,HSE_OUT to HSE_XTAL_OUT,Fit 0ohm initially
+Display,J_TFT,1,GND,Board-defined keyed 1x8 header
+Display,J_TFT,2,3V3_D,10uF plus 100nF local at header
+Display,J_TFT,3,TFT_SCK,From U1 PA5
+Display,J_TFT,4,TFT_MOSI,From U1 PA7
+Display,J_TFT,5,TFT_CS,From U1 PA4
+Display,J_TFT,6,TFT_DC,From U1 PB1
+Display,J_TFT,7,TFT_RST,From U1 PB0
+Display,J_TFT,8,TFT_BL,To 3V3_D through fitted 0ohm link; confirm module has backlight resistor
+Debug,J_SWD,1,3V3_D,Target-voltage reference only; do not back-power board unless intentionally jumpered
+Debug,J_SWD,2,SWDIO,From U1 PA13
+Debug,J_SWD,3,GND,Ground
+Debug,J_SWD,4,SWCLK,From U1 PA14
+Debug,J_SWD,5,NRST,From U1 NRST

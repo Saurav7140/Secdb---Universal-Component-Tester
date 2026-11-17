@@ -1,0 +1,4 @@
+option,scope,cost_impact,design_impact,recommendation
+Coordinated two-layer local re-fan,"Rip up and reroute selected short MCU-side USB, MUX, clock, ADC, and VDDA copper",Low,"Moderate layout change; placements and long USB pair retained",Recommended first
+Four-layer conversion,"Add internal ground and signal/power layers and define a fabrication stack-up",Medium to high,"Board rules and USB impedance must be revalidated",Best electrical margin
+Schematic pin-remap ECO,"Reassign suitable MCU GPIO/ADC pins and update firmware mapping",Low hardware cost,"Returns to schematic and firmware interface design",Best if local re-fan still fails

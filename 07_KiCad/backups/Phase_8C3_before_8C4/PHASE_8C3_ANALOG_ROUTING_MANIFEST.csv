@@ -1,0 +1,129 @@
+item_type,net,role,layer,width_mm,start_x_mm,start_y_mm,end_x_mm,end_y_mm,via_diameter_mm,via_drill_mm
+track,GND,Source-MUX ground return moved for signal fanout,F.Cu,0.200,57.900,43.500,53.800,43.500,,
+via,GND,Source-MUX ground return moved for signal fanout,F.Cu-B.Cu,,53.800,43.500,,,0.600,0.300
+track,SRC_1K,1k precision-source selection,F.Cu,0.200,57.900,43.000,55.000,43.000,,
+track,SRC_1K,1k precision-source selection,F.Cu,0.200,55.000,43.000,55.000,40.000,,
+track,SRC_1K,1k precision-source selection,F.Cu,0.200,55.000,40.000,55.500,37.000,,
+track,SRC_10K,10k precision-source selection,F.Cu,0.200,62.100,43.000,63.100,43.000,,
+track,SRC_10K,10k precision-source selection,F.Cu,0.200,63.100,43.000,63.100,39.800,,
+track,SRC_10K,10k precision-source selection,F.Cu,0.200,63.100,39.800,61.800,38.500,,
+track,SRC_10K,10k precision-source selection,F.Cu,0.200,61.800,38.500,60.500,37.000,,
+track,SRC_100K,100k source upper approach,F.Cu,0.250,65.500,37.000,65.500,40.500,,
+via,SRC_100K,100k source upper via,F.Cu-B.Cu,,65.500,40.500,,,0.600,0.300
+track,SRC_100K,100k source supply crossover,B.Cu,0.250,65.500,40.500,65.500,46.500,,
+via,SRC_100K,100k source lower via,F.Cu-B.Cu,,65.500,46.500,,,0.600,0.300
+track,SRC_100K,100k precision-source selection,F.Cu,0.200,65.500,46.500,54.800,46.500,,
+track,SRC_100K,100k precision-source selection,F.Cu,0.200,54.800,46.500,54.800,44.000,,
+track,SRC_100K,100k precision-source selection,F.Cu,0.200,54.800,44.000,57.900,44.000,,
+track,SNS_RC,R/C Kelvin sense to MUX,F.Cu,0.200,74.912,39.500,75.000,40.000,,
+track,SNS_RC,R/C Kelvin sense to MUX,F.Cu,0.200,75.000,40.000,76.000,41.000,,
+track,SNS_RC,R/C Kelvin sense to MUX,F.Cu,0.200,76.000,41.000,79.000,41.000,,
+track,SNS_RC,R/C Kelvin sense to MUX,F.Cu,0.200,79.000,41.000,79.000,44.675,,
+track,SNS_RC,R/C Kelvin sense to MUX,F.Cu,0.200,79.000,44.675,84.138,44.675,,
+track,SNS_DIODE_A,Diode-A sense source escape,F.Cu,0.200,78.912,39.500,79.000,40.000,,
+track,SNS_DIODE_A,Diode-A sense source escape,F.Cu,0.200,79.000,40.000,79.500,40.500,,
+via,SNS_DIODE_A,Diode-A sense source via,F.Cu-B.Cu,,79.500,40.500,,,0.600,0.300
+track,SNS_DIODE_A,Diode-A sense B.Cu fanout,B.Cu,0.200,79.500,40.500,78.000,42.000,,
+track,SNS_DIODE_A,Diode-A sense B.Cu fanout,B.Cu,0.200,78.000,42.000,78.000,45.325,,
+track,SNS_DIODE_A,Diode-A sense B.Cu fanout,B.Cu,0.200,78.000,45.325,82.000,45.325,,
+via,SNS_DIODE_A,Diode-A sense MUX via,F.Cu-B.Cu,,82.000,45.325,,,0.600,0.300
+track,SNS_DIODE_A,Diode-A MUX neck-down,F.Cu,0.200,82.000,45.325,84.138,45.325,,
+track,SNS_DIODE_B,Diode-B sense source escape,F.Cu,0.200,82.912,39.500,83.000,40.000,,
+track,SNS_DIODE_B,Diode-B sense source escape,F.Cu,0.200,83.000,40.000,83.000,41.000,,
+via,SNS_DIODE_B,Diode-B sense source via,F.Cu-B.Cu,,83.000,41.000,,,0.600,0.300
+track,SNS_DIODE_B,Diode-B sense B.Cu fanout,B.Cu,0.200,83.000,41.000,84.000,42.000,,
+track,SNS_DIODE_B,Diode-B sense B.Cu fanout,B.Cu,0.200,84.000,42.000,84.000,44.800,,
+track,SNS_DIODE_B,Diode-B sense B.Cu fanout,B.Cu,0.200,84.000,44.800,82.500,45.975,,
+via,SNS_DIODE_B,Diode-B sense MUX via,F.Cu-B.Cu,,82.500,45.975,,,0.600,0.300
+track,SNS_DIODE_B,Diode-B MUX neck-down,F.Cu,0.200,82.500,45.975,84.138,45.975,,
+track,SNS_BJT_E,BJT-emitter sense source escape,F.Cu,0.200,86.912,39.500,87.500,40.100,,
+track,SNS_BJT_E,BJT-emitter sense source escape,F.Cu,0.200,87.500,40.100,87.500,41.500,,
+via,SNS_BJT_E,BJT-emitter sense source via,F.Cu-B.Cu,,87.500,41.500,,,0.600,0.300
+track,SNS_BJT_E,BJT-emitter sense B.Cu fanout,B.Cu,0.200,87.500,41.500,88.000,42.000,,
+track,SNS_BJT_E,BJT-emitter sense B.Cu fanout,B.Cu,0.200,88.000,42.000,88.000,46.625,,
+track,SNS_BJT_E,BJT-emitter sense B.Cu fanout,B.Cu,0.200,88.000,46.625,82.000,46.625,,
+via,SNS_BJT_E,BJT-emitter sense MUX via,F.Cu-B.Cu,,82.000,46.625,,,0.600,0.300
+track,SNS_BJT_E,BJT-emitter MUX neck-down,F.Cu,0.200,82.000,46.625,84.138,46.625,,
+track,SNS_BJT_B,BJT-base sense source escape,F.Cu,0.200,90.912,39.500,90.900,40.800,,
+via,SNS_BJT_B,BJT-base sense source via,F.Cu-B.Cu,,90.900,40.800,,,0.600,0.300
+track,SNS_BJT_B,BJT-base sense B.Cu fanout,B.Cu,0.200,90.900,40.800,90.500,45.325,,
+via,SNS_BJT_B,BJT-base sense MUX through-via,F.Cu-B.Cu,,90.500,45.325,,,0.450,0.200
+track,SNS_BJT_B,BJT-base MUX neck-down,F.Cu,0.200,90.500,45.325,89.862,45.325,,
+track,SNS_BJT_C,BJT-collector sense source escape,F.Cu,0.200,94.912,39.500,94.900,40.600,,
+via,SNS_BJT_C,BJT-collector sense source via,F.Cu-B.Cu,,94.900,40.600,,,0.600,0.300
+track,SNS_BJT_C,BJT-collector sense B.Cu fanout,B.Cu,0.200,94.900,40.600,93.500,42.000,,
+track,SNS_BJT_C,BJT-collector sense B.Cu fanout,B.Cu,0.200,93.500,42.000,93.500,45.200,,
+track,SNS_BJT_C,BJT-collector sense B.Cu fanout,B.Cu,0.200,93.500,45.200,92.700,46.000,,
+track,SNS_BJT_C,BJT-collector sense B.Cu fanout,B.Cu,0.200,92.700,46.000,90.500,45.975,,
+via,SNS_BJT_C,BJT-collector sense MUX through-via,F.Cu-B.Cu,,90.500,45.975,,,0.450,0.200
+track,SNS_BJT_C,BJT-collector MUX neck-down,F.Cu,0.200,90.500,45.975,89.862,45.975,,
+track,SNS_CAL_1V1,1.1 V sense source escape,F.Cu,0.200,96.912,48.000,98.000,48.000,,
+track,SNS_CAL_1V1,1.1 V sense source escape,F.Cu,0.200,98.000,48.000,98.000,50.500,,
+via,SNS_CAL_1V1,1.1 V sense source via,F.Cu-B.Cu,,98.000,50.500,,,0.600,0.300
+track,SNS_CAL_1V1,1.1 V sense B.Cu fanout,B.Cu,0.200,98.000,50.500,98.000,49.000,,
+track,SNS_CAL_1V1,1.1 V sense B.Cu fanout,B.Cu,0.200,98.000,49.000,94.000,49.000,,
+track,SNS_CAL_1V1,1.1 V sense B.Cu fanout,B.Cu,0.200,94.000,49.000,91.200,46.625,,
+track,SNS_CAL_1V1,1.1 V sense B.Cu fanout,B.Cu,0.200,91.200,46.625,90.500,46.625,,
+via,SNS_CAL_1V1,1.1 V sense MUX through-via,F.Cu-B.Cu,,90.500,46.625,,,0.450,0.200
+track,SNS_CAL_1V1,1.1 V sense MUX neck-down,F.Cu,0.200,90.500,46.625,89.862,46.625,,
+track,SNS_CAL_2V2,2.2 V sense source escape,F.Cu,0.200,101.412,48.000,102.500,48.000,,
+track,SNS_CAL_2V2,2.2 V sense source escape,F.Cu,0.200,102.500,48.000,102.500,51.500,,
+via,SNS_CAL_2V2,2.2 V sense source via,F.Cu-B.Cu,,102.500,51.500,,,0.600,0.300
+track,SNS_CAL_2V2,2.2 V sense B.Cu fanout,B.Cu,0.200,102.500,51.500,94.500,51.500,,
+track,SNS_CAL_2V2,2.2 V sense B.Cu fanout,B.Cu,0.200,94.500,51.500,92.000,49.500,,
+track,SNS_CAL_2V2,2.2 V sense B.Cu fanout,B.Cu,0.200,92.000,49.500,92.000,48.000,,
+track,SNS_CAL_2V2,2.2 V sense B.Cu fanout,B.Cu,0.200,92.000,48.000,90.500,47.275,,
+via,SNS_CAL_2V2,2.2 V sense MUX through-via,F.Cu-B.Cu,,90.500,47.275,,,0.450,0.200
+track,SNS_CAL_2V2,2.2 V sense MUX neck-down,F.Cu,0.200,90.500,47.275,89.862,47.275,,
+track,CAL_2V2,2.2 V calibration ladder node,F.Cu,0.250,103.000,42.000,106.000,42.000,,
+track,CAL_1V1,1.1 V calibration ladder node,F.Cu,0.250,106.000,44.000,109.000,44.000,,
+track,CAL_2V2,2.2 V sense-branch source,F.Cu,0.200,103.000,42.000,102.000,41.000,,
+track,CAL_2V2,2.2 V sense-branch source,F.Cu,0.200,102.000,41.000,101.500,41.000,,
+via,CAL_2V2,2.2 V calibration branch via,F.Cu-B.Cu,,101.500,41.000,,,0.600,0.300
+track,CAL_2V2,2.2 V calibration B.Cu branch,B.Cu,0.200,101.500,41.000,99.500,43.000,,
+track,CAL_2V2,2.2 V calibration B.Cu branch,B.Cu,0.200,99.500,43.000,99.500,46.500,,
+via,CAL_2V2,2.2 V sense-resistor via,F.Cu-B.Cu,,99.500,46.500,,,0.600,0.300
+track,CAL_2V2,2.2 V sense-resistor feed,F.Cu,0.200,99.500,46.500,99.588,48.000,,
+track,CAL_1V1,1.1 V sense-branch source,F.Cu,0.200,106.000,44.000,105.000,45.000,,
+track,CAL_1V1,1.1 V sense-branch source,F.Cu,0.200,105.000,45.000,104.500,46.000,,
+via,CAL_1V1,1.1 V calibration branch via,F.Cu-B.Cu,,104.500,46.000,,,0.600,0.300
+track,CAL_1V1,1.1 V calibration B.Cu branch,B.Cu,0.200,104.500,46.000,102.500,48.000,,
+track,CAL_1V1,1.1 V calibration B.Cu branch,B.Cu,0.200,102.500,48.000,95.000,47.000,,
+via,CAL_1V1,1.1 V sense-resistor via,F.Cu-B.Cu,,95.000,47.000,,,0.600,0.300
+track,CAL_1V1,1.1 V sense-resistor feed,F.Cu,0.200,95.000,47.000,95.088,48.000,,
+track,GND,Calibration-ladder quiet ground return,F.Cu,0.250,109.000,42.000,111.000,42.000,,
+via,GND,Calibration-ladder quiet ground return,F.Cu-B.Cu,,111.000,42.000,,,0.600,0.300
+track,SENSE_COM,Sense-MUX common neck-down,F.Cu,0.200,84.138,47.275,83.000,48.200,,
+via,SENSE_COM,Sense common MUX-side via,F.Cu-B.Cu,,83.000,48.200,,,0.600,0.300
+track,SENSE_COM,Selected-sense B.Cu corridor,B.Cu,0.250,83.000,48.200,86.500,48.200,,
+track,SENSE_COM,Selected-sense B.Cu corridor,B.Cu,0.250,86.500,48.200,86.500,56.000,,
+track,SENSE_COM,Selected-sense B.Cu corridor,B.Cu,0.250,86.500,56.000,76.500,56.000,,
+track,SENSE_COM,Selected-sense B.Cu corridor,B.Cu,0.250,76.500,56.000,76.500,52.450,,
+via,SENSE_COM,Sense common op-amp-side via,F.Cu-B.Cu,,76.500,52.450,,,0.600,0.300
+track,SENSE_COM,Selected sense to OPA391 non-inverting input,F.Cu,0.200,76.500,52.450,77.862,52.450,,
+track,OPA_OUT,OPA391 output escape,F.Cu,0.200,77.862,50.550,76.800,50.550,,
+track,OPA_OUT,OPA391 output escape,F.Cu,0.200,76.800,50.550,76.800,49.500,,
+via,OPA_OUT,OPA391 feedback west via,F.Cu-B.Cu,,76.800,49.500,,,0.600,0.300
+track,OPA_OUT,OPA391 B.Cu feedback loop,B.Cu,0.200,76.800,49.500,76.800,47.000,,
+track,OPA_OUT,OPA391 B.Cu feedback loop,B.Cu,0.200,76.800,47.000,81.200,47.000,,
+track,OPA_OUT,OPA391 B.Cu feedback loop,B.Cu,0.200,81.200,47.000,81.200,52.450,,
+via,OPA_OUT,OPA391 feedback east via,F.Cu-B.Cu,,81.200,52.450,,,0.600,0.300
+track,OPA_OUT,OPA391 inverting-input neck-down,F.Cu,0.200,81.200,52.450,80.138,52.450,,
+track,OPA_OUT,Op-amp output to ADC isolation resistor,F.Cu,0.250,80.138,52.450,79.200,53.400,,
+track,OPA_OUT,Op-amp output to ADC isolation resistor,F.Cu,0.250,79.200,53.400,76.000,53.400,,
+track,OPA_OUT,Op-amp output to ADC isolation resistor,F.Cu,0.250,76.000,53.400,74.088,55.000,,
+track,ADC_BUFFERED,ADC filter resistor escape,F.Cu,0.200,75.912,55.000,77.000,55.000,,
+track,ADC_BUFFERED,ADC filter resistor escape,F.Cu,0.200,77.000,55.000,77.000,57.500,,
+via,ADC_BUFFERED,ADC filter resistor via,F.Cu-B.Cu,,77.000,57.500,,,0.600,0.300
+track,ADC_BUFFERED,ADC filter B.Cu crossover,B.Cu,0.250,77.000,57.500,70.500,57.500,,
+track,ADC_BUFFERED,ADC filter B.Cu crossover,B.Cu,0.250,70.500,57.500,70.500,56.000,,
+via,ADC_BUFFERED,Filtered ADC source via,F.Cu-B.Cu,,70.500,56.000,,,0.600,0.300
+track,ADC_BUFFERED,ADC shunt-capacitor node,F.Cu,0.250,70.500,56.000,71.362,55.000,,
+track,ADC_BUFFERED,Filtered ADC B.Cu corridor,B.Cu,0.250,70.500,56.000,60.000,56.000,,
+track,ADC_BUFFERED,Filtered ADC B.Cu corridor,B.Cu,0.250,60.000,56.000,60.000,65.000,,
+track,ADC_BUFFERED,Filtered ADC B.Cu MCU approach,B.Cu,0.200,60.000,65.000,60.000,67.750,,
+track,ADC_BUFFERED,Filtered ADC B.Cu MCU approach,B.Cu,0.200,60.000,67.750,64.600,67.750,,
+via,ADC_BUFFERED,Filtered ADC PA0 through-via,F.Cu-B.Cu,,64.600,67.750,,,0.450,0.200
+track,ADC_BUFFERED,Filtered ADC input to STM32 PA0,F.Cu,0.200,64.600,67.750,65.050,67.750,,
+track,GND,ADC filter quiet ground return,F.Cu,0.250,69.638,55.000,68.500,54.000,,
+via,GND,ADC filter quiet ground return,F.Cu-B.Cu,,68.500,54.000,,,0.600,0.300

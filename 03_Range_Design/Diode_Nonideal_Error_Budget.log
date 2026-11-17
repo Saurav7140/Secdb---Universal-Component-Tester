@@ -1,0 +1,113 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Nonideal_Error_Budget.cir
+Start Time: Sat Sep 12 16:48:54 2026
+
+.step temp=-10°
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = -10
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=25°
+Direct Newton iteration succeeded in finding operating point.
+
+.step temp=60°
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.191 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Diode_Nonideal_Error_Budget.cir
+C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+
+
+Measurement: vf_si
+  step	V(SI_A,SI_K) 	at
+     1	0.667234182358	1e-06
+     2	0.599782705307	1e-06
+     3	0.531518697739	1e-06
+
+Measurement: if_si
+  step	I(RSI_H) 	at
+     1	0.00124128512107	1e-06
+     2	0.00127308687661	1e-06
+     3	0.00130527163856	1e-06
+
+Measurement: vf_schottky
+  step	V(SCH_A,SCH_K) 	at
+     1	0.210307359695	1e-06
+     2	0.141464352608	1e-06
+     3	0.0768338441849	1e-06
+
+Measurement: if_schottky
+  step	I(RSCH_H) 	at
+     1	0.00145671505015	1e-06
+     2	0.00148917280603	1e-06
+     3	0.00151964463294	1e-06
+
+Measurement: vf_red_led
+  step	V(LED_A,LED_K) 	at
+     1	1.99044233561	1e-06
+     2	2.00469613075	1e-06
+     3	2.01780331135	1e-06
+
+Measurement: if_red_led
+  step	I(RLED_H) 	at
+     1	0.000617424666416	1e-06
+     2	0.000610704300925	1e-06
+     3	0.000604524626397	1e-06
+
+Measurement: v_reverse_si
+  step	V(REV_HI,REV_LO) 	at
+     1	3.29999988069	1e-06
+     2	3.29999556134	1e-06
+     3	3.29992778769	1e-06
+
+Measurement: i_reverse_si
+  step	I(RREV_H) 	at
+     1	6.75412226148e-11	1e-06
+     2	2.11712203324e-09	1e-06
+     3	3.41003456583e-08	1e-06
+
+Measurement: v_open
+  step	V(OPEN_HI,OPEN_LO) 	at
+     1	3.29999311481	1e-06
+     2	3.29999311481	1e-06
+     3	3.29999311481	1e-06
+
+Measurement: v_short
+  step	V(SHORT_HI,SHORT_LO) 	at
+     1	1.54972076416e-05	1e-06
+     2	1.54972076416e-05	1e-06
+     3	1.54972076416e-05	1e-06
+
+Measurement: i_short
+  step	I(RSHORT_H) 	at
+     1	0.00155586248729	1e-06
+     2	0.00155586248729	1e-06
+     3	0.00155586248729	1e-06
+
+Measurement: v_leak_100k
+  step	V(L100_HI,L100_LO) 	at
+     1	3.23146073893	1e-06
+     2	3.23146073893	1e-06
+     3	3.23146073893	1e-06
+
+Measurement: v_leak_10k
+  step	V(L10_HI,L10_LO) 	at
+     1	2.72254768014	1e-06
+     2	2.72254768014	1e-06
+     3	2.72254768014	1e-06
+
+Measurement: vf_si_supply_low
+  step	V(SIL_A,SIL_K) 	at
+     1	0.664660692215	1e-06
+     2	0.596951246262	1e-06
+     3	0.528444051743	1e-06
+
+Measurement: vf_si_supply_high
+  step	V(SIH_A,SIH_K) 	at
+     1	0.671106934547	1e-06
+     2	0.604089856148	1e-06
+     3	0.536246776581	1e-06

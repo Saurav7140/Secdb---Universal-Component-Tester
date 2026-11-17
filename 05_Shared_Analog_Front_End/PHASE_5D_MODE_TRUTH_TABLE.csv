@@ -1,0 +1,24 @@
+Mode_or_step,PA1_BJT_E,PA2_BJT_B,PA3_BJT_C,PA6_DIO_A,PA10_DIO_B,SRC_EN,SRC_A1_PA8,SRC_A0_PB10,SNS_EN,SNS_A2_PB15,SNS_A1_PB14,SNS_A0_PB13,Selected_nodes,Required_wait_or_action
+Reset hardware state,Z,Z,Z,Z,Z,0,0,0,0,0,0,0,None,All external pulldowns hold muxes off
+Firmware transition,Z,Z,Z,Z,Z,0,0,0,0,0,0,0,None,Disable sense then source; set every drive analog no-pull
+Idle calibration 1,Z,Z,Z,Z,Z,0,0,0,1,1,1,0,CAL_1V1,Wait 200us discard first ADC conversion
+Idle calibration 2,Z,Z,Z,Z,Z,0,0,0,1,1,1,1,CAL_2V2,Wait 200us discard first ADC conversion
+Resistor trial 10k,Z,Z,Z,Z,Z,1,0,1,1,0,0,0,SRC_10K plus RC_SOCKET,Wait 200us discard first ADC conversion
+Resistor low range 1k,Z,Z,Z,Z,Z,1,0,0,1,0,0,0,SRC_1K plus RC_SOCKET,Wait 200us discard first ADC conversion
+Resistor high range 100k,Z,Z,Z,Z,Z,1,1,0,1,0,0,0,SRC_100K plus RC_SOCKET,Wait 200us discard first ADC conversion
+Capacitor discharge,Z,Z,Z,Z,Z,1,1,1,1,0,0,0,SRC_DISCHARGE plus RC_SOCKET,Hold until below discharge threshold or timeout
+Capacitor isolated ready,Z,Z,Z,Z,Z,0,0,0,1,0,0,0,RC_SOCKET sense only,Keep sense selected and settle before charge
+Capacitor charge,Z,Z,Z,Z,Z,1,0,1,1,0,0,0,SRC_10K plus RC_SOCKET,Start timer at SRC_EN event; do not insert post-start 200us delay
+Diode A-to-B read A,Z,Z,Z,H,L,0,0,0,1,0,0,1,DIODE_A,Set drives while sense disabled; then wait 200us and sample
+Diode A-to-B read B,Z,Z,Z,H,L,0,0,0,1,0,1,0,DIODE_B,Wait 200us discard first ADC conversion
+Diode B-to-A read A,Z,Z,Z,L,H,0,0,0,1,0,0,1,DIODE_A,Set drives while sense disabled; then wait 200us and sample
+Diode B-to-A read B,Z,Z,Z,L,H,0,0,0,1,0,1,0,DIODE_B,Wait 200us discard first ADC conversion
+NPN active read E,L,H,H,Z,Z,0,0,0,1,0,1,1,BJT_E,Configure emitter then collector then base; wait 200us
+NPN active read B,L,H,H,Z,Z,0,0,0,1,1,0,0,BJT_B,Wait 200us discard first ADC conversion
+NPN active read C,L,H,H,Z,Z,0,0,0,1,1,0,1,BJT_C,Wait 200us discard first ADC conversion
+NPN base-off confirmation,L,L,H,Z,Z,0,0,0,1,1,0,1,BJT_C,Remove base drive first when leaving state
+PNP active read E,H,L,L,Z,Z,0,0,0,1,0,1,1,BJT_E,Configure emitter then collector then base; wait 200us
+PNP active read B,H,L,L,Z,Z,0,0,0,1,1,0,0,BJT_B,Wait 200us discard first ADC conversion
+PNP active read C,H,L,L,Z,Z,0,0,0,1,1,0,1,BJT_C,Wait 200us discard first ADC conversion
+PNP base-off confirmation,H,H,L,Z,Z,0,0,0,1,1,0,1,BJT_C,Remove base drive first when leaving state
+Return to idle,Z,Z,Z,Z,Z,0,0,0,0,0,0,0,None,Disable sense then remove drive/source then select calibration idle

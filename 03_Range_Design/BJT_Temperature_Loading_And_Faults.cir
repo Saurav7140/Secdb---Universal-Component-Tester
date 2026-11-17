@@ -1,0 +1,125 @@
+* SECDB Phase 3D - real-model temperature, ADC loading and fault signatures
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.bjt
+.param RCAL=1010.5
+.param RBAL=1001009.5
+
+VCC VCC 0 3.3
+
+* Healthy buffered NPN and PNP reference paths
+RC_OK VCC C_OK {RCAL}
+Q_OK C_OK B_OK E_OK 2N3904
+RB_OK VCC B_OK {RBAL}
+RE_OK E_OK 0 9.5
+
+RE_P VCC E_P 9.5
+Q_P C_P B_P E_P 2N3906
+RC_P C_P 0 {RCAL}
+RB_P B_P 0 {RBAL}
+
+* Direct MCU ADC leakage examples on otherwise identical NPN base nodes.
+* Positive source direction draws 1uA from base; negative injects 1uA.
+RC_DS VCC C_DS {RCAL}
+Q_DS C_DS B_DS E_DS 2N3904
+RB_DS VCC B_DS {RBAL}
+RE_DS E_DS 0 9.5
+I_ADC_SINK B_DS 0 1u
+
+RC_DI VCC C_DI {RCAL}
+Q_DI C_DI B_DI E_DI 2N3904
+RB_DI VCC B_DI {RBAL}
+RE_DI E_DI 0 9.5
+I_ADC_INJECT 0 B_DI 1u
+
+* OPA391-class buffered input loading, conservative 5pA examples.
+RC_BS VCC C_BS {RCAL}
+Q_BS C_BS B_BS E_BS 2N3904
+RB_BS VCC B_BS {RBAL}
+RE_BS E_BS 0 9.5
+I_BUF_SINK B_BS 0 5p
+
+RC_BI VCC C_BI {RCAL}
+Q_BI C_BI B_BI E_BI 2N3904
+RB_BI VCC B_BI {RBAL}
+RE_BI E_BI 0 9.5
+I_BUF_INJECT 0 B_BI 5p
+
+* Fault/signature circuits
+* Open base: the socket/test node is still pulled up normally, but the internal
+* transistor base is separated by 1 Tohm.
+RC_OB VCC C_OB {RCAL}
+Q_OB C_OB B_OB_INT E_OB 2N3904
+RB_OB VCC B_OB {RBAL}
+R_BASE_OPEN B_OB B_OB_INT 1T
+RE_OB E_OB 0 9.5
+
+* Open collector: base-emitter junction still responds, collector test node does not.
+RC_OC VCC C_OC {RCAL}
+R_COL_OPEN C_OC C_OC_INT 1T
+Q_OC C_OC_INT B_OC E_OC 2N3904
+RB_OC VCC B_OC {RBAL}
+RE_OC E_OC 0 9.5
+
+RC_CES VCC C_CES {RCAL}
+Q_CES C_CES B_CES E_CES 2N3904
+RB_CES VCC B_CES {RBAL}
+RE_CES E_CES 0 9.5
+R_CE_SHORT C_CES E_CES 10m
+
+RC_BES VCC C_BES {RCAL}
+Q_BES C_BES B_BES E_BES 2N3904
+RB_BES VCC B_BES {RBAL}
+RE_BES E_BES 0 9.5
+R_BE_SHORT B_BES E_BES 10m
+
+RC_BCS VCC C_BCS {RCAL}
+Q_BCS C_BCS B_BCS E_BCS 2N3904
+RB_BCS VCC B_BCS {RBAL}
+RE_BCS E_BCS 0 9.5
+R_BC_SHORT B_BCS C_BCS 10m
+
+* Excessive base drive demonstrates tester-induced saturation, not low hFE.
+RC_SAT VCC C_SAT {RCAL}
+Q_SAT C_SAT B_SAT E_SAT 2N3904
+RB_SAT VCC B_SAT 10k
+RE_SAT E_SAT 0 9.5
+
+.step temp list -10 25 60
+.tran 0 1u 0 1u
+
+.meas TRAN OK_VBE FIND V(B_OK,E_OK) AT=1u
+.meas TRAN OK_VCE FIND V(C_OK,E_OK) AT=1u
+.meas TRAN OK_VCB FIND V(C_OK,B_OK) AT=1u
+.meas TRAN OK_IB FIND I(RB_OK) AT=1u
+.meas TRAN OK_IC FIND I(RC_OK) AT=1u
+.meas TRAN OK_HFE_EST PARAM I(RC_OK)/I(RB_OK)
+
+.meas TRAN P_VEB FIND V(E_P,B_P) AT=1u
+.meas TRAN P_VEC FIND V(E_P,C_P) AT=1u
+.meas TRAN P_VBC FIND V(B_P,C_P) AT=1u
+.meas TRAN P_HFE_EST PARAM I(RC_P)/I(RB_P)
+
+.meas TRAN DIRECT_SINK_HFE_EST PARAM I(RC_DS)/I(RB_DS)
+.meas TRAN DIRECT_INJECT_HFE_EST PARAM I(RC_DI)/I(RB_DI)
+.meas TRAN BUFFER_SINK_HFE_EST PARAM I(RC_BS)/I(RB_BS)
+.meas TRAN BUFFER_INJECT_HFE_EST PARAM I(RC_BI)/I(RB_BI)
+
+.meas TRAN OPEN_BASE_VCE FIND V(C_OB,E_OB) AT=1u
+.meas TRAN OPEN_BASE_VBE FIND V(B_OB,E_OB) AT=1u
+.meas TRAN OPEN_BASE_IC FIND I(RC_OB) AT=1u
+.meas TRAN OPEN_COL_VBE FIND V(B_OC,E_OC) AT=1u
+.meas TRAN OPEN_COL_VCE FIND V(C_OC,E_OC) AT=1u
+.meas TRAN OPEN_COL_IC FIND I(RC_OC) AT=1u
+.meas TRAN CE_SHORT_VCE FIND V(C_CES,E_CES) AT=1u
+.meas TRAN CE_SHORT_VBE FIND V(B_CES,E_CES) AT=1u
+.meas TRAN CE_SHORT_IC FIND I(RC_CES) AT=1u
+.meas TRAN BE_SHORT_VBE FIND V(B_BES,E_BES) AT=1u
+.meas TRAN BE_SHORT_IC FIND I(RC_BES) AT=1u
+.meas TRAN BC_SHORT_VBE FIND V(B_BCS,E_BCS) AT=1u
+.meas TRAN BC_SHORT_VCE FIND V(C_BCS,E_BCS) AT=1u
+.meas TRAN BC_SHORT_VCB FIND V(C_BCS,B_BCS) AT=1u
+.meas TRAN BC_SHORT_IC FIND I(RC_BCS) AT=1u
+.meas TRAN SAT_VBE FIND V(B_SAT,E_SAT) AT=1u
+.meas TRAN SAT_VCE FIND V(C_SAT,E_SAT) AT=1u
+.meas TRAN SAT_VCB FIND V(C_SAT,B_SAT) AT=1u
+.meas TRAN SAT_FORCED_BETA PARAM I(RC_SAT)/I(RB_SAT)
+.end

@@ -1,0 +1,86 @@
+* SECDB Phase 3C - diode non-ideal error budget and fault separation
+* Proposed two-terminal test: each terminal is driven through one protected leg.
+* One leg includes 1k 0.1%, GPIO output resistance and a possible TMUX1104 path.
+* Worst high-resistance leg = 1001 + 50 + 9.5 = 1060.5 ohm.
+* ADC reports the differential terminal voltage V(AP,KP).
+
+.lib C:\Users\Saurav\AppData\Local\LTspice\lib\cmp\standard.dio
+.param RLEG=1060.5
+
+* Healthy device/type comparison, forward orientation
+VSI SI_SRC 0 3.3
+RSI_H SI_SRC SI_A {RLEG}
+DSI SI_A SI_K 1N4148
+RSI_L SI_K 0 {RLEG}
+
+VSCH SCH_SRC 0 3.3
+RSCH_H SCH_SRC SCH_A {RLEG}
+DSCH SCH_A SCH_K 1N5819
+RSCH_L SCH_K 0 {RLEG}
+
+VLED LED_SRC 0 3.3
+RLED_H LED_SRC LED_A {RLEG}
+DLED LED_A LED_K RED_LED
+RLED_L LED_K 0 {RLEG}
+.model RED_LED D(Is=1e-20 N=2 Rs=10 Eg=1.8)
+
+* Same silicon diode with applied polarity reversed
+VREV REV_SRC 0 3.3
+RREV_H REV_SRC REV_HI {RLEG}
+DREV REV_LO REV_HI 1N4148
+RREV_L REV_LO 0 {RLEG}
+
+* Fault/reference cases tested between the two terminals
+VOPEN OPEN_SRC 0 3.3
+ROPEN_H OPEN_SRC OPEN_HI {RLEG}
+ROPEN_DUT OPEN_HI OPEN_LO 1G
+ROPEN_L OPEN_LO 0 {RLEG}
+
+VSHORT SHORT_SRC 0 3.3
+RSHORT_H SHORT_SRC SHORT_HI {RLEG}
+RSHORT_DUT SHORT_HI SHORT_LO 10m
+RSHORT_L SHORT_LO 0 {RLEG}
+
+* Resistive leakage examples: 100k should remain close to open; 10k should not.
+VLEAK100K L100_SRC 0 3.3
+RL100_H L100_SRC L100_HI {RLEG}
+RL100_DUT L100_HI L100_LO 100k
+RL100_L L100_LO 0 {RLEG}
+
+VLEAK10K L10_SRC 0 3.3
+RL10_H L10_SRC L10_HI {RLEG}
+RL10_DUT L10_HI L10_LO 10k
+RL10_L L10_LO 0 {RLEG}
+
+* Supply/path corners for a silicon diode.
+* Low corner: 3.135V (-5%), maximum leg resistance.
+VSI_LOW SIL_SRC 0 3.135
+RSIL_H SIL_SRC SIL_A {RLEG}
+DSIL SIL_A SIL_K 1N4148
+RSIL_L SIL_K 0 {RLEG}
+
+* High corner: 3.465V (+5%), 0.1%-low resistor, 20-ohm GPIO, typ switch Ron.
+VSI_HIGH SIH_SRC 0 3.465
+RSIH_H SIH_SRC SIH_A 1022.7
+DSIH SIH_A SIH_K 1N4148
+RSIH_L SIH_K 0 1022.7
+
+.step temp list -10 25 60
+.tran 0 1u 0 1u
+
+.meas TRAN VF_SI FIND V(SI_A,SI_K) AT=1u
+.meas TRAN IF_SI FIND I(RSI_H) AT=1u
+.meas TRAN VF_SCHOTTKY FIND V(SCH_A,SCH_K) AT=1u
+.meas TRAN IF_SCHOTTKY FIND I(RSCH_H) AT=1u
+.meas TRAN VF_RED_LED FIND V(LED_A,LED_K) AT=1u
+.meas TRAN IF_RED_LED FIND I(RLED_H) AT=1u
+.meas TRAN V_REVERSE_SI FIND V(REV_HI,REV_LO) AT=1u
+.meas TRAN I_REVERSE_SI FIND I(RREV_H) AT=1u
+.meas TRAN V_OPEN FIND V(OPEN_HI,OPEN_LO) AT=1u
+.meas TRAN V_SHORT FIND V(SHORT_HI,SHORT_LO) AT=1u
+.meas TRAN I_SHORT FIND I(RSHORT_H) AT=1u
+.meas TRAN V_LEAK_100K FIND V(L100_HI,L100_LO) AT=1u
+.meas TRAN V_LEAK_10K FIND V(L10_HI,L10_LO) AT=1u
+.meas TRAN VF_SI_SUPPLY_LOW FIND V(SIL_A,SIL_K) AT=1u
+.meas TRAN VF_SI_SUPPLY_HIGH FIND V(SIH_A,SIH_K) AT=1u
+.end

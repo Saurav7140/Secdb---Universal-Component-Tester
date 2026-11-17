@@ -1,0 +1,11 @@
+Footprints checked: 94 (positions and orientations preserved)
+Named nets checked: 71
+Routed segments: 501 (Phase 8C5: 390)
+Vias: 123 (Phase 8C5: 96)
+Manifest rows: 138 (Counter({'track': 111, 'via': 27}))
+MUX control nets completed: 7
+Copper zones: 1 (B.Cu GND)
+KiCad DRC violations: 0
+KiCad unconnected pads: 58 (Phase 8C5: 69; reduction: 11)
+KiCad footprint errors: 0
+PASS: Phase 8D1 source/sense MUX-control routing verified

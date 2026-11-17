@@ -1,0 +1,68 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5C_Protection_Capacitor.cir
+Start Time: Sun Sep 13 02:27:22 2026
+Options:plotwinsize=0 reltol=1e-6
+
+.step cx=1e-07
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 25
+method = trap
+reltol = 1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-06
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=1e-05
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+
+.step cx=0.0001
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 1.081 seconds.
+
+Files loaded:
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\Phase_5C_Protection_Capacitor.cir
+C:\Users\Saurav\Documents\ChatGPT\ECe mini prject\OPA391_TI_Model\OPAx391.LIB
+
+
+Measurement: t63
+  step	t63	FROM	TO
+     1	0.00103593695755	1.00050000001e-06	0.00103693745755
+     2	0.0103536229532	1.00050000001e-06	0.0103546234532
+     3	0.103530394189	1.00050000001e-06	0.103531394689
+     4	1.03529831296	1.00050000001e-06	1.03529931346
+
+Measurement: c_est
+  step	T63/(RCHPATH*KTH)
+     1	1.00064384099e-07
+     2	1.00008875681e-06
+     3	1.0000323914e-05
+     4	0.000100002695425
+
+Measurement: c_err_pct
+  step	100*(T63/(RCHPATH*KTH)-CX)/CX
+     1	0.0643840988109
+     2	0.00887568053484
+     3	0.00323914039652
+     4	0.00269542500437
+
+Measurement: tdis_1pct
+  step	tdis_1pct	FROM	TO
+     1	0.000617941154507	1.0005e-06	0.000618941654507
+     2	0.00617380743344	1.0005e-06	0.00617480793344
+     3	0.0617323992634	1.0005e-06	0.0617333997634
+     4	0.617318968494	1.0005e-06	0.617319968994
