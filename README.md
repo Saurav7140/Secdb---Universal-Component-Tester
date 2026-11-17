@@ -43,7 +43,8 @@ PCB routing checkpoints.
 
 <img src="07_KiCad/SECDB_Component_Tester_Phase8B_3D.png" alt="SECDB KiCad 3D PCB render" width="850">
 
-**Milestone progress:** `███████░░░ 70%`
+<strong>Milestone progress</strong><br>
+<img src="https://geps.dev/progress/70" alt="70% milestone progress">
 
 </div>
 
